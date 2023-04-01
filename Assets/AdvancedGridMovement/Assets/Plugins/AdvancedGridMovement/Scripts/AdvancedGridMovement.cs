@@ -255,7 +255,8 @@ public class AdvancedGridMovement : MonoBehaviour
         Vector3 delta = targetPosition - moveTowardsPosition;
         delta *= .6f;
         Collider[] intersectingColliders = Physics.OverlapBox(moveTowardsPosition + delta, new Vector3((gridSize / 2.0f) - .1f, 1.0f, (gridSize / 2.0f) - .1f), gameObject.transform.rotation);
-        Collider[] filteredColliders = System.Array.FindAll(intersectingColliders, collider => collider.CompareTag("Enemy") || collider.CompareTag("Level"));
+      //  Collider[] filteredColliders = System.Array.FindAll(intersectingColliders, collider => collider.CompareTag("Enemy") || collider.CompareTag("Level"));
+      Collider[] filteredColliders = System.Array.FindAll(intersectingColliders, collider => collider.CompareTag("Level"));
         return filteredColliders.Length == 0;
     }
 
