@@ -6,6 +6,7 @@ https://opensource.org/licenses/MIT.
 */
 
 
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -19,12 +20,12 @@ public class AdvancedGridMovement : MonoBehaviour
     private const float RightHand = 90.0f;
     private const float LeftHand = -RightHand;
     private const float approximationThreshold = 0.025f;
-
+    private bool start = true;
     [SerializeField] private float gridSize = 3.0f;
 
 
     [Header("Walk speed settings")]
-    [SerializeField] private float walkSpeed = 1.0f;
+    [SerializeField] private float walkSpeed = 2.0f;
     [SerializeField] private float turnSpeed = 5.0f;
 
     [Header("Walking animation curve")]
@@ -235,13 +236,15 @@ public class AdvancedGridMovement : MonoBehaviour
         if (IsStationary())
         {
             Vector3 targetPosition = moveTowardsPosition + movementDirection;
-            if (FreeSpace(targetPosition))
+            if (start || FreeSpace(targetPosition))
             {
                 moveFromPosition = transform.position;
                 moveTowardsPosition = targetPosition;
+                start = false;
             }
             else
             {
+                Debug.Log("blocked");
                 blockedEvent?.Invoke();
             }
         }
