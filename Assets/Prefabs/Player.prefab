@@ -322,6 +322,7 @@ GameObject:
   - component: {fileID: 3699627891036127485}
   - component: {fileID: 3699627891036127486}
   - component: {fileID: 3699627891036127487}
+  - component: {fileID: 4605870985798894074}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -345,7 +346,7 @@ Transform:
   - {fileID: 3699627891311098353}
   - {fileID: 3699627891100086817}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!114 &3699627891036127484
 MonoBehaviour:
@@ -691,6 +692,18 @@ MonoBehaviour:
   rightMinimumPitch: 0.5
   turnClip: {fileID: 8300000, guid: 03abc06de1e112f4cbd8856cc395339a, type: 3}
   turnMinimumPitch: 0.5
+--- !u!114 &4605870985798894074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3699627891036127482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35fb18605e088ec47a759aa1e58b99ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3699627891100086816
 GameObject:
   m_ObjectHideFlags: 0
