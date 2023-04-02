@@ -343,7 +343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 240795883e468b640837a721fa878bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _checkDist: 3
+  _checkDist: 20
   _layersToCheck:
     serializedVersion: 2
     m_Bits: 64
@@ -1041,7 +1041,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls: []
-  - key: 113
+  - key: 97
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -1057,7 +1057,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - key: 101
+  - key: 100
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -1073,7 +1073,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - key: 32
+  - key: 101
     callback:
       m_PersistentCalls:
         m_Calls:
