@@ -9,6 +9,7 @@ public class PlayerManager : Singleton<PlayerManager> {
     [SerializeField] private int _startCondition = 100;
     [SerializeField] private float _conditionReductionTickRate = 1f;
 
+    public int CompletedMirrors => _completedMirrors;
     public Transform PlayerTransform => _player;
 
     public Observable<int> ConditionLevel = new Observable<int>();
@@ -16,6 +17,8 @@ public class PlayerManager : Singleton<PlayerManager> {
     private bool _isRemovingCondition = false;
     private float _conditionTimer = 0f;
     private int _currConditionRemovalAmount;
+
+    private int _completedMirrors = 0;
 
     protected override void Awake() {
         base.Awake();
@@ -53,6 +56,11 @@ public class PlayerManager : Singleton<PlayerManager> {
 
     public void AddCondition(int amount) {
         ConditionLevel.Value += amount;
+    }
+
+    [ContextMenu("Complete Puzzle")]
+    public void CompleteMirror() {
+        _completedMirrors++;
     }
 
     public virtual void TeleportPlayer(Vector3 newPos) {
