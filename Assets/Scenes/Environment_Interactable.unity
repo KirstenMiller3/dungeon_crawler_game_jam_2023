@@ -1223,6 +1223,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 820332717302957281, guid: 1b1f5f059e7043c4dbf349c36d72b42f, type: 3}
+      propertyPath: _offset.z
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 820332717302957282, guid: 1b1f5f059e7043c4dbf349c36d72b42f, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1237,7 +1241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 820332717302957282, guid: 1b1f5f059e7043c4dbf349c36d72b42f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 820332717302957282, guid: 1b1f5f059e7043c4dbf349c36d72b42f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1676,7 +1680,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -201.012, y: -63.003}
+  m_AnchoredPosition: {x: -201.01196, y: -63.00305}
   m_SizeDelta: {x: 280.024, y: 70.006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &2017667583

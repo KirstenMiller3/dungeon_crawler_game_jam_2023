@@ -21,6 +21,8 @@ public class MirroredPlayer : MonoBehaviour {
     [SerializeField] private ParticleSystem _transformParticles;
     [SerializeField] private Animator _light;
 
+    public Vector3 Offset => _offset;
+
     private MirroredPerson _currentMirroredPerson;
 
     private void Start() {
