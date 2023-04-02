@@ -7,7 +7,6 @@ public class Mirror : MonoBehaviour {
     [TextArea][SerializeField] private string _hintQuote;
 
     [SerializeField] private Transform _badMirror;
-    [SerializeField] private Vector3 _offset;
     [SerializeField] private Camera _camera;
     [SerializeField] private Material _material;
    
@@ -30,7 +29,7 @@ public class Mirror : MonoBehaviour {
 
         _camera.targetTexture = rt;
 
-        _badMirror.transform.position = transform.position + _offset;
+        _badMirror.transform.position = transform.position + _mirrorPerson.Offset;
 
         IsComplete.Value = false;
     }

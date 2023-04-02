@@ -21,6 +21,8 @@ public class MirroredPlayer : MonoBehaviour {
     [SerializeField] private ParticleSystem _transformParticles;
     [SerializeField] private Animator _light;
 
+    public Vector3 Offset => _offset;
+
     private MirroredPerson _currentMirroredPerson;
 
     private void Start() {
@@ -70,8 +72,6 @@ public class MirroredPlayer : MonoBehaviour {
                 _personModel[i].SetActive(false);
             }
         }
-
-        Debug.Log($"Person: {(int)_currentMirroredPerson}");
 
         if(_personModel[(int)_currentMirroredPerson] == null) {
             return;

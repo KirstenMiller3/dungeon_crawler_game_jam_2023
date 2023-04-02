@@ -199,10 +199,9 @@ MonoBehaviour:
   _person: 0
   _hintQuote: 
   _badMirror: {fileID: 9095119801940167126}
-  _offset: {x: 0, y: 0, z: 20}
+  _offset: {x: 0, y: 0, z: 90}
   _camera: {fileID: 9095119802380864629}
   _material: {fileID: 2100000, guid: b8fa18d02e0e758449da3704d9821dcb, type: 2}
-  _mirrorPerson: {fileID: 0}
 --- !u!1 &9095119802380864584
 GameObject:
   m_ObjectHideFlags: 0
