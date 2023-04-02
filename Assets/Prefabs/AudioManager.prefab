@@ -99,13 +99,13 @@ MonoBehaviour:
     sName: peace
     loop: 0
     source: {fileID: 0}
-  - volume: 1
+  - volume: 0.9
     pitch: 1
     clip: {fileID: 8300000, guid: 4c76d2659ba49834cb9d76fe65e3a373, type: 3}
     sName: perfection
     loop: 0
     source: {fileID: 0}
-  - volume: 1
+  - volume: 0.7
     pitch: 1
     clip: {fileID: 8300000, guid: 2de4756015cdfae46842c1e8f50e857a, type: 3}
     sName: health
