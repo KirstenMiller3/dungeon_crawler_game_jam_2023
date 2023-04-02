@@ -34,7 +34,9 @@ public class PlayerMirrorDetection : MonoBehaviour {
 
             LookingAtMirror.Value = false;
 
-            PlayerManager.Instance.EndRemoveCondition();
+            if (PlayerManager.Instance != null) {
+                PlayerManager.Instance.EndRemoveCondition();
+            }
         }
     }
 }
