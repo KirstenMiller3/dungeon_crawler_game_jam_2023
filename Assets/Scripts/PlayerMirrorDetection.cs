@@ -19,6 +19,10 @@ public class PlayerMirrorDetection : MonoBehaviour {
         RaycastHit hit;
         Debug.DrawRay(transform.position, fwd * _checkDist);
         if(Physics.Raycast(transform.position, fwd, out hit, _checkDist, _layersToCheck)) {
+            if(hit.transform.gameObject.layer == LayerMask.NameToLayer("Level")) {
+                return;
+            }
+
             _lookAtMirror = hit.transform.GetComponent<Mirror>();
             _lookAtMirror.Interact();
 
