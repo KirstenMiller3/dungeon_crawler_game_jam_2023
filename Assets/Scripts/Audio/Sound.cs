@@ -17,7 +17,7 @@ public class Sound
 
     public bool loop;
 
-    public AudioMixerGroup mixerGroup;
+ //   public AudioMixerGroup mixerGroup;
 
 
     [HideInInspector]

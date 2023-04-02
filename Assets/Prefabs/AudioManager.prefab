@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4972224289673072815
 MonoBehaviour:
@@ -47,100 +47,37 @@ MonoBehaviour:
   sounds:
   - volume: 1
     pitch: 1
-    clip: {fileID: 8300000, guid: aec00b0d5e97b9744a2858825ef80e0d, type: 3}
+    clip: {fileID: 8300000, guid: f5ff1c60956e5b3449e403a5e4b41311, type: 3}
     sName: main
     loop: 1
-    mixerGroup: {fileID: 4609161467335981969, guid: 594970546b92b9842af94076cbf34440, type: 2}
     source: {fileID: 0}
-  - volume: 1
+  - volume: 0.05
     pitch: 1
-    clip: {fileID: 8300000, guid: abe2b9a283060e24ba2863c84fc27d6f, type: 3}
-    sName: vine_1
+    clip: {fileID: 8300000, guid: 47907fd1ec7dc6644a45af5da2f52d88, type: 3}
+    sName: city_1
     loop: 0
-    mixerGroup: {fileID: 407932118885073094, guid: 594970546b92b9842af94076cbf34440, type: 2}
     source: {fileID: 0}
-  - volume: 1
+  - volume: 0.1
     pitch: 1
-    clip: {fileID: 8300000, guid: d1540015091dc8b4ea9efaa4c70ec35e, type: 3}
-    sName: vine_2
+    clip: {fileID: 8300000, guid: 48af0732854d3814bb8104c01dbca07d, type: 3}
+    sName: city_2
     loop: 0
-    mixerGroup: {fileID: 407932118885073094, guid: 594970546b92b9842af94076cbf34440, type: 2}
     source: {fileID: 0}
-  - volume: 1
+  - volume: 0.1
     pitch: 1
-    clip: {fileID: 8300000, guid: c06cff88c13825843897762748e1a68c, type: 3}
-    sName: vine_3
+    clip: {fileID: 8300000, guid: ede8484b9446aaf4e814d4cd788517c2, type: 3}
+    sName: city_3
     loop: 0
-    mixerGroup: {fileID: 407932118885073094, guid: 594970546b92b9842af94076cbf34440, type: 2}
     source: {fileID: 0}
-  - volume: 1
+  - volume: 0.2
     pitch: 1
-    clip: {fileID: 8300000, guid: 74f15626c1e66a64f89977bb8de561f8, type: 3}
-    sName: vine_retract_1
+    clip: {fileID: 8300000, guid: 91788ef26e935e14ab9aeca8ac546cb7, type: 3}
+    sName: city_4
     loop: 0
-    mixerGroup: {fileID: 407932118885073094, guid: 594970546b92b9842af94076cbf34440, type: 2}
     source: {fileID: 0}
-  - volume: 1
+  - volume: 0.3
     pitch: 1
-    clip: {fileID: 8300000, guid: be4171eea49c3f74bb96c356489f56a4, type: 3}
-    sName: vine_retract_2
-    loop: 0
-    mixerGroup: {fileID: 407932118885073094, guid: 594970546b92b9842af94076cbf34440, type: 2}
+    clip: {fileID: 8300000, guid: 51c22187be9bb0343be60a5090fe9e47, type: 3}
+    sName: main_2
+    loop: 1
     source: {fileID: 0}
-  - volume: 1
-    pitch: 1
-    clip: {fileID: 8300000, guid: 8b7655fa207a0af4fa4aded8c0eb4d2c, type: 3}
-    sName: vine_retract_3
-    loop: 0
-    mixerGroup: {fileID: 407932118885073094, guid: 594970546b92b9842af94076cbf34440, type: 2}
-    source: {fileID: 0}
-  - volume: 1
-    pitch: 1
-    clip: {fileID: 8300000, guid: 1f630e3f2961fb74a90fc190dd0f3b75, type: 3}
-    sName: vine_retract_4
-    loop: 0
-    mixerGroup: {fileID: 407932118885073094, guid: 594970546b92b9842af94076cbf34440, type: 2}
-    source: {fileID: 0}
-  - volume: 1
-    pitch: 1
-    clip: {fileID: 8300000, guid: ab6a6947a1fc0a64db18b4963098955c, type: 3}
-    sName: vine_retract_5
-    loop: 0
-    mixerGroup: {fileID: 407932118885073094, guid: 594970546b92b9842af94076cbf34440, type: 2}
-    source: {fileID: 0}
-  - volume: 1
-    pitch: 1
-    clip: {fileID: 8300000, guid: a36bc9cb5c49de0498afbf61ebc94902, type: 3}
-    sName: vine_retract_6
-    loop: 0
-    mixerGroup: {fileID: 407932118885073094, guid: 594970546b92b9842af94076cbf34440, type: 2}
-    source: {fileID: 0}
-  - volume: 1
-    pitch: 1
-    clip: {fileID: 8300000, guid: 7751fe7935e8ba94b8c9ab44cdbc9ae9, type: 3}
-    sName: vine_retract_7
-    loop: 0
-    mixerGroup: {fileID: 407932118885073094, guid: 594970546b92b9842af94076cbf34440, type: 2}
-    source: {fileID: 0}
-  - volume: 1
-    pitch: 1
-    clip: {fileID: 8300000, guid: 1ab417510d8311a4aac82416823c1a46, type: 3}
-    sName: vine_retract_8
-    loop: 0
-    mixerGroup: {fileID: 407932118885073094, guid: 594970546b92b9842af94076cbf34440, type: 2}
-    source: {fileID: 0}
-  - volume: 1
-    pitch: 1
-    clip: {fileID: 8300000, guid: cb4829758ade02b43ba7b3522de1941d, type: 3}
-    sName: vine_retract_9
-    loop: 0
-    mixerGroup: {fileID: 407932118885073094, guid: 594970546b92b9842af94076cbf34440, type: 2}
-    source: {fileID: 0}
-  - volume: 1
-    pitch: 1
-    clip: {fileID: 8300000, guid: a17dc568fbba68b428c668d1f8ca05ba, type: 3}
-    sName: chirp_1
-    loop: 0
-    mixerGroup: {fileID: 407932118885073094, guid: 594970546b92b9842af94076cbf34440, type: 2}
-    source: {fileID: 0}
-  masterMixer: {fileID: 24100000, guid: 594970546b92b9842af94076cbf34440, type: 2}
