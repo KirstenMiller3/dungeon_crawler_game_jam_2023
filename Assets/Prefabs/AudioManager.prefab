@@ -129,3 +129,9 @@ MonoBehaviour:
     sName: restore
     loop: 0
     source: {fileID: 0}
+  - volume: 1
+    pitch: 1
+    clip: {fileID: 8300000, guid: 8ebfb98a43c501740ac0978019a55248, type: 3}
+    sName: solved
+    loop: 0
+    source: {fileID: 0}

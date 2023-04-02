@@ -24,6 +24,7 @@ public class Door : MonoBehaviour {
 
     private void OnMirrorIsComplete(bool prev, bool cur) {
         if(cur) {
+            AudioManager.instance.Play("solved");
             _completeMirrors++;
         }
 
