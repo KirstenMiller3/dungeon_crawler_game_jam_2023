@@ -28,7 +28,7 @@ public class PlayerManager : Singleton<PlayerManager> {
     private void Update() {
         if(_isRemovingCondition) {
             _conditionTimer += Time.deltaTime;
-
+            // condition still removes even once mirror completed
             if(_conditionTimer >= _conditionReductionTickRate) {
                 RemoveCondition(_currConditionRemovalAmount);
                 _conditionTimer = 0f;
@@ -51,6 +51,10 @@ public class PlayerManager : Singleton<PlayerManager> {
     }
 
     public void RemoveCondition(int amount) {
+        if (!AudioManager.instance.IsSoundPlaying("debuff")) {
+            AudioManager.instance.Play("debuff");
+        }
+
         ConditionLevel.Value -= amount;
     }
 

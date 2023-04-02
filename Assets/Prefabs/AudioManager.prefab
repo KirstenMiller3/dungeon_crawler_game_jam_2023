@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 49
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4972224289673072815
 MonoBehaviour:
@@ -80,4 +80,52 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 51c22187be9bb0343be60a5090fe9e47, type: 3}
     sName: main_2
     loop: 1
+    source: {fileID: 0}
+  - volume: 1
+    pitch: 1
+    clip: {fileID: 8300000, guid: c0e57868efe51a449bec2bdaa9a16788, type: 3}
+    sName: fire
+    loop: 0
+    source: {fileID: 0}
+  - volume: 1
+    pitch: 1
+    clip: {fileID: 8300000, guid: 2eb1f25e3bda7424498171d67446a0a5, type: 3}
+    sName: debuff
+    loop: 0
+    source: {fileID: 0}
+  - volume: 1
+    pitch: 1
+    clip: {fileID: 8300000, guid: 94288bb8b2e1a5c4aa891d0e5890009b, type: 3}
+    sName: peace
+    loop: 0
+    source: {fileID: 0}
+  - volume: 1
+    pitch: 1
+    clip: {fileID: 8300000, guid: 4c76d2659ba49834cb9d76fe65e3a373, type: 3}
+    sName: perfection
+    loop: 0
+    source: {fileID: 0}
+  - volume: 1
+    pitch: 1
+    clip: {fileID: 8300000, guid: 2de4756015cdfae46842c1e8f50e857a, type: 3}
+    sName: health
+    loop: 0
+    source: {fileID: 0}
+  - volume: 1
+    pitch: 1
+    clip: {fileID: 8300000, guid: dd2badbfd388e704ba9a3384fb0eca35, type: 3}
+    sName: time
+    loop: 0
+    source: {fileID: 0}
+  - volume: 1
+    pitch: 1
+    clip: {fileID: 8300000, guid: 543affaf6d9de914cb1db5b511ec777f, type: 3}
+    sName: presence
+    loop: 0
+    source: {fileID: 0}
+  - volume: 1
+    pitch: 1
+    clip: {fileID: 8300000, guid: e1e39673a5478b64fb8b52a01e98e4e6, type: 3}
+    sName: restore
+    loop: 0
     source: {fileID: 0}

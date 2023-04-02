@@ -23,7 +23,11 @@ public class PlayerMirrorDetection : MonoBehaviour {
 
             LookingAtMirror.Value = true;
 
-            PlayerManager.Instance.StartRemoveCondition(1);
+            if (_lookAtMirror.IsComplete.Value) {
+                PlayerManager.Instance.EndRemoveCondition();
+            } else {
+                PlayerManager.Instance.StartRemoveCondition(1);
+            }
         }
         else {
             if(_lookAtMirror) {

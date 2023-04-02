@@ -34,7 +34,36 @@ public class MirroredPlayer : MonoBehaviour {
     }
 
     public void ShowMirroredPerson(MirroredPerson mirroredPerson) {
+
+        if (_currentMirroredPerson == mirroredPerson) {
+            return;
+        }
         _currentMirroredPerson = mirroredPerson;
+
+        switch(mirroredPerson) 
+        {
+            case MirroredPerson.Calm:
+                AudioManager.instance.Play("fire");
+                break;
+            case MirroredPerson.Health:
+                AudioManager.instance.Play("health");
+                break;
+            case MirroredPerson.Peace:
+                AudioManager.instance.Play("peace");
+                break;
+            case MirroredPerson.Perfection:
+                AudioManager.instance.Play("perfection");
+                break;
+            case MirroredPerson.Presence:
+                AudioManager.instance.Play("presence");
+                break;
+            case MirroredPerson.Restore:
+                AudioManager.instance.Play("restore");
+                break;
+            case MirroredPerson.Time:
+                AudioManager.instance.Play("time");
+                break;
+        }
 
         for(int i = 0; i < _personModel.Length; i++) {
             if(_personModel[i] != null) {

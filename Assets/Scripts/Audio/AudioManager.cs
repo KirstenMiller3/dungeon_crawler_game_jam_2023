@@ -80,6 +80,15 @@ public class AudioManager : MonoBehaviour
         
     }
 
+    public bool IsSoundPlaying(string name) {
+        Sound s = Array.Find(sounds, sound => sound.sName == name);
+        if (s == null) {
+            return false;
+        } else {
+            return s.source.isPlaying;
+        }
+    }
+
     private static bool CitySoundEffectIsNotPlaying() {
         return !instance.sounds.Where(s => s.sName.Contains("city")).Any(x => x.source.isPlaying);
     }
@@ -90,6 +99,7 @@ public class AudioManager : MonoBehaviour
 
         if(s != null)
         {
+            Debug.Log($"playing sound {name}");
             s.source.Play();
         }
         else
