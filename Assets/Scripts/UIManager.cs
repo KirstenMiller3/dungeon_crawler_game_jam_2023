@@ -17,6 +17,9 @@ public class UIManager : MonoBehaviour {
     public void Start() {
         _pickUpBase = _pickUpText.text;
 
+        _pickUpDetection = FindObjectOfType<PickUpDetection>();
+        _mirrorDetection = FindObjectOfType<PlayerMirrorDetection>();
+
         PlayerManager.Instance.ConditionLevel.Subscribe(OnUpdateCondition, true);
         _pickUpDetection.LookAtObjName.Subscribe(OnLookAtObjName, true);
         _pickUpDetection.LookingAtObj.Subscribe(OnLookAtObj, true);

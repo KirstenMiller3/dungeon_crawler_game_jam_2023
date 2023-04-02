@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public enum MirroredPerson {
     None,
@@ -16,13 +17,14 @@ public enum MirroredPerson {
 public class MirroredPlayer : MonoBehaviour {
     [SerializeField] private Transform _player;
     [SerializeField] private Vector3 _offset;
-    [SerializeField] private GameObject[] _personModel = new GameObject[7];
+    [SerializeField] private GameObject[] _personModel = new GameObject[8];
     [SerializeField] private ParticleSystem _transformParticles;
     [SerializeField] private Animator _light;
 
     private MirroredPerson _currentMirroredPerson;
 
     private void Start() {
+        _player = GameObject.Find("Player").transform;
         ShowMirroredPerson(0);
     }
 
@@ -39,6 +41,8 @@ public class MirroredPlayer : MonoBehaviour {
                 _personModel[i].SetActive(false);
             }
         }
+
+        Debug.Log($"Person: {(int)_currentMirroredPerson}");
 
         if(_personModel[(int)_currentMirroredPerson] == null) {
             return;
