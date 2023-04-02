@@ -34,14 +34,19 @@ public class Mirror : MonoBehaviour {
         IsComplete.Value = false;
     }
 
-    public virtual void Interact() {
+    public void ShowPerson() {
         if(IsComplete.Value) {
             return;
         }
 
         _mirrorPerson.ShowMirroredPerson(_person);
-
         SkyText.Instance.SetText(_hintQuote);
+    }
+
+    public virtual void Interact() {
+        if(IsComplete.Value) {
+            return;
+        }
     }
 
     public virtual void StopInteract() {

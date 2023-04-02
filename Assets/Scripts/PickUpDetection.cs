@@ -44,12 +44,17 @@ public class PickUpDetection : MonoBehaviour {
             return;
         }
 
+        _lookAtObj.PickUp();
         _lookAtObj.gameObject.SetActive(false);
         _heldObj = _lookAtObj;
         _heldInstance = Instantiate(_heldObj.Prefab, _heldObjPos);
     }
 
     public void PresentObj() {
+        if(_heldObj == null) {
+            return;
+        }
+
         if(_mirrorDetection.LookAtMirror != null) {
             if(_mirrorDetection.LookAtMirror is PresentMirror) {
                 PresentMirror mirror = (PresentMirror)_mirrorDetection.LookAtMirror;

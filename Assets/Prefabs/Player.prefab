@@ -197,8 +197,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: If the ocean can calm itself, so can you. We are both salt <b>water</b>
-    mixed with air.
+  m_text: Must find my way out...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ebc64aedc8d41964f8456bbc4f4bd71a, type: 2}
   m_sharedMaterial: {fileID: 6964237482300838716, guid: ebc64aedc8d41964f8456bbc4f4bd71a, type: 2}
@@ -343,7 +342,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 240795883e468b640837a721fa878bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _checkDist: 20
+  _checkDist: 3
+  _checkDistToChange: 20
   _layersToCheck:
     serializedVersion: 2
     m_Bits: 64
@@ -1089,7 +1089,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - key: 32
+  - key: 101
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -1105,7 +1105,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - key: 116
+  - key: 113
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -1122,7 +1122,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   eventMappingsKeyUp:
-  - key: 116
+  - key: 119
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -1138,6 +1138,10 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - key: 113
+    callback:
+      m_PersistentCalls:
+        m_Calls:
         - m_Target: {fileID: 4896660778302081626}
           m_TargetAssemblyTypeName: CameraController, Assembly-CSharp
           m_MethodName: EndLookUp

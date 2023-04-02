@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerMirrorDetection : MonoBehaviour {
     [SerializeField] private float _checkDist = 10f;
+    [SerializeField] private float _checkDistToChange = 20f;
     [SerializeField] private LayerMask _layersToCheck;
 
     public Observable<bool> LookingAtMirror = new Observable<bool>();
@@ -41,6 +42,11 @@ public class PlayerMirrorDetection : MonoBehaviour {
             if (PlayerManager.Instance != null) {
                 PlayerManager.Instance.EndRemoveCondition();
             }
+        }
+
+        if(Physics.Raycast(transform.position, fwd, out hit, _checkDistToChange, _layersToCheck)) {
+            _lookAtMirror = hit.transform.GetComponent<Mirror>();
+            _lookAtMirror.ShowPerson();
         }
     }
 }
