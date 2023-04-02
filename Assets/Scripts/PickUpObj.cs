@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum PickUpType {
-    Bucket
+    Bucket,
+    Apple,
+    Beating_Heart
 }
 
 public class PickUpObj : MonoBehaviour {

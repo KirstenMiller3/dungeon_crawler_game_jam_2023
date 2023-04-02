@@ -1,6 +1,4 @@
 using Milo.Tools;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Mirror : MonoBehaviour {
@@ -56,8 +54,14 @@ public class Mirror : MonoBehaviour {
 
     [ContextMenu("Complete")]
     public void CompleteMirror() {
+        if(IsComplete.Value) {
+            return;
+        }
+
         IsComplete.Value = true;
         _mirrorPerson.TransformPlayer();
+        PlayerManager.Instance.AddCondition(50);
+        PlayerManager.Instance.CompleteMirror();
     }
 }
 

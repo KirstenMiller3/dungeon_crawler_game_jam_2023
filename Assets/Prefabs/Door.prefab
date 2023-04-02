@@ -396,9 +396,9 @@ GameObject:
   m_Component:
   - component: {fileID: 771336088906107346}
   - component: {fileID: 818475576658966850}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Blocker
-  m_TagString: Untagged
+  m_TagString: Level
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
