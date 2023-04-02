@@ -42,8 +42,6 @@ public class MirroredPlayer : MonoBehaviour {
             }
         }
 
-        Debug.Log($"Person: {(int)_currentMirroredPerson}");
-
         if(_personModel[(int)_currentMirroredPerson] == null) {
             return;
         }
