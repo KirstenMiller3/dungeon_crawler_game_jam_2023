@@ -196,12 +196,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a47fe98b734724641aa874e636eb291c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _person: 0
   _badMirror: {fileID: 9095119801940167126}
   _offset: {x: 0, y: 0, z: 20}
   _camera: {fileID: 9095119802380864629}
   _material: {fileID: 2100000, guid: b8fa18d02e0e758449da3704d9821dcb, type: 2}
-  _val1: 80
-  _val2: 10
+  _mirrorPerson: {fileID: 0}
 --- !u!1 &9095119802380864584
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,7 +212,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9095119802380864587}
   - component: {fileID: 9095119802380864629}
-  - component: {fileID: 9095119802380864586}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -278,11 +277,3 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &9095119802380864586
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9095119802380864584}
-  m_Enabled: 1
