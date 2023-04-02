@@ -1,5 +1,103 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1259876827539946209
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8880177730078677539}
+  m_Layer: 0
+  m_Name: HeldObjPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8880177730078677539
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259876827539946209}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 1, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3699627891036127483}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2453125141093925620
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 733987103107855431}
+  - component: {fileID: 6775631625656333382}
+  - component: {fileID: 7446226509243976495}
+  m_Layer: 0
+  m_Name: Detection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &733987103107855431
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2453125141093925620}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3699627891036127483}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6775631625656333382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2453125141093925620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 240795883e468b640837a721fa878bcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _checkDist: 3
+  _layersToCheck:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &7446226509243976495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2453125141093925620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b05166488da39f941adc66a3e80a0b9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _checkDist: 3
+  _layersToCheck:
+    serializedVersion: 2
+    m_Bits: 128
+  _heldObjPos: {fileID: 8880177730078677539}
+  _mirrorDetection: {fileID: 6775631625656333382}
 --- !u!1 &3699627890479497849
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,6 +443,8 @@ Transform:
   - {fileID: 3699627890479497852}
   - {fileID: 3699627891311098353}
   - {fileID: 3699627891100086817}
+  - {fileID: 733987103107855431}
+  - {fileID: 8880177730078677539}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
@@ -626,6 +726,38 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - key: 32
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7446226509243976495}
+          m_TargetAssemblyTypeName: PickUpDetection, Assembly-CSharp
+          m_MethodName: PickUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - key: 32
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7446226509243976495}
+          m_TargetAssemblyTypeName: PickUpDetection, Assembly-CSharp
+          m_MethodName: PresentObj
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   eventMappingsKeyUp:
   - key: 119
     callback:
@@ -704,6 +836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35fb18605e088ec47a759aa1e58b99ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HasKey: 0
 --- !u!1 &3699627891100086816
 GameObject:
   m_ObjectHideFlags: 0
