@@ -1,3 +1,4 @@
+using Milo.Tools;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -9,6 +10,11 @@ public class PickUpDetection : MonoBehaviour {
     [SerializeField] private Transform _heldObjPos;
     [SerializeField] protected PlayerMirrorDetection _mirrorDetection;
 
+    public Observable<bool> LookingAtObj = new Observable<bool>();
+    public Observable<string> LookAtObjName = new Observable<string>();
+
+    public bool HasHeldObj => _heldObj;
+
     private PickUpObj _heldObj;
     private PickUpObj _lookAtObj;
     private GameObject _heldInstance;
@@ -19,9 +25,13 @@ public class PickUpDetection : MonoBehaviour {
         Debug.DrawRay(transform.position, fwd * _checkDist);
         if(Physics.Raycast(transform.position, fwd, out hit, _checkDist, _layersToCheck)) {
             _lookAtObj = hit.transform.GetComponent<PickUpObj>();
+            LookingAtObj.Value = true;
+            LookAtObjName.Value = _lookAtObj.PickUpType.ToString();
         }
         else {
             _lookAtObj = null;
+            LookingAtObj.Value = false;
+            LookAtObjName.Value = string.Empty;
         }
     }
 
@@ -45,6 +55,7 @@ public class PickUpDetection : MonoBehaviour {
                 PresentMirror mirror = (PresentMirror)_mirrorDetection.LookAtMirror;
                 if(mirror.Solution == _heldObj.PickUpType) {
                     Destroy(_heldInstance);
+                    _heldObj = null;
                     _heldInstance = null;
                     mirror.CompleteMirror();
                 }

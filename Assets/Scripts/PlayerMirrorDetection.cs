@@ -1,3 +1,4 @@
+using Milo.Tools;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine;
 public class PlayerMirrorDetection : MonoBehaviour {
     [SerializeField] private float _checkDist = 10f;
     [SerializeField] private LayerMask _layersToCheck;
+
+    public Observable<bool> LookingAtMirror = new Observable<bool>();
 
     private Mirror _lookAtMirror;
 
@@ -18,10 +21,15 @@ public class PlayerMirrorDetection : MonoBehaviour {
             _lookAtMirror = hit.transform.GetComponent<Mirror>();
             _lookAtMirror.Interact();
 
+            LookingAtMirror.Value = true;
+
             PlayerManager.Instance.StartRemoveCondition(1);
         }
         else {
             _lookAtMirror = null;
+
+            LookingAtMirror.Value = false;
+
             PlayerManager.Instance.EndRemoveCondition();
         }
     }
