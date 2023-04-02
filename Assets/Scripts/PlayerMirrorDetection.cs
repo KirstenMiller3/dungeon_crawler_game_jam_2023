@@ -12,6 +12,9 @@ public class PlayerMirrorDetection : MonoBehaviour {
         RaycastHit hit;
         Debug.DrawRay(transform.position, fwd * _checkDist);
         if(Physics.Raycast(transform.position, fwd, out hit, _checkDist, _layersToCheck)) {
+            Mirror mirror = hit.transform.GetComponent<Mirror>();
+            mirror.Interact();
+
             PlayerManager.Instance.StartRemoveCondition(1);
         }
         else {
