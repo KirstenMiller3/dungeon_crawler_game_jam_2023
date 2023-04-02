@@ -135,6 +135,8 @@ GameObject:
   - component: {fileID: 230825138}
   - component: {fileID: 230825137}
   - component: {fileID: 230825136}
+  - component: {fileID: 230825140}
+  - component: {fileID: 230825141}
   m_Layer: 5
   m_Name: SkyCanvas
   m_TagString: Untagged
@@ -211,20 +213,47 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 230825135}
-  m_LocalRotation: {x: -0.26488677, y: -0.655618, z: -0.26488677, w: 0.655618}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.33712, y: 0.33712, z: 0.33712}
+  m_LocalRotation: {x: 0.3746065, y: -0, z: -0, w: -0.9271839}
+  m_LocalPosition: {x: 0, y: 0, z: 111.70001}
+  m_LocalScale: {x: 0.33711997, y: 0.33712, z: 0.33712}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 347401444}
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_Father: {fileID: 291164824}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: -44, y: -90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -111.7, y: 52.39}
+  m_AnchoredPosition: {x: 0.000045776367, y: 50.39}
   m_SizeDelta: {x: 622, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &230825140
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230825135}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
+--- !u!114 &230825141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230825135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cea40343396a4654bb2b75e6c9ac9618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _canvasGroup: {fileID: 230825140}
+  _text: {fileID: 347401445}
+  _fadeTime: 5
 --- !u!20 &281508944 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 9095119802380864629, guid: 464273bd827519c4d85d4add88300e00, type: 3}
@@ -363,7 +392,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3699627891036127483, guid: c50ac816486e9b045b9e276ded1f8b3d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 230825139}
   m_SourcePrefab: {fileID: 100100000, guid: c50ac816486e9b045b9e276ded1f8b3d, type: 3}
 --- !u!1 &347401443
 GameObject:
@@ -423,8 +455,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: If the ocean can calm itself, so can you. We are both salt water mixed
-    with air.
+  m_text: If the ocean can calm itself, so can you. We are both salt <b>water</b>
+    mixed with air.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ebc64aedc8d41964f8456bbc4f4bd71a, type: 2}
   m_sharedMaterial: {fileID: 6964237482300838716, guid: ebc64aedc8d41964f8456bbc4f4bd71a, type: 2}
