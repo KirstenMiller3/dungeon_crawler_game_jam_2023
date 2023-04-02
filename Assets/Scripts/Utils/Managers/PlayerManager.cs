@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Milo.Tools;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : Singleton<PlayerManager> {
     [SerializeField] private Transform _player;
@@ -56,6 +57,11 @@ public class PlayerManager : Singleton<PlayerManager> {
         }
 
         ConditionLevel.Value -= amount;
+
+        if (ConditionLevel.Value == 0) {
+            SceneManager.LoadScene("DeathScene");
+
+        }
     }
 
     public void AddCondition(int amount) {
