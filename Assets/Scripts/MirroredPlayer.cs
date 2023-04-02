@@ -16,12 +16,15 @@ public enum MirroredPerson {
 public class MirroredPlayer : MonoBehaviour {
     [SerializeField] private Transform _player;
     [SerializeField] private Vector3 _offset;
-    [SerializeField] private Renderer _renderer;
-    [SerializeField] private Material[] _personMaterial = new Material[7];
+    [SerializeField] private GameObject[] _personModel = new GameObject[7];
     [SerializeField] private ParticleSystem _transformParticles;
     [SerializeField] private Animator _light;
 
     private MirroredPerson _currentMirroredPerson;
+
+    private void Start() {
+        ShowMirroredPerson(0);
+    }
 
     private void Update() {
         transform.position = _player.position + _offset;
@@ -29,7 +32,18 @@ public class MirroredPlayer : MonoBehaviour {
 
     public void ShowMirroredPerson(MirroredPerson mirroredPerson) {
         _currentMirroredPerson = mirroredPerson;
-        _renderer.material = _personMaterial[(int)_currentMirroredPerson];
+
+        for(int i = 0; i < _personModel.Length; i++) {
+            if(_personModel[i] != null) {
+                _personModel[i].SetActive(false);
+            }
+        }
+
+        if(_personModel[(int)_currentMirroredPerson] == null) {
+            return;
+        }
+
+        _personModel[(int)_currentMirroredPerson].SetActive(true);
     }
 
     public void TransformPlayer() {

@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Mirror : MonoBehaviour {
     [SerializeField] private MirroredPerson _person;
+
+    [TextArea][SerializeField] private string _hintQuote;
+
     [SerializeField] private Transform _badMirror;
     [SerializeField] private Vector3 _offset;
     [SerializeField] private Camera _camera;
@@ -40,6 +43,8 @@ public class Mirror : MonoBehaviour {
         }
 
         _mirrorPerson.ShowMirroredPerson(_person);
+
+        SkyText.Instance.SetText(_hintQuote);
     }
 
 
