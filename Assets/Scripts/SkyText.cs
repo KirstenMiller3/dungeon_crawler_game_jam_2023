@@ -1,16 +1,18 @@
+using Milo.Tools;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class SkyText : MonoBehaviour {
+public class SkyText : Singleton<SkyText> {
     [SerializeField] private CanvasGroup _canvasGroup;
     [SerializeField] private TextMeshProUGUI _text;
     [SerializeField] private float _fadeTime = 2f;
 
     private float _targetAlpha;
 
-    private void Awake() {
+    protected override void Awake() {
+        base.Awake();
         _canvasGroup.alpha = 0f;
         _targetAlpha = 0f;
     }

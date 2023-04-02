@@ -26,6 +26,10 @@ public class PlayerMirrorDetection : MonoBehaviour {
             PlayerManager.Instance.StartRemoveCondition(1);
         }
         else {
+            if(_lookAtMirror) {
+                _lookAtMirror.StopInteract();
+            }
+
             _lookAtMirror = null;
 
             LookingAtMirror.Value = false;

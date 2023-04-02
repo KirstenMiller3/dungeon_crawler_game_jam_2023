@@ -5,19 +5,22 @@ using UnityEngine;
 
 public class Mirror : MonoBehaviour {
     [SerializeField] private MirroredPerson _person;
+
+    [TextArea][SerializeField] private string _hintQuote;
+
     [SerializeField] private Transform _badMirror;
     [SerializeField] private Vector3 _offset;
     [SerializeField] private Camera _camera;
     [SerializeField] private Material _material;
-    [SerializeField] private MirroredPlayer _mirrorPerson;
+   
+    private MirroredPlayer _mirrorPerson;
 
     public MirroredPerson MirroredPerson => _person;
-    Transform _mirrorPlayer;
 
     public Observable<bool> IsComplete = new Observable<bool>();
 
     private void Start() {
-        _mirrorPlayer = GameObject.Find("Mirror_Player").transform;
+        _mirrorPerson = FindObjectOfType<MirroredPlayer>();
 
         RenderTexture rt = new RenderTexture((int)transform.localScale.x * 400, (int)transform.localScale.y * 400, 16, RenderTextureFormat.DefaultHDR);
         rt.Create();
@@ -34,12 +37,20 @@ public class Mirror : MonoBehaviour {
         IsComplete.Value = false;
     }
 
-    public void Interact() {
+    public virtual void Interact() {
         if(IsComplete.Value) {
             return;
         }
 
         _mirrorPerson.ShowMirroredPerson(_person);
+
+        SkyText.Instance.SetText(_hintQuote);
+    }
+
+    public virtual void StopInteract() {
+        if(IsComplete.Value) {
+            return;
+        }
     }
 
 
