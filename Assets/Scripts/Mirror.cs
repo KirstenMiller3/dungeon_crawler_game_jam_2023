@@ -19,7 +19,7 @@ public class Mirror : MonoBehaviour {
     private void Start() {
         _mirrorPlayer = GameObject.Find("Mirror_Player").transform;
 
-        RenderTexture rt = new RenderTexture((int)transform.localScale.x * 100, (int)transform.localScale.y * 100, 16, RenderTextureFormat.ARGB32);
+        RenderTexture rt = new RenderTexture((int)transform.localScale.x * 400, (int)transform.localScale.y * 400, 16, RenderTextureFormat.DefaultHDR);
         rt.Create();
         rt.name = "Mirror_RenderTexture";
         Material newMat = new Material(_material);
