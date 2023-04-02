@@ -27,6 +27,7 @@ public class MirroredPlayer : MonoBehaviour {
 
     private void Start() {
         _player = GameObject.Find("Player").transform;
+        _currentMirroredPerson = MirroredPerson.Health;
         ShowMirroredPerson(0);
     }
 
@@ -36,10 +37,10 @@ public class MirroredPlayer : MonoBehaviour {
     }
 
     public void ShowMirroredPerson(MirroredPerson mirroredPerson) {
-
         if (_currentMirroredPerson == mirroredPerson) {
             return;
         }
+
         _currentMirroredPerson = mirroredPerson;
 
         switch(mirroredPerson) 
