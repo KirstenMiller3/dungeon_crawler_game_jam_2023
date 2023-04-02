@@ -28,6 +28,7 @@ public class MirroredPlayer : MonoBehaviour {
 
     private void Update() {
         transform.position = _player.position + _offset;
+        transform.rotation = _player.rotation;
     }
 
     public void ShowMirroredPerson(MirroredPerson mirroredPerson) {
@@ -47,6 +48,7 @@ public class MirroredPlayer : MonoBehaviour {
     }
 
     public void TransformPlayer() {
+        StopCoroutine(DoTransform());
         StartCoroutine(DoTransform());
     }
 
