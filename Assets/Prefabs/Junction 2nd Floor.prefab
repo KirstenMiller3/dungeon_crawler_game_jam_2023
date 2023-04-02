@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3590838080846917663}
   - component: {fileID: 466935791358869434}
   - component: {fileID: 2422396641384106864}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Junction 2nd Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

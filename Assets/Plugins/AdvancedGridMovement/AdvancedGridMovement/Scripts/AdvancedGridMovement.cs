@@ -22,7 +22,7 @@ public class AdvancedGridMovement : MonoBehaviour
     private const float approximationThreshold = 0.025f;
     private bool start = true;
     [SerializeField] private float gridSize = 3.0f;
-
+    [SerializeField] private LayerMask _layersToCheck;
 
     [Header("Walk speed settings")]
     [SerializeField] private float walkSpeed = 2.0f;
@@ -255,12 +255,23 @@ public class AdvancedGridMovement : MonoBehaviour
     {
         // this is pretty lousy way to perform collision checks, its just here for demonstration purposes.
         // Hint: layers are much faster then tags ;-)
-        Vector3 delta = targetPosition - moveTowardsPosition;
-        delta *= .6f;
-        Collider[] intersectingColliders = Physics.OverlapBox(moveTowardsPosition + delta, new Vector3((gridSize / 2.0f) - .1f, 1.0f, (gridSize / 2.0f) - .1f), gameObject.transform.rotation);
-      //  Collider[] filteredColliders = System.Array.FindAll(intersectingColliders, collider => collider.CompareTag("Enemy") || collider.CompareTag("Level"));
-      Collider[] filteredColliders = System.Array.FindAll(intersectingColliders, collider => collider.CompareTag("Level"));
-        return filteredColliders.Length == 0;
+        //  Vector3 delta = targetPosition - moveTowardsPosition;
+        //  delta *= .6f;
+        //  Collider[] intersectingColliders = Physics.OverlapBox(moveTowardsPosition + delta, new Vector3((gridSize / 2.0f) - .1f, 1.0f, (gridSize / 2.0f) - .1f), gameObject.transform.rotation);
+        ////  Collider[] filteredColliders = System.Array.FindAll(intersectingColliders, collider => collider.CompareTag("Enemy") || collider.CompareTag("Level"));
+        //  Collider[] filteredColliders = System.Array.FindAll(intersectingColliders, collider => collider.CompareTag("Level"));
+
+        Vector3 fwd = transform.TransformDirection(Vector3.forward);
+        RaycastHit hit;
+
+        if(Physics.Raycast(transform.position + new Vector3(0, 1f, 0), fwd, out hit, 4f, _layersToCheck)) {
+            Debug.DrawRay(transform.position, fwd * 3f, Color.red);
+            return false;
+        }
+
+        Debug.DrawRay(transform.position, fwd * 3f, Color.white);
+        return true;
+       // return filteredColliders.Length == 0;
     }
 
     public void TurnRight()

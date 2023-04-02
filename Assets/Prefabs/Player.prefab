@@ -805,6 +805,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridSize: 3
+  _layersToCheck:
+    serializedVersion: 2
+    m_Bits: 256
   walkSpeed: 1
   turnSpeed: 6
   walkSpeedCurve:

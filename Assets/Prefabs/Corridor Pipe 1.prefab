@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8214609633648918117}
   - component: {fileID: 2883925854091731897}
   - component: {fileID: 4216313728007796610}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Circle.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 6610055524295013831}
   - component: {fileID: 7787983723189336674}
   - component: {fileID: 5472030394682019496}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Corridor Pipe 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
