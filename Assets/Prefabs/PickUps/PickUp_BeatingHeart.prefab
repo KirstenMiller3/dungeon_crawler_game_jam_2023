@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: _type
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1150844755423450366, guid: c7f07ca83f435e94b8b267e10f1e93c8, type: 3}
+      propertyPath: _prefab
+      value: 
+      objectReference: {fileID: 3276276723891025766, guid: ccd5c10725425e04e948dd27f54672e6, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: c7f07ca83f435e94b8b267e10f1e93c8, type: 3}
