@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 
 public class UIManager : MonoBehaviour {
-    [SerializeField] private TextMeshProUGUI _conditionMeter;
+    [SerializeField] private ConditionMeter _conditionMeter;
     [SerializeField] private TextMeshProUGUI _pickUpText;
     [SerializeField] private GameObject _giveText;
     [SerializeField] private GameObject _dropText;
@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour {
 
     private string _pickUpBase;
     private bool _onMirror;
+    private int _currentCondition;
 
     public void Start() {
         _pickUpBase = _pickUpText.text;
@@ -46,7 +47,16 @@ public class UIManager : MonoBehaviour {
     }
 
     private void OnUpdateCondition(int prev, int curr) {
-        _conditionMeter.text = $"{curr}%";
+        //_conditionMeter.text = $"{curr}%";
+        _currentCondition = curr;
+        _conditionMeter.SetLevel(curr);
+
+        if(_onMirror) {
+            _conditionMeter.IsInteractingWithMirror(_currentCondition);
+        }
+        else {
+            _conditionMeter.StopInteraction();
+        }
     }
 
     private void OnLookAtObj(bool prev, bool curr) {
@@ -55,6 +65,13 @@ public class UIManager : MonoBehaviour {
 
     private void OnMirror(bool prev, bool curr) {
         _onMirror = curr;
+
+        if(curr) {
+            _conditionMeter.IsInteractingWithMirror(_currentCondition);
+        }
+        else {
+            _conditionMeter.StopInteraction();
+        }
     }
 
     private void OnLookAtObjName(string prev, string curr) {

@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
-  _startCondition: 100
-  _conditionReductionTickRate: 1
+  _startCondition: 3
+  _conditionReductionTickRate: 2

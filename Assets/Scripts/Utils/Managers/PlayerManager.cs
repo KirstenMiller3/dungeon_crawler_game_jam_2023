@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class PlayerManager : Singleton<PlayerManager> {
     [SerializeField] private Transform _player;
 
-    [SerializeField] private int _startCondition = 100;
-    [SerializeField] private float _conditionReductionTickRate = 1f;
+    [SerializeField] private int _startCondition = 5;
+    [SerializeField] private float _conditionReductionTickRate = 3f;
 
     public int CompletedMirrors => _completedMirrors;
     public Transform PlayerTransform => _player;
@@ -60,12 +60,21 @@ public class PlayerManager : Singleton<PlayerManager> {
 
         if (ConditionLevel.Value == 0) {
             SceneManager.LoadScene("DeathScene");
-
         }
     }
 
     public void AddCondition(int amount) {
         ConditionLevel.Value += amount;
+
+        if(ConditionLevel.Value > 5) {
+            ConditionLevel.Value = 5;
+        }
+    }
+
+
+    [ContextMenu("Fully Heal")]
+    public void FullHeal() {
+        ConditionLevel.Value = 5;
     }
 
     [ContextMenu("Complete Puzzle")]

@@ -64,7 +64,7 @@ public class Mirror : MonoBehaviour {
 
         IsComplete.Value = true;
         _mirrorPerson.TransformPlayer();
-        PlayerManager.Instance.AddCondition(50);
+        PlayerManager.Instance.AddCondition(1);
         PlayerManager.Instance.CompleteMirror();
     }
 }
