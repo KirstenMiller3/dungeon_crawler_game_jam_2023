@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Mirror : MonoBehaviour {
     [SerializeField] private MirroredPerson _person;
+    [SerializeField] private GameObject _beatinHeart;
 
     [TextArea][SerializeField] private string _hintQuote;
 
@@ -17,6 +18,10 @@ public class Mirror : MonoBehaviour {
     public Observable<bool> IsComplete = new Observable<bool>();
 
     private void Start() {
+        if(_person == MirroredPerson.Peace) {
+            _beatinHeart.gameObject.SetActive(false);
+        }
+
         _mirrorPerson = FindObjectOfType<MirroredPlayer>();
 
         RenderTexture rt = new RenderTexture((int)transform.localScale.x * 400, (int)transform.localScale.y * 400, 16, RenderTextureFormat.DefaultHDR);
@@ -39,8 +44,16 @@ public class Mirror : MonoBehaviour {
             return;
         }
 
+        if(_person == MirroredPerson.Peace) {
+            _beatinHeart.SetActive(true);
+        }
+        else {
+            _beatinHeart.SetActive(false);
+        }
+
         _mirrorPerson.ShowMirroredPerson(_person);
         SkyText.Instance.SetText(_hintQuote);
+
     }
 
     public virtual void Interact() {
