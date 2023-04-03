@@ -346,7 +346,7 @@ MonoBehaviour:
   _checkDistToChange: 20
   _layersToCheck:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 320
 --- !u!114 &7446226509243976495
 MonoBehaviour:
   m_ObjectHideFlags: 0
