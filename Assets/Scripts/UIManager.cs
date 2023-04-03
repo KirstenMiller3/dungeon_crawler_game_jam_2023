@@ -7,12 +7,13 @@ public class UIManager : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI _conditionMeter;
     [SerializeField] private TextMeshProUGUI _pickUpText;
     [SerializeField] private GameObject _giveText;
-
+    [SerializeField] private GameObject _dropText;
 
     [SerializeField] private PickUpDetection _pickUpDetection;
     [SerializeField] private PlayerMirrorDetection _mirrorDetection;
 
     private string _pickUpBase;
+    private bool _onMirror;
 
     public void Start() {
         _pickUpBase = _pickUpText.text;
@@ -36,7 +37,12 @@ public class UIManager : MonoBehaviour {
     private void Update() {
         if(!_pickUpDetection.HasHeldObj) {
             _giveText.gameObject.SetActive(false);
-        }  
+            _dropText.gameObject.SetActive(false);
+        } 
+        else {
+            _giveText.gameObject.SetActive(_onMirror);
+            _dropText.gameObject.SetActive(!_onMirror);
+        }
     }
 
     private void OnUpdateCondition(int prev, int curr) {
@@ -48,9 +54,7 @@ public class UIManager : MonoBehaviour {
     }
 
     private void OnMirror(bool prev, bool curr) {
-        if(_pickUpDetection.HasHeldObj && curr) {
-            _giveText.gameObject.SetActive(curr);
-        }
+        _onMirror = curr;
     }
 
     private void OnLookAtObjName(string prev, string curr) {

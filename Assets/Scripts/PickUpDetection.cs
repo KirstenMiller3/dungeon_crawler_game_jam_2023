@@ -50,6 +50,18 @@ public class PickUpDetection : MonoBehaviour {
         _heldInstance = Instantiate(_heldObj.Prefab, _heldObjPos);
     }
 
+    public void DropObj() {
+        if(_heldObj == null) {
+            return;
+        }
+
+        _heldObj.gameObject.SetActive(true);
+        Destroy(_heldInstance);
+
+        _heldObj = null;
+        _heldInstance = null;
+    }
+
     public void PresentObj() {
         if(_heldObj == null) {
             return;
@@ -58,6 +70,9 @@ public class PickUpDetection : MonoBehaviour {
         if(_mirrorDetection.LookAtMirror != null) {
             if(_mirrorDetection.LookAtMirror is PresentMirror) {
                 PresentMirror mirror = (PresentMirror)_mirrorDetection.LookAtMirror;
+                if(!_mirrorDetection.LookingAtMirror.Value) {
+                    return;
+                }
                 if(mirror.Solution == _heldObj.PickUpType) {
                     Destroy(_heldInstance);
                     _heldObj = null;
