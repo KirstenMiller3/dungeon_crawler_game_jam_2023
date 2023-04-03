@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using DG.Tweening;
 
 public class UIManager : MonoBehaviour {
     [SerializeField] private ConditionMeter _conditionMeter;
     [SerializeField] private TextMeshProUGUI _pickUpText;
+    [SerializeField] private RectTransform _skyMessage;
     [SerializeField] private GameObject _giveText;
     [SerializeField] private GameObject _dropText;
 
@@ -76,5 +78,15 @@ public class UIManager : MonoBehaviour {
 
     private void OnLookAtObjName(string prev, string curr) {
         _pickUpText.text = string.Format(_pickUpBase, curr);
+    }
+
+    [ContextMenu("ShowSkyMessage")]
+    public void ShowSkyMessage() {
+        _skyMessage.DOMoveY(434, 2f).SetEase(Ease.OutCirc, 0.3f);
+    }
+
+    [ContextMenu("HideSkyMessage")]
+    public void HideSkyMessage() {
+        _skyMessage.DOMoveY(600, 1f).SetEase(Ease.InCirc);
     }
 }
