@@ -6,7 +6,7 @@ https://opensource.org/licenses/MIT.
 */
 
 
-using UnityEditor;
+//using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -265,6 +265,9 @@ public class AdvancedGridMovement : MonoBehaviour
         RaycastHit hit;
 
         if(Physics.Raycast(transform.position + new Vector3(0, 1f, 0), fwd, out hit, 4f, _layersToCheck)) {
+            if (hit.transform.gameObject.layer == LayerMask.NameToLayer("door")) {
+             //   AudioManager.instance.Play("pickup");
+            }
             Debug.DrawRay(transform.position, fwd * 3f, Color.red);
             return false;
         }

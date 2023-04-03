@@ -809,7 +809,7 @@ MonoBehaviour:
   gridSize: 3
   _layersToCheck:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 768
   walkSpeed: 1
   turnSpeed: 6
   walkSpeedCurve:

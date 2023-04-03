@@ -135,3 +135,15 @@ MonoBehaviour:
     sName: solved
     loop: 0
     source: {fileID: 0}
+  - volume: 1
+    pitch: 1
+    clip: {fileID: 8300000, guid: ae925b15b287653499af48a0ab0a73a9, type: 3}
+    sName: pickup
+    loop: 0
+    source: {fileID: 0}
+  - volume: 1
+    pitch: 1
+    clip: {fileID: 8300000, guid: 3906bc032223489448f71ed3542368bc, type: 3}
+    sName: locked-door
+    loop: 0
+    source: {fileID: 0}

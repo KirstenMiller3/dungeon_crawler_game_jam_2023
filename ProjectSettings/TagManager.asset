@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Level
   - FxTemporaire
+  - Door
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - Mirror
   - PickUp
   - Level
-  - 
+  - Door
   - 
   - 
   - 
