@@ -95,13 +95,17 @@ public class AudioManager : MonoBehaviour
     }
 
     private bool _neverActivateAgain = false;
-    public void SetLowPassOn(bool isOn, bool _neverActivateAgain = false) {
+    public void LockHeartPuzzle() {
+        _neverActivateAgain = true;
+    }
+
+    public void SetLowPassOn(bool isOn) {
         if(_neverActivateAgain) {
             audioMixer.SetFloat("LowPass", 5000);
             audioMixer.SetFloat("MusicVol", 0);
             return;
         }
-
+        
         if(isOn) {
             audioMixer.SetFloat("LowPass", 555);
             audioMixer.SetFloat("MusicVol", -80);

@@ -18,7 +18,8 @@ public class PickUpObj : MonoBehaviour {
 
     public void PickUp() {
         if(_type == PickUpType.Beating_Heart) {
-            AudioManager.instance.SetLowPassOn(false, true);
+            AudioManager.instance.LockHeartPuzzle();
+            AudioManager.instance.SetLowPassOn(false);
         }
 
         AudioManager.instance.Play("pickup");
