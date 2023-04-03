@@ -94,7 +94,18 @@ public class AudioManager : MonoBehaviour
         return !instance.sounds.Where(s => s.sName.Contains("city")).Any(x => x.source.isPlaying);
     }
 
+    private bool _neverActivateAgain = false;
+    public void LockHeartPuzzle() {
+        _neverActivateAgain = true;
+    }
+
     public void SetLowPassOn(bool isOn) {
+        if(_neverActivateAgain) {
+            audioMixer.SetFloat("LowPass", 5000);
+            audioMixer.SetFloat("MusicVol", 0);
+            return;
+        }
+        
         if(isOn) {
             audioMixer.SetFloat("LowPass", 555);
             audioMixer.SetFloat("MusicVol", -80);
