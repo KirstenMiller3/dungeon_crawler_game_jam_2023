@@ -18,7 +18,7 @@ public class ConditionMeter : MonoBehaviour {
             _tween.Kill();
         }
 
-        if(level == 0) {
+        if(level <= 0) {
             return;
         }
 

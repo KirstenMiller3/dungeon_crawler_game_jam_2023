@@ -12,7 +12,7 @@ public class HealMirror : Mirror {
             return;
         }
 
-        if(PlayerManager.Instance.ConditionLevel.Value > _conditionCheck) {
+        if(PlayerManager.Instance.ConditionLevel.Value >= _conditionCheck) {
             CompleteMirror();
         }
     }

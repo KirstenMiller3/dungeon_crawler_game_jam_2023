@@ -64,11 +64,11 @@ public class PlayerManager : Singleton<PlayerManager> {
     }
 
     public void AddCondition(int amount) {
-        ConditionLevel.Value += amount;
-
-        if(ConditionLevel.Value > 5) {
-            ConditionLevel.Value = 5;
+        if(ConditionLevel.Value == 5)
+        {
+            return;
         }
+        ConditionLevel.Value += amount;
     }
 
 
