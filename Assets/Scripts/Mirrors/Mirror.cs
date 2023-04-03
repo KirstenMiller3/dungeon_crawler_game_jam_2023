@@ -20,6 +20,7 @@ public class Mirror : MonoBehaviour {
     private void Start() {
         if(_person == MirroredPerson.Peace) {
             _beatinHeart.gameObject.SetActive(false);
+            AudioManager.instance.SetLowPassOn(false);
         }
 
         _mirrorPerson = FindObjectOfType<MirroredPlayer>();
@@ -44,12 +45,8 @@ public class Mirror : MonoBehaviour {
             return;
         }
 
-        if(_person == MirroredPerson.Peace) {
-            _beatinHeart.SetActive(true);
-        }
-        else {
-            _beatinHeart.SetActive(false);
-        }
+        AudioManager.instance.SetLowPassOn(_person == MirroredPerson.Peace);
+        _beatinHeart.SetActive(_person == MirroredPerson.Peace);
 
         _mirrorPerson.ShowMirroredPerson(_person);
         SkyText.Instance.SetText(_hintQuote);
@@ -73,6 +70,10 @@ public class Mirror : MonoBehaviour {
     public void CompleteMirror() {
         if(IsComplete.Value) {
             return;
+        }
+
+        if(_person == MirroredPerson.Peace) {
+            AudioManager.instance.SetLowPassOn(false);
         }
 
         IsComplete.Value = true;

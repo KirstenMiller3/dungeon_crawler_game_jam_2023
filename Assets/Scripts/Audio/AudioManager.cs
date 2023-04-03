@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
 {
 
     public Sound[] sounds;
+    [SerializeField] private AudioMixer audioMixer;
 
     private float _citySoundsTimer;
     
@@ -45,7 +46,7 @@ public class AudioManager : MonoBehaviour
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
             s.source.volume = s.volume;
-            //s.source.outputAudioMixerGroup = s.mixerGroup;
+            s.source.outputAudioMixerGroup = s.mixerGroup;
         }
         
 
@@ -91,6 +92,17 @@ public class AudioManager : MonoBehaviour
 
     private static bool CitySoundEffectIsNotPlaying() {
         return !instance.sounds.Where(s => s.sName.Contains("city")).Any(x => x.source.isPlaying);
+    }
+
+    public void SetLowPassOn(bool isOn) {
+        if(isOn) {
+            audioMixer.SetFloat("LowPass", 555);
+            audioMixer.SetFloat("MusicVol", -80);
+        }
+        else {
+            audioMixer.SetFloat("LowPass", 5000);
+            audioMixer.SetFloat("MusicVol", 0);
+        }
     }
 
     public void Play(string name)
