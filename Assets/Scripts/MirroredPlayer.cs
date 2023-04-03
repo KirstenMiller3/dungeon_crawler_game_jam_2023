@@ -6,7 +6,7 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 public enum MirroredPerson {
     None,
     Calm = 1,
-    Perfection = 2,
+    Acceptance = 2,
     Presence = 3,
     Peace = 4,
     Health = 5,
@@ -54,7 +54,7 @@ public class MirroredPlayer : MonoBehaviour {
             case MirroredPerson.Peace:
                 AudioManager.instance.Play("peace");
                 break;
-            case MirroredPerson.Perfection:
+            case MirroredPerson.Acceptance:
                 AudioManager.instance.Play("perfection");
                 break;
             case MirroredPerson.Presence:
