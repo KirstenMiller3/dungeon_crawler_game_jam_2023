@@ -695,7 +695,7 @@ AudioSource:
   m_GameObject: {fileID: 3699627890632906218}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -6173057732953885981, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.8
@@ -846,7 +846,7 @@ MonoBehaviour:
   _layersToCheck:
     serializedVersion: 2
     m_Bits: 768
-  walkSpeed: 1
+  walkSpeed: 0.8
   turnSpeed: 6
   walkSpeedCurve:
     serializedVersion: 2
@@ -885,8 +885,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.14674135
     - serializedVersion: 3
-      time: 0.27443272
-      value: 0.019587448
+      time: 0.28712803
+      value: 0.0108594205
       inSlope: 0.053942025
       outSlope: 0.053942025
       tangentMode: 0
@@ -905,7 +905,7 @@ MonoBehaviour:
     m_PreInfinity: 1
     m_PostInfinity: 1
     m_RotationOrder: 4
-  runningSpeed: 2
+  runningSpeed: 1
   runningSpeedCurve:
     serializedVersion: 2
     m_Curve:
@@ -943,8 +943,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.14674135
     - serializedVersion: 3
-      time: 0.4714064
-      value: 0.031363398
+      time: 0.4762892
+      value: 0.014853388
       inSlope: 0.027701227
       outSlope: 0.027701227
       tangentMode: 0
@@ -1240,7 +1240,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  keyPressThresholdTime: 1.5
+  keyPressThresholdTime: 0.5
 --- !u!114 &3699627891036127487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1254,12 +1254,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftFoot: {fileID: 3699627891324503821}
-  leftFootClip: {fileID: 8300000, guid: 03abc06de1e112f4cbd8856cc395339a, type: 3}
+  leftFootClip: {fileID: 8300000, guid: 1c8ccb97b269b444b893b137c48f3c7d, type: 3}
   leftMinimumPitch: 0.5
   rightFoot: {fileID: 3699627890632906220}
-  rightFootClip: {fileID: 8300000, guid: 03abc06de1e112f4cbd8856cc395339a, type: 3}
+  rightFootClip: {fileID: 8300000, guid: 1c8ccb97b269b444b893b137c48f3c7d, type: 3}
   rightMinimumPitch: 0.5
-  turnClip: {fileID: 8300000, guid: 03abc06de1e112f4cbd8856cc395339a, type: 3}
+  turnClip: {fileID: 8300000, guid: 1c8ccb97b269b444b893b137c48f3c7d, type: 3}
   turnMinimumPitch: 0.5
 --- !u!114 &4605870985798894074
 MonoBehaviour:
@@ -1409,7 +1409,7 @@ AudioSource:
   m_GameObject: {fileID: 3699627891324503819}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -6173057732953885981, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.8

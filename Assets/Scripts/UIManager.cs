@@ -76,7 +76,7 @@ public class UIManager : Singleton<UIManager> {
     }
 
     private void OnLookAtObj(bool prev, bool curr) {
-        _pickUpText.gameObject.SetActive(curr);
+        _pickUpText.transform.parent.gameObject.SetActive(curr);
     }
 
     private void OnMirror(bool prev, bool curr) {
