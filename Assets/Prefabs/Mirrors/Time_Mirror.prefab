@@ -90,7 +90,7 @@ MonoBehaviour:
   _camera: {fileID: 180297393556945080}
   _material: {fileID: 2100000, guid: b8fa18d02e0e758449da3704d9821dcb, type: 2}
   _endCorridorPickUp: {fileID: 8802905332684289080, guid: 57a8499fab87c914f8b145966aeba598, type: 3}
-  _loopsNeeded: 3
+  _loopsNeeded: 4
 --- !u!20 &180297393556945080 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 9095119802380864629, guid: 464273bd827519c4d85d4add88300e00, type: 3}

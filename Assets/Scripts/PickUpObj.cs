@@ -5,7 +5,8 @@ using UnityEngine;
 public enum PickUpType {
     Bucket,
     Apple,
-    Beating_Heart
+    Beating_Heart,
+    Pebble
 }
 
 public class PickUpObj : MonoBehaviour {
