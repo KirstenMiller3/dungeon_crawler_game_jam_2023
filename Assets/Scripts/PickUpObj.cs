@@ -6,14 +6,15 @@ public enum PickUpType {
     Bucket,
     Apple,
     Beating_Heart,
-    Pebble
+    Pebble,
+    Acceptance
 }
 
 public class PickUpObj : MonoBehaviour {
     [SerializeField] private PickUpType _type;
     [SerializeField] private GameObject _prefab;
     [SerializeField] private GameObject _poof;
-    [SerializeField] private bool _dontAddToHand;
+    [SerializeField] protected bool _dontAddToHand;
 
     public bool DontAddToHand => _dontAddToHand;
 
@@ -21,6 +22,9 @@ public class PickUpObj : MonoBehaviour {
     public PickUpType PickUpType => _type;
 
     public System.Action OnPickUp;
+
+    protected virtual void Start() {
+    }
 
     public void PickUp() {
         AudioManager.instance.Play("pickup");

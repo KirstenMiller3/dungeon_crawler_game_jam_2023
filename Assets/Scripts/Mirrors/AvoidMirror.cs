@@ -3,42 +3,65 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AvoidMirror : Mirror {
-    [SerializeField] private float _avoidTime = 5f;
+    [SerializeField] private AcceptanceMessage[] _acceptanceObjs;
 
-    private float _timer;
+    private int _index;
+    private AdvancedGridMovement _player;
 
-    private bool _hasBeenLookedAt = false;
-    private bool _startTimer = false;
-
-    private void Update() {
-        if(IsComplete.Value) {
-            return;
-        }
-
-        if(_startTimer && _hasBeenLookedAt) {
-            _timer += Time.deltaTime;
-
-            if(_timer >= _avoidTime) {
-                CompleteMirror();
-                _timer = 0f;
-            } 
+    protected override void Start() {
+        base.Start();
+        for(int i = 0; i < _acceptanceObjs.Length; i++) {
+            _acceptanceObjs[i].gameObject.SetActive(false);
         }
     }
 
-    public override void Interact() {
-        base.Interact();
+    public override void OnPressStartPuzzle() {
+        base.OnPressStartPuzzle();
 
-        if(IsComplete.Value) {
+        _player = PlayerManager.Instance.PlayerTransform.GetComponent<AdvancedGridMovement>();
+
+        _acceptanceObjs[_index].OnPickUp = () => OnClaim(_acceptanceObjs[_index].Type);
+        _acceptanceObjs[_index].gameObject.SetActive(true);
+    }
+
+    public override void CancelPuzzle() {
+        base.CancelPuzzle();
+
+        for(int i = 0; i < _acceptanceObjs.Length; i++) {
+            _acceptanceObjs[i].gameObject.SetActive(false);
+        }
+    }
+
+    private void OnClaim(AcceptanceMessage.AcceptanceType type) {
+        _index++;
+
+        switch(type) {
+            case AcceptanceMessage.AcceptanceType.Normal:
+                break;
+            case AcceptanceMessage.AcceptanceType.Weak:
+                PlayerManager.Instance.ReduceConditionToOne();
+                break;
+            case AcceptanceMessage.AcceptanceType.Slow:
+                _player.SetSpeedMultiplier(0.5f);
+                break;
+            case AcceptanceMessage.AcceptanceType.Clumsy:
+                _player.SetInvertedMovement(true);
+                break;
+            case AcceptanceMessage.AcceptanceType.Reset:
+                _player.ResetSpeedMultiplier();
+                _player.SetInvertedMovement(false);
+                PlayerManager.Instance.FullHeal();
+                break;
+            default:
+                break;
+        }
+
+        if(_index > _acceptanceObjs.Length - 1) {
+            CompleteMirror();
             return;
         }
 
-        _hasBeenLookedAt = true;
-        _startTimer = false;
-        _timer = 0f;
-    }
-
-    public override void StopInteract() {
-        base.StopInteract();
-        _startTimer = true;
+        _acceptanceObjs[_index].OnPickUp = () => OnClaim(_acceptanceObjs[_index].Type);
+        _acceptanceObjs[_index].gameObject.SetActive(true);
     }
 }

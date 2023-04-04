@@ -30,6 +30,10 @@ public class PlayerManager : Singleton<PlayerManager> {
         ConditionLevel.Value = _startCondition;
     }
 
+    private void Start() {
+        _player = GameObject.Find("Player").transform;
+    }
+
     private void Update() {
         if(_isRemovingCondition) {
             _conditionTimer += Time.deltaTime;
@@ -84,6 +88,11 @@ public class PlayerManager : Singleton<PlayerManager> {
     public void FullHeal() {
         ConditionLevel.Value = 5;
     }
+
+    public void ReduceConditionToOne() {
+        ConditionLevel.Value = 1;
+    }
+
 
     [ContextMenu("Complete Puzzle")]
     public void CompleteMirror() {

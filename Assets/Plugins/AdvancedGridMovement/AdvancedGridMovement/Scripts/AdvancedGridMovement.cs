@@ -75,6 +75,8 @@ public class AdvancedGridMovement : MonoBehaviour
     private AnimationCurve currentHeadBobCurve;
     private float currentSpeed;
 
+    private bool _invertMovement;
+
     void Start()
     {
         moveTowardsPosition = transform.position;
@@ -219,23 +221,54 @@ public class AdvancedGridMovement : MonoBehaviour
 
     }
 
+    private float _baseSpeed;
+    private float _baseRunSpeed;
+    public void SetSpeedMultiplier(float multiplier) {
+        _baseSpeed = walkSpeed;
+        walkSpeed *= multiplier;
+        _baseRunSpeed = runningSpeed;
+        runningSpeed *= multiplier;
+    }
+
+    public void ResetSpeedMultiplier() {
+        walkSpeed = _baseSpeed;
+        runningSpeed = _baseRunSpeed;
+    }
+
+    public void SetInvertedMovement(bool invert) {
+        _invertMovement = invert;
+    }
+
     public void MoveForward()
     {
+        if(_invertMovement) {
+            CollisonCheckedMovement(-CalculateForwardPosition());
+            return;
+        }
         CollisonCheckedMovement(CalculateForwardPosition());
     }
 
-    public void MoveBackward()
-    {
+    public void MoveBackward() {
+        if(_invertMovement) {
+            CollisonCheckedMovement(CalculateForwardPosition());
+            return;
+        }
         CollisonCheckedMovement(-CalculateForwardPosition());
     }
 
-    public void StrafeRight()
-    {
+    public void StrafeRight() {
+        if(_invertMovement) {
+            CollisonCheckedMovement(-CalculateStrafePosition());
+            return;
+        }
         CollisonCheckedMovement(CalculateStrafePosition());
     }
 
-    public void StrafeLeft()
-    {
+    public void StrafeLeft() {
+        if(_invertMovement) {
+            CollisonCheckedMovement(CalculateStrafePosition());
+            return;
+        }
         CollisonCheckedMovement(-CalculateStrafePosition());
     }
 
@@ -285,15 +318,25 @@ public class AdvancedGridMovement : MonoBehaviour
        // return filteredColliders.Length == 0;
     }
 
-    public void TurnRight()
-    {
+    public void TurnRight() {
         turnEvent?.Invoke();
+
+        if(_invertMovement) {
+            TurnEulerDegrees(LeftHand);
+            return;
+        }
+
         TurnEulerDegrees(RightHand);
     }
 
-    public void TurnLeft()
-    {
+    public void TurnLeft()  {
         turnEvent?.Invoke();
+
+        if(_invertMovement) {
+            TurnEulerDegrees(RightHand);
+            return;
+        }
+
         TurnEulerDegrees(LeftHand);
     }
 
