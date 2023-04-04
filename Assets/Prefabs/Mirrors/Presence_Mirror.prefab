@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9095119801941145998, guid: 464273bd827519c4d85d4add88300e00, type: 3}
       propertyPath: m_Name
-      value: Mirror
+      value: Presence_Mirror
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9095119801941146037, guid: 464273bd827519c4d85d4add88300e00, type: 3}
@@ -83,14 +83,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _person: 3
+  _isInteractable: 1
   _hintQuote: "We\u2019re so busy watching out for what\u2019s just ahead of us that
     we don\u2019t take time to enjoy where we are."
   _badMirror: {fileID: 5213184064551571099}
-  _offset: {x: 0, y: 0, z: 20}
   _camera: {fileID: 5213184063918656312}
   _material: {fileID: 2100000, guid: b8fa18d02e0e758449da3704d9821dcb, type: 2}
-  _mirrorPerson: {fileID: 0}
-  _stareTime: 5
+  _stareTime: 30
 --- !u!4 &5213184064551571099 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9095119801940167126, guid: 464273bd827519c4d85d4add88300e00, type: 3}

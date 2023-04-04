@@ -34,11 +34,11 @@ public class PlayerMirrorDetection : MonoBehaviour {
 
             //if(_lookAtMirror.IsInteractable && !_lookAtMirror.IsComplete.Value) {
             //    UIManager.Instance.ShowMirrorInteractPrompt(true);
-            //}
+            //} 
 
             LookingAtMirror.Value = true;
 
-            if (_lookAtMirror.IsComplete.Value) {
+            if (_lookAtMirror.HasStarted || _lookAtMirror.IsComplete.Value) {
                 PlayerManager.Instance.EndRemoveCondition();
             } else {
                 PlayerManager.Instance.StartRemoveCondition(1);

@@ -76,6 +76,7 @@ public class AdvancedGridMovement : MonoBehaviour
     private float currentSpeed;
 
     private bool _invertMovement;
+    private bool _disableMovement;
 
     void Start()
     {
@@ -87,8 +88,11 @@ public class AdvancedGridMovement : MonoBehaviour
         stepTime = 1.0f / gridSize;
     }
 
-    void Update()
-    {
+    void Update() {
+        if(_disableMovement) {
+            return;
+        }
+
         if (IsMoving())
         {
             AnimateMovement();
@@ -239,8 +243,14 @@ public class AdvancedGridMovement : MonoBehaviour
         _invertMovement = invert;
     }
 
-    public void MoveForward()
-    {
+    public void DisableMovement(bool disable) {
+        _disableMovement = disable;
+    }
+
+    public void MoveForward() {
+        if(_disableMovement) {
+            return;
+        }
         if(_invertMovement) {
             CollisonCheckedMovement(-CalculateForwardPosition());
             return;
@@ -249,6 +259,9 @@ public class AdvancedGridMovement : MonoBehaviour
     }
 
     public void MoveBackward() {
+        if(_disableMovement) {
+            return;
+        }
         if(_invertMovement) {
             CollisonCheckedMovement(CalculateForwardPosition());
             return;
@@ -257,6 +270,9 @@ public class AdvancedGridMovement : MonoBehaviour
     }
 
     public void StrafeRight() {
+        if(_disableMovement) {
+            return;
+        }
         if(_invertMovement) {
             CollisonCheckedMovement(-CalculateStrafePosition());
             return;
@@ -265,6 +281,9 @@ public class AdvancedGridMovement : MonoBehaviour
     }
 
     public void StrafeLeft() {
+        if(_disableMovement) {
+            return;
+        }
         if(_invertMovement) {
             CollisonCheckedMovement(CalculateStrafePosition());
             return;
@@ -319,6 +338,9 @@ public class AdvancedGridMovement : MonoBehaviour
     }
 
     public void TurnRight() {
+        if(_disableMovement) {
+            return;
+        }
         turnEvent?.Invoke();
 
         if(_invertMovement) {
@@ -329,7 +351,10 @@ public class AdvancedGridMovement : MonoBehaviour
         TurnEulerDegrees(RightHand);
     }
 
-    public void TurnLeft()  {
+    public void TurnLeft() {
+        if(_disableMovement) {
+            return;
+        }
         turnEvent?.Invoke();
 
         if(_invertMovement) {

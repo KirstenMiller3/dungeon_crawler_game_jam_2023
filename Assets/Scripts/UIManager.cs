@@ -12,6 +12,8 @@ public class UIManager : Singleton<UIManager> {
     [SerializeField] private GameObject _giveText;
     [SerializeField] private GameObject _dropText;
     [SerializeField] private GameObject _mirrorInteractPrompt;
+    [SerializeField] private CanvasGroup _fadeCanvasGroup;
+    [SerializeField] private float _fadeSpeed = 2f;
 
     [SerializeField] private PickUpDetection _pickUpDetection;
     [SerializeField] private PlayerMirrorDetection _mirrorDetection;
@@ -19,8 +21,10 @@ public class UIManager : Singleton<UIManager> {
     private string _pickUpBase;
     private bool _onMirror;
     private int _currentCondition;
+    private float _targetFadeAlpha = 0f;
 
     public void Start() {
+        _fadeCanvasGroup.alpha = 1f;
         _pickUpBase = _pickUpText.text;
 
         _pickUpDetection = FindObjectOfType<PickUpDetection>();
@@ -50,6 +54,8 @@ public class UIManager : Singleton<UIManager> {
             _giveText.gameObject.SetActive(_onMirror);
             _dropText.gameObject.SetActive(!_onMirror);
         }
+
+        _fadeCanvasGroup.alpha = Mathf.Lerp(_fadeCanvasGroup.alpha, _targetFadeAlpha, Time.deltaTime * _fadeSpeed);
     }
 
     public void ShowMirrorInteractPrompt(bool show) {
@@ -86,6 +92,10 @@ public class UIManager : Singleton<UIManager> {
 
     private void OnLookAtObjName(string prev, string curr) {
         _pickUpText.text = string.Format(_pickUpBase, curr);
+    }
+
+    public void SetCanvasFade(float alpha) {
+        _targetFadeAlpha = alpha;
     }
 
     [ContextMenu("ShowSkyMessage")]

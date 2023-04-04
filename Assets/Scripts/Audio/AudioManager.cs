@@ -116,6 +116,18 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void SetPresence(bool isActive) {
+        if(isActive) {
+            audioMixer.SetFloat("SFXVol", -80);
+            audioMixer.SetFloat("MusicVol", -80);
+        }
+        else {
+            audioMixer.SetFloat("EvilSFXVol", -80);
+            audioMixer.SetFloat("SFXVol", 0);
+            audioMixer.SetFloat("MusicVol", 0);
+        }
+    }
+
     public void Play(string name)
     {
        Sound s = Array.Find(sounds, sound => sound.sName == name);
