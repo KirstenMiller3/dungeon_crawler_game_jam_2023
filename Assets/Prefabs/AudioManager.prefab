@@ -50,100 +50,132 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: f5ff1c60956e5b3449e403a5e4b41311, type: 3}
     sName: main
     loop: 1
+    mixerGroup: {fileID: 6792780334715419751, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
     source: {fileID: 0}
   - volume: 0.05
     pitch: 1
     clip: {fileID: 8300000, guid: 47907fd1ec7dc6644a45af5da2f52d88, type: 3}
     sName: city_1
     loop: 0
+    mixerGroup: {fileID: -8627581259990819372, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
     source: {fileID: 0}
   - volume: 0.1
     pitch: 1
     clip: {fileID: 8300000, guid: 48af0732854d3814bb8104c01dbca07d, type: 3}
     sName: city_2
     loop: 0
+    mixerGroup: {fileID: -8627581259990819372, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
     source: {fileID: 0}
   - volume: 0.1
     pitch: 1
     clip: {fileID: 8300000, guid: ede8484b9446aaf4e814d4cd788517c2, type: 3}
     sName: city_3
     loop: 0
+    mixerGroup: {fileID: -8627581259990819372, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
     source: {fileID: 0}
   - volume: 0.2
     pitch: 1
     clip: {fileID: 8300000, guid: 91788ef26e935e14ab9aeca8ac546cb7, type: 3}
     sName: city_4
     loop: 0
+    mixerGroup: {fileID: -8627581259990819372, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
     source: {fileID: 0}
   - volume: 0.3
     pitch: 1
     clip: {fileID: 8300000, guid: 51c22187be9bb0343be60a5090fe9e47, type: 3}
     sName: main_2
     loop: 1
+    mixerGroup: {fileID: -8627581259990819372, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
     source: {fileID: 0}
   - volume: 1
     pitch: 1
     clip: {fileID: 8300000, guid: c0e57868efe51a449bec2bdaa9a16788, type: 3}
     sName: fire
     loop: 0
+    mixerGroup: {fileID: 5912310669215329797, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
     source: {fileID: 0}
   - volume: 1
     pitch: 1
     clip: {fileID: 8300000, guid: 2eb1f25e3bda7424498171d67446a0a5, type: 3}
     sName: debuff
     loop: 0
+    mixerGroup: {fileID: 5912310669215329797, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
     source: {fileID: 0}
   - volume: 1
     pitch: 1
     clip: {fileID: 8300000, guid: 94288bb8b2e1a5c4aa891d0e5890009b, type: 3}
     sName: peace
     loop: 0
+    mixerGroup: {fileID: 5912310669215329797, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
     source: {fileID: 0}
   - volume: 0.9
     pitch: 1
     clip: {fileID: 8300000, guid: 4c76d2659ba49834cb9d76fe65e3a373, type: 3}
     sName: perfection
     loop: 0
+    mixerGroup: {fileID: 5912310669215329797, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
     source: {fileID: 0}
   - volume: 0.7
     pitch: 1
     clip: {fileID: 8300000, guid: 2de4756015cdfae46842c1e8f50e857a, type: 3}
     sName: health
     loop: 0
+    mixerGroup: {fileID: 5912310669215329797, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
     source: {fileID: 0}
   - volume: 1
     pitch: 1
     clip: {fileID: 8300000, guid: dd2badbfd388e704ba9a3384fb0eca35, type: 3}
     sName: time
     loop: 0
+    mixerGroup: {fileID: 5912310669215329797, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
     source: {fileID: 0}
   - volume: 1
     pitch: 1
     clip: {fileID: 8300000, guid: 543affaf6d9de914cb1db5b511ec777f, type: 3}
     sName: presence
     loop: 0
+    mixerGroup: {fileID: 5912310669215329797, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
     source: {fileID: 0}
   - volume: 1
     pitch: 1
     clip: {fileID: 8300000, guid: e1e39673a5478b64fb8b52a01e98e4e6, type: 3}
     sName: restore
     loop: 0
+    mixerGroup: {fileID: 5912310669215329797, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
     source: {fileID: 0}
   - volume: 1
     pitch: 1
     clip: {fileID: 8300000, guid: 8ebfb98a43c501740ac0978019a55248, type: 3}
     sName: solved
     loop: 0
+    mixerGroup: {fileID: 5912310669215329797, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
     source: {fileID: 0}
   - volume: 1
     pitch: 1
     clip: {fileID: 8300000, guid: ae925b15b287653499af48a0ab0a73a9, type: 3}
     sName: pickup
     loop: 0
+    mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - volume: 1
     pitch: 1
     clip: {fileID: 8300000, guid: 3906bc032223489448f71ed3542368bc, type: 3}
     sName: locked-door
     loop: 0
+    mixerGroup: {fileID: 0}
     source: {fileID: 0}
+  - volume: 1
+    pitch: 1
+    clip: {fileID: 8300000, guid: 542859d6966bb6849b39a86d3de568e5, type: 3}
+    sName: presence_1
+    loop: 1
+    mixerGroup: {fileID: 741058327724290181, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
+    source: {fileID: 0}
+  - volume: 1
+    pitch: 1
+    clip: {fileID: 8300000, guid: 35202660b9955dd41b2db8ac90592055, type: 3}
+    sName: presence_2
+    loop: 1
+    mixerGroup: {fileID: 741058327724290181, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
+    source: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}

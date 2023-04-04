@@ -12,11 +12,11 @@ public class Mirror : MonoBehaviour {
     [SerializeField] private Material _material;
    
     private MirroredPlayer _mirrorPerson;
-    private bool _hasStarted;
+    protected bool _hasStarted;
 
     public MirroredPerson MirroredPerson => _person;
     public bool IsInteractable => _isInteractable;
-
+    public bool HasStarted => _hasStarted;
     public Observable<bool> IsComplete = new Observable<bool>();
 
     protected virtual void Start() {
@@ -43,7 +43,6 @@ public class Mirror : MonoBehaviour {
         }
 
         _mirrorPerson.ShowMirroredPerson(_person);
-        SkyText.Instance.SetText(_hintQuote);
     }
 
     public virtual void OnPressStartPuzzle() {
@@ -74,6 +73,8 @@ public class Mirror : MonoBehaviour {
                 AudioManager.instance.Play("time");
                 break;
         }
+
+        SkyText.Instance.SetText(_hintQuote);
 
         PlayerManager.Instance.SetActiveMirror(this);
 
