@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4259491201636444367}
   - component: {fileID: 4259491201636444352}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 4259491202786679460}
   - component: {fileID: 4259491202786679461}
   - component: {fileID: 4259491202786679462}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Health_PickUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ Transform:
   m_Children:
   - {fileID: 8729961102888751846}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &4259491202786679461
 BoxCollider:
@@ -217,9 +217,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: CFXR3 Shield Leaves A (Lit)
       objectReference: {fileID: 0}
+    - target: {fileID: 4772634663576830964, guid: e1385af346f4e624eb313ec1ea4fcd7e, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4772634663576830967, guid: e1385af346f4e624eb313ec1ea4fcd7e, type: 3}
       propertyPath: clearBehavior
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8018385630816773088, guid: e1385af346f4e624eb313ec1ea4fcd7e, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8018385630816773118, guid: e1385af346f4e624eb313ec1ea4fcd7e, type: 3}
       propertyPath: m_Materials.Array.size
