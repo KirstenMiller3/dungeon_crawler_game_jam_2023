@@ -798,7 +798,7 @@ GameObject:
   - component: {fileID: 4605870985798894074}
   - component: {fileID: 1231955162036068752}
   - component: {fileID: 5872554474393250654}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -840,6 +840,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridSize: 6
+  _groundCheckLayers:
+    serializedVersion: 2
+    m_Bits: 256
   _layersToCheck:
     serializedVersion: 2
     m_Bits: 768

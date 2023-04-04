@@ -21,7 +21,10 @@ public class AdvancedGridMovement : MonoBehaviour
     private const float LeftHand = -RightHand;
     private const float approximationThreshold = 0.025f;
     private bool start = true;
+
+
     [SerializeField] private float gridSize = 3.0f;
+    [SerializeField] private LayerMask _groundCheckLayers;
     [SerializeField] private LayerMask _layersToCheck;
 
     [Header("Walk speed settings")]
@@ -178,20 +181,22 @@ public class AdvancedGridMovement : MonoBehaviour
        
         var targetHeading = Vector3.Normalize(HeightInvariantVector(moveTowardsPosition) - HeightInvariantVector(moveFromPosition));
         var newPosition = moveFromPosition + (targetHeading * (currentPositionValue * gridSize));
-        newPosition.y = maximumStepHeight;
+        //newPosition.y = maximumStepHeight;
         
-        RaycastHit hit;
-        Ray downRay = new Ray(newPosition, -Vector3.up);
+        //RaycastHit hit;
+        //Ray downRay = new Ray(newPosition, -Vector3.up);
 
         // Cast a ray straight downwards.
-        if (Physics.Raycast(downRay, out hit))
-        {
-            newPosition.y = (maximumStepHeight - hit.distance) + currentHeadBobValue;
-        }
-        else
-        {
-            newPosition.y = currentHeadBobValue;
-        }
+        //if (Physics.Raycast(downRay, out hit, _groundCheckLayers))
+        //{
+        //    newPosition.y = (maximumStepHeight - hit.distance) + currentHeadBobValue;
+        //}
+        //else
+        //{
+        //    newPosition.y = currentHeadBobValue;
+        //}
+
+        newPosition.y = currentHeadBobValue;
 
         transform.position = newPosition;
         CompensateRoundingErrors();
