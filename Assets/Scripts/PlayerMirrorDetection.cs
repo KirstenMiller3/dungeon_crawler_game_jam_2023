@@ -14,6 +14,12 @@ public class PlayerMirrorDetection : MonoBehaviour {
 
     public Mirror LookAtMirror => _lookAtMirror;
 
+    public void OnPressInteract() {
+        if(_lookAtMirror != null && _lookAtMirror.IsInteractable && !_lookAtMirror.IsComplete.Value) {
+            _lookAtMirror.OnPressInteract();
+        }
+    }
+
     private void FixedUpdate() {
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
         RaycastHit hit;
@@ -26,7 +32,7 @@ public class PlayerMirrorDetection : MonoBehaviour {
             _lookAtMirror = hit.transform.GetComponent<Mirror>();
             _lookAtMirror.Interact();
 
-            if(_lookAtMirror.IsInteractable) {
+            if(_lookAtMirror.IsInteractable && !_lookAtMirror.IsComplete.Value) {
                 UIManager.Instance.ShowMirrorInteractPrompt(true);
             }
 

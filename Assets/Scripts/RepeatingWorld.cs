@@ -33,6 +33,7 @@ public class RepeatingWorld : MonoBehaviour {
         }
 
         _triggerIndex = !_triggerIndex;
+        SetTriggers();
 
         if(!_triggerIndex) {
             Loops.Value++;

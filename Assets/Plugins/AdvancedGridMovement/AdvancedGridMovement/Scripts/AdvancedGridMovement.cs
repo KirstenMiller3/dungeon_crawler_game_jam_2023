@@ -98,6 +98,14 @@ public class AdvancedGridMovement : MonoBehaviour
         }
     }
 
+    public void Teleport(Vector3 moveToPosition, Quaternion dir) {
+        moveTowardsPosition = moveToPosition;
+        rotateTowardsDirection = dir;
+
+        transform.position = moveToPosition;
+        transform.rotation = dir;
+    }
+
     public void SwitchToWalking()
     {
         var currentPosition = currentAnimationCurve.Evaluate(curveTime);

@@ -55,6 +55,10 @@ public class Mirror : MonoBehaviour {
 
     }
 
+    public virtual void OnPressInteract() {
+
+    }
+
     public virtual void Interact() {
         if(IsComplete.Value) {
             return;
@@ -68,8 +72,7 @@ public class Mirror : MonoBehaviour {
     }
 
 
-    [ContextMenu("Complete")]
-    public void CompleteMirror() {
+    public virtual void CompleteMirror() {
         if(IsComplete.Value) {
             return;
         }

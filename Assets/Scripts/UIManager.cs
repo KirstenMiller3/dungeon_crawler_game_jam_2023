@@ -30,6 +30,8 @@ public class UIManager : Singleton<UIManager> {
         _pickUpDetection.LookAtObjName.Subscribe(OnLookAtObjName, true);
         _pickUpDetection.LookingAtObj.Subscribe(OnLookAtObj, true);
         _mirrorDetection.LookingAtMirror.Subscribe(OnMirror, true);
+
+        ShowMirrorInteractPrompt(false);
     }
 
     public void OnDisable() {

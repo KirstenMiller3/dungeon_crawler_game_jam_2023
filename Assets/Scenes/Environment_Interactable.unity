@@ -318,7 +318,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 25ff26f5670565044a1a2d3fb5252ff8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 6d21264be560fc1428e5fe69055fb583, type: 2}
+      objectReference: {fileID: 2100000, guid: 36a71aacd557d9747aba8d307d53e8b4, type: 2}
     - target: {fileID: 919132149155446097, guid: 25ff26f5670565044a1a2d3fb5252ff8, type: 3}
       propertyPath: m_Name
       value: Patience
@@ -2462,6 +2462,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 25ff26f5670565044a1a2d3fb5252ff8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6d21264be560fc1428e5fe69055fb583, type: 2}
     - target: {fileID: 919132149155446097, guid: 25ff26f5670565044a1a2d3fb5252ff8, type: 3}
       propertyPath: m_Name
       value: Patience
