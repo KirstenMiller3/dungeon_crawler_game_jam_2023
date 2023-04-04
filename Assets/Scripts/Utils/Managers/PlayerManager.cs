@@ -15,6 +15,10 @@ public class PlayerManager : Singleton<PlayerManager> {
 
     public Observable<int> ConditionLevel = new Observable<int>();
 
+    public Mirror ActiveMirror => _activeMirror;
+
+    private Mirror _activeMirror;
+
     private bool _isRemovingCondition = false;
     private float _conditionTimer = 0f;
     private int _currConditionRemovalAmount;
@@ -69,6 +73,10 @@ public class PlayerManager : Singleton<PlayerManager> {
             return;
         }
         ConditionLevel.Value += amount;
+    }
+
+    public void SetActiveMirror(Mirror activeMirror) {
+        _activeMirror = activeMirror;
     }
 
 

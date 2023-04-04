@@ -23,11 +23,6 @@ public class PickUpObj : MonoBehaviour {
     public System.Action OnPickUp;
 
     public void PickUp() {
-        if(_type == PickUpType.Beating_Heart) {
-            AudioManager.instance.LockHeartPuzzle();
-            AudioManager.instance.SetLowPassOn(false);
-        }
-
         AudioManager.instance.Play("pickup");
         Instantiate(_poof, transform.position, Quaternion.identity);
         OnPickUp?.Invoke();

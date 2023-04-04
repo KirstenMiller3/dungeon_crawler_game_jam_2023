@@ -16,7 +16,7 @@ public class PlayerMirrorDetection : MonoBehaviour {
 
     public void OnPressInteract() {
         if(_lookAtMirror != null && _lookAtMirror.IsInteractable && !_lookAtMirror.IsComplete.Value) {
-            _lookAtMirror.OnPressInteract();
+            _lookAtMirror.OnPressStartPuzzle();
         }
     }
 
@@ -32,9 +32,9 @@ public class PlayerMirrorDetection : MonoBehaviour {
             _lookAtMirror = hit.transform.GetComponent<Mirror>();
             _lookAtMirror.Interact();
 
-            if(_lookAtMirror.IsInteractable && !_lookAtMirror.IsComplete.Value) {
-                UIManager.Instance.ShowMirrorInteractPrompt(true);
-            }
+            //if(_lookAtMirror.IsInteractable && !_lookAtMirror.IsComplete.Value) {
+            //    UIManager.Instance.ShowMirrorInteractPrompt(true);
+            //}
 
             LookingAtMirror.Value = true;
 
@@ -47,9 +47,9 @@ public class PlayerMirrorDetection : MonoBehaviour {
         else {
             if(_lookAtMirror) {
                 _lookAtMirror.StopInteract();
-                if(_lookAtMirror.IsInteractable) {
-                    UIManager.Instance.ShowMirrorInteractPrompt(false);
-                }
+                //if(_lookAtMirror.IsInteractable) {
+                //    UIManager.Instance.ShowMirrorInteractPrompt(false);
+                //}
             }
 
             _lookAtMirror = null;

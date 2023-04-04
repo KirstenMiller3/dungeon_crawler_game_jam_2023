@@ -17,8 +17,8 @@ public class TimeMirror : Mirror {
         _repeatingWorld = FindObjectOfType<RepeatingWorld>();
     }
 
-    public override void OnPressInteract() {
-        base.OnPressInteract();
+    public override void OnPressStartPuzzle() {
+        base.OnPressStartPuzzle();
         if(IsComplete.Value) {
             return;
         }
