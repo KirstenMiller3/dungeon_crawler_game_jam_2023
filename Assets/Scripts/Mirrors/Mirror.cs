@@ -51,6 +51,30 @@ public class Mirror : MonoBehaviour {
             PlayerManager.Instance.ActiveMirror.CancelPuzzle();
         }
 
+        switch(_person) {
+            case MirroredPerson.Calm:
+                AudioManager.instance.Play("fire");
+                break;
+            case MirroredPerson.Health:
+                AudioManager.instance.Play("health");
+                break;
+            case MirroredPerson.Peace:
+                AudioManager.instance.Play("peace");
+                break;
+            case MirroredPerson.Acceptance:
+                AudioManager.instance.Play("perfection");
+                break;
+            case MirroredPerson.Presence:
+                AudioManager.instance.Play("presence");
+                break;
+            case MirroredPerson.Restore:
+                AudioManager.instance.Play("restore");
+                break;
+            case MirroredPerson.Time:
+                AudioManager.instance.Play("time");
+                break;
+        }
+
         PlayerManager.Instance.SetActiveMirror(this);
 
         _hasStarted = true;
@@ -82,6 +106,10 @@ public class Mirror : MonoBehaviour {
     public virtual void CompleteMirror() {
         if(IsComplete.Value) {
             return;
+        }
+
+        if(_isInteractable) {
+            UIManager.Instance.ShowMirrorInteractPrompt(false);
         }
 
         IsComplete.Value = true;

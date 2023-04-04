@@ -1742,6 +1742,10 @@ PrefabInstance:
       propertyPath: _beatinHeart
       value: 
       objectReference: {fileID: 912434198}
+    - target: {fileID: 1540054773118890149, guid: d03ceffb9a133b546a2df1a946333595, type: 3}
+      propertyPath: _isInteractable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1718844431370692066, guid: d03ceffb9a133b546a2df1a946333595, type: 3}
       propertyPath: m_RootOrder
       value: -1
