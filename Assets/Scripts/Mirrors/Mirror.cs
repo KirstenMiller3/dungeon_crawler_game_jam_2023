@@ -39,10 +39,12 @@ public class Mirror : MonoBehaviour {
 
     public void ShowPerson() {
         if(IsComplete.Value) {
-            return;
+            _mirrorPerson.ShowMirroredPerson(MirroredPerson.None);
+        }
+        else {
+            _mirrorPerson.ShowMirroredPerson(_person);
         }
 
-        _mirrorPerson.ShowMirroredPerson(_person);
     }
 
     public virtual void OnPressStartPuzzle() {

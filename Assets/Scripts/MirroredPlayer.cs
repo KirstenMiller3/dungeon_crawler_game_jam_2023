@@ -24,6 +24,7 @@ public class MirroredPlayer : MonoBehaviour {
     public Vector3 Offset => _offset;
 
     private MirroredPerson _currentMirroredPerson;
+    private bool _isTransforming;
 
     private void Start() {
         _player = GameObject.Find("Player").transform;
@@ -38,6 +39,10 @@ public class MirroredPlayer : MonoBehaviour {
 
     public void ShowMirroredPerson(MirroredPerson mirroredPerson) {
         if (_currentMirroredPerson == mirroredPerson) {
+            return;
+        }
+
+        if(_isTransforming) {
             return;
         }
 
@@ -61,9 +66,11 @@ public class MirroredPlayer : MonoBehaviour {
     }
 
     private IEnumerator DoTransform() {
+        _isTransforming = true;
         _light.SetTrigger("Play");
         _transformParticles.Play();
         yield return new WaitForSeconds(2f);
+        _isTransforming = false;
         ShowMirroredPerson(0);
     }
 }
