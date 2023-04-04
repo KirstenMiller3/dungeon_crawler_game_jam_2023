@@ -394,7 +394,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ACCEPT ME AND RETURN TO THE MIRROR
+  m_text: Breathe...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ebc64aedc8d41964f8456bbc4f4bd71a, type: 2}
   m_sharedMaterial: {fileID: 6964237482300838716, guid: ebc64aedc8d41964f8456bbc4f4bd71a, type: 2}
@@ -604,7 +604,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: '<size=50%>You are...</size>
 
-    SLOW'
+    WEAK'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ebc64aedc8d41964f8456bbc4f4bd71a, type: 2}
   m_sharedMaterial: {fileID: 6964237482300838716, guid: ebc64aedc8d41964f8456bbc4f4bd71a, type: 2}
@@ -2069,7 +2069,7 @@ MonoBehaviour:
   _prefab: {fileID: 0}
   _poof: {fileID: 1429954232896169633, guid: 83036083a4ebcd34f98131bd3cf6f4d2, type: 3}
   _dontAddToHand: 0
-  _atype: 1
+  _atype: 2
 --- !u!114 &943831396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2373,7 +2373,7 @@ MonoBehaviour:
   _prefab: {fileID: 0}
   _poof: {fileID: 1429954232896169633, guid: 83036083a4ebcd34f98131bd3cf6f4d2, type: 3}
   _dontAddToHand: 0
-  _atype: 2
+  _atype: 1
 --- !u!65 &999549488
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2447,7 +2447,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: '<size=50%>You are...</size>
 
-    WEAK'
+    SLOW'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ebc64aedc8d41964f8456bbc4f4bd71a, type: 2}
   m_sharedMaterial: {fileID: 6964237482300838716, guid: ebc64aedc8d41964f8456bbc4f4bd71a, type: 2}
@@ -2735,7 +2735,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1140781954}
   m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.7071078}
-  m_LocalPosition: {x: 0, y: 0, z: -47.94}
+  m_LocalPosition: {x: 0, y: 0, z: -54.008}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2745,7 +2745,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -18.07, y: 1.731}
+  m_AnchoredPosition: {x: -12.35, y: 1.731}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!65 &1140781956
