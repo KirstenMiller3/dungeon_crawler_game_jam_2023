@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using DG.Tweening;
+using Milo.Tools;
 
-public class UIManager : MonoBehaviour {
+public class UIManager : Singleton<UIManager> {
     [SerializeField] private ConditionMeter _conditionMeter;
     [SerializeField] private TextMeshProUGUI _pickUpText;
     [SerializeField] private RectTransform _skyMessage;
     [SerializeField] private GameObject _giveText;
     [SerializeField] private GameObject _dropText;
+    [SerializeField] private GameObject _mirrorInteractPrompt;
 
     [SerializeField] private PickUpDetection _pickUpDetection;
     [SerializeField] private PlayerMirrorDetection _mirrorDetection;
@@ -46,6 +48,10 @@ public class UIManager : MonoBehaviour {
             _giveText.gameObject.SetActive(_onMirror);
             _dropText.gameObject.SetActive(!_onMirror);
         }
+    }
+
+    public void ShowMirrorInteractPrompt(bool show) {
+        _mirrorInteractPrompt.SetActive(show);
     }
 
     private void OnUpdateCondition(int prev, int curr) {

@@ -4,6 +4,7 @@ using UnityEngine;
 public class Mirror : MonoBehaviour {
     [SerializeField] private MirroredPerson _person;
     [SerializeField] private GameObject _beatinHeart;
+    [SerializeField] private bool _isInteractable;
 
     [TextArea][SerializeField] private string _hintQuote;
 
@@ -14,10 +15,11 @@ public class Mirror : MonoBehaviour {
     private MirroredPlayer _mirrorPerson;
 
     public MirroredPerson MirroredPerson => _person;
+    public bool IsInteractable => _isInteractable;
 
     public Observable<bool> IsComplete = new Observable<bool>();
 
-    private void Start() {
+    protected virtual void Start() {
         if(_person == MirroredPerson.Peace) {
             _beatinHeart.gameObject.SetActive(false);
             AudioManager.instance.SetLowPassOn(false);

@@ -26,6 +26,10 @@ public class PlayerMirrorDetection : MonoBehaviour {
             _lookAtMirror = hit.transform.GetComponent<Mirror>();
             _lookAtMirror.Interact();
 
+            if(_lookAtMirror.IsInteractable) {
+                UIManager.Instance.ShowMirrorInteractPrompt(true);
+            }
+
             LookingAtMirror.Value = true;
 
             if (_lookAtMirror.IsComplete.Value) {
@@ -37,6 +41,9 @@ public class PlayerMirrorDetection : MonoBehaviour {
         else {
             if(_lookAtMirror) {
                 _lookAtMirror.StopInteract();
+                if(_lookAtMirror.IsInteractable) {
+                    UIManager.Instance.ShowMirrorInteractPrompt(false);
+                }
             }
 
             _lookAtMirror = null;

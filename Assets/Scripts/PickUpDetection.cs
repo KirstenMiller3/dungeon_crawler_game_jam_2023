@@ -46,6 +46,11 @@ public class PickUpDetection : MonoBehaviour {
 
         _lookAtObj.PickUp();
         _lookAtObj.gameObject.SetActive(false);
+
+        if(_lookAtObj.DontAddToHand) {
+            return;
+        }
+
         _heldObj = _lookAtObj;
         _heldInstance = Instantiate(_heldObj.Prefab, _heldObjPos);
     }
