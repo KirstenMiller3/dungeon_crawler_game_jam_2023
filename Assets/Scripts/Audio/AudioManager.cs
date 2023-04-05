@@ -128,6 +128,19 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void SetPatience(bool isActive) {
+        if(isActive) {
+            Play("patience");
+            audioMixer.SetFloat("SFXVol", -80);
+            audioMixer.SetFloat("MusicVol", -80);
+        }
+        else {
+            Stop("patience");
+            audioMixer.SetFloat("SFXVol", 0);
+            audioMixer.SetFloat("MusicVol", 0);
+        }
+    }
+
     public void Play(string name)
     {
        Sound s = Array.Find(sounds, sound => sound.sName == name);
