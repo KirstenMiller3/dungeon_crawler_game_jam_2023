@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5754507790254849432}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hall End F2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,6 +88,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ba619103af1cfa54bb7ef47efa5db920, type: 2}
+    - target: {fileID: -1807970279642858887, guid: b574106b7775da342b70d71127aacc3b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: -1660384031183063813, guid: b574106b7775da342b70d71127aacc3b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -95,6 +99,18 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b574106b7775da342b70d71127aacc3b, type: 3}
       propertyPath: m_Name
       value: Hall End F2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b574106b7775da342b70d71127aacc3b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6392698200589398024, guid: b574106b7775da342b70d71127aacc3b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461577628520871817, guid: b574106b7775da342b70d71127aacc3b, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6724980687364927792, guid: b574106b7775da342b70d71127aacc3b, type: 3}
       propertyPath: m_Materials.Array.data[0]
