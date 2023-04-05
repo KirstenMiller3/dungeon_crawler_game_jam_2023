@@ -18,7 +18,8 @@ public class HealthZone : Singleton<HealthZone> {
         _player = PlayerManager.Instance.PlayerTransform.GetComponent<AdvancedGridMovement>();
         _originalPos = PlayerManager.Instance.PlayerTransform.position;
         _originalRot = PlayerManager.Instance.PlayerTransform.rotation;
-        _player.Teleport(_spawnPoint.position, _spawnPoint.rotation);
+
+        UIManager.Instance.Transition(() => _player.Teleport(_spawnPoint.position, _spawnPoint.rotation));
     }
 
     public void AddToCounter() {
@@ -26,7 +27,8 @@ public class HealthZone : Singleton<HealthZone> {
 
         if(_count >= _counter) {
             OnComplete?.Invoke();
-            _player.Teleport(_originalPos, _originalRot);
+
+            UIManager.Instance.Transition(() => _player.Teleport(_originalPos, _originalRot));
         }
     }
 }

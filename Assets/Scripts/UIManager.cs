@@ -38,6 +38,8 @@ public class UIManager : Singleton<UIManager> {
         _mirrorDetection.LookingAtMirror.Subscribe(OnMirror, true);
 
         ShowMirrorInteractPrompt(false);
+
+        _fadeCanvasGroup.DOFade(0f, 1f / _fadeSpeed);
     }
 
     public void OnDisable() {
@@ -58,8 +60,6 @@ public class UIManager : Singleton<UIManager> {
         }
 
         _feedText.gameObject.SetActive(_pickUpDetection.CanPresentToMonster);
-
-        _fadeCanvasGroup.alpha = Mathf.Lerp(_fadeCanvasGroup.alpha, _targetFadeAlpha, Time.deltaTime * _fadeSpeed);
     }
 
     public void ShowMirrorInteractPrompt(bool show) {
@@ -86,6 +86,16 @@ public class UIManager : Singleton<UIManager> {
 
     public void SetCanvasFade(float alpha) {
         _targetFadeAlpha = alpha;
+    }
+
+    public void Transition(System.Action onReady) {
+        _fadeCanvasGroup.DOFade(1f, 1f / _fadeSpeed).OnComplete(() => TransitionBack(onReady));
+        // = Mathf.Lerp(_fadeCanvasGroup.alpha, _targetFadeAlpha, Time.deltaTime * _fadeSpeed);
+    }
+
+    private void TransitionBack(System.Action onReady) {
+        onReady?.Invoke();
+        _fadeCanvasGroup.DOFade(0f, 1f / _fadeSpeed);
     }
 
     [ContextMenu("ShowSkyMessage")]

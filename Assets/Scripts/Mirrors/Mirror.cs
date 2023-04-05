@@ -55,6 +55,8 @@ public class Mirror : MonoBehaviour {
             PlayerManager.Instance.ActiveMirror.CancelPuzzle();
         }
 
+        PlayerManager.Instance.SetActiveMirror(this);
+
         _hasStarted = true;
 
         if(_fightCompleted) {
@@ -94,8 +96,6 @@ public class Mirror : MonoBehaviour {
         }
 
         SkyText.Instance.SetText(_hintQuote);
-
-        PlayerManager.Instance.SetActiveMirror(this);
     }
 
     public virtual void Interact() {

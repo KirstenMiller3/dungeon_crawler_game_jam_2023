@@ -25,7 +25,7 @@ public class TimeMirror : Mirror {
         _repeatingWorld.Init();
         _repeatingWorld.Loops.Subscribe(OnLoopUpdate, true);
         _lastPlayerPosition = _player.position;
-        _player.GetComponent<AdvancedGridMovement>().Teleport(_repeatingWorld.StartPosition, Quaternion.Euler(new Vector3(0, 90, 0)));
+        UIManager.Instance.Transition(() => _player.GetComponent<AdvancedGridMovement>().Teleport(_repeatingWorld.StartPosition, Quaternion.Euler(new Vector3(0, 90, 0))));
 
         AudioManager.instance.SetPatience(true);
     }
@@ -43,7 +43,7 @@ public class TimeMirror : Mirror {
         base.CompleteMirror();
 
         AudioManager.instance.SetPatience(false);
-        _player.GetComponent<AdvancedGridMovement>().Teleport(_lastPlayerPosition, Quaternion.Euler(Vector3.zero));
+        UIManager.Instance.Transition(() => _player.GetComponent<AdvancedGridMovement>().Teleport(_lastPlayerPosition, Quaternion.Euler(Vector3.zero)));
         _repeatingWorld.Loops.Unsubscribe(OnLoopUpdate);
         _repeatingWorld.Complete();
     }
