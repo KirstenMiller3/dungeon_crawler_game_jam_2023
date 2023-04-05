@@ -32,6 +32,11 @@ public class AvoidMirror : Mirror {
         }
     }
 
+    public override void CompleteMirror() {
+        _player.Teleport(_player.transform.position, Quaternion.Euler(Vector3.up * -90f));
+        base.CompleteMirror();
+    }
+
     private void OnClaim(AcceptanceMessage.AcceptanceType type) {
         _index++;
 
@@ -57,7 +62,7 @@ public class AvoidMirror : Mirror {
         }
 
         if(_index > _acceptanceObjs.Length - 1) {
-            CompleteMirror();
+            UIManager.Instance.Transition(CompleteMirror);
             return;
         }
 

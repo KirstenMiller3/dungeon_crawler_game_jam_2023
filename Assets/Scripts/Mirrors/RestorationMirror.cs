@@ -5,6 +5,7 @@ using UnityEngine;
 public class RestorationMirror : Mirror {
     [SerializeField] private GameObject[] _apples;
     [SerializeField] private HungerMonster _hungerMonster;
+    [SerializeField] private Transform _playerTeleport;
 
     protected override void Start() {
         base.Start();
@@ -36,7 +37,12 @@ public class RestorationMirror : Mirror {
     }
 
     private void OnComplete() {
-        CompleteMirror();
+        UIManager.Instance.Transition(CompleteMirror);
+    }
+
+    public override void CompleteMirror() {
+        PlayerManager.Instance.PlayerTransform.GetComponent<AdvancedGridMovement>().Teleport(_playerTeleport.position, _playerTeleport.rotation);
+        base.CompleteMirror();
     }
 
 }
