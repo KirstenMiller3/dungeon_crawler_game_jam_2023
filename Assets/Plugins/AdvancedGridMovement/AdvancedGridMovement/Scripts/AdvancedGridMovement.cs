@@ -88,7 +88,7 @@ public class AdvancedGridMovement : MonoBehaviour
         currentAnimationCurve = walkSpeedCurve;
         currentHeadBobCurve = walkHeadBobCurve;
         currentSpeed = walkSpeed;
-        stepTime = 1.0f / gridSize;
+        stepTime = 1.5f / gridSize;
     }
 
     void Update() {

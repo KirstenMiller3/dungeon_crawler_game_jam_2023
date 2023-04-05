@@ -47,6 +47,25 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-6173057732953885981
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Footsteps
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 7ca5629a398fc774394e8efbd783872f
+  m_Children: []
+  m_Volume: f7fcd8be44794b643b22fd6f391d7fa2
+  m_Pitch: b399f901139748042969795c6b57f81d
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -376943064461669822}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!244 &-4455107881174295055
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -75,6 +94,20 @@ AudioMixerEffectController:
   m_EffectID: 3dab6bd39716a3b459d0dcb24ce46e72
   m_EffectName: Attenuation
   m_MixLevel: f5a0035046929bf42ad7462d703d068e
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &-376943064461669822
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: cf1fc2ee1ae9f984ca15e00fceb31176
+  m_EffectName: Attenuation
+  m_MixLevel: 1638b5526c461ec40b0e0b11d3611e6b
   m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
@@ -125,6 +158,7 @@ AudioMixerController:
     - f1bed1602b136b94a96907cb168baadb
     - eec98388aae511049a0a174ccbbae6c8
     - 73b1a404778d4f14686fd2616980355b
+    - 7ca5629a398fc774394e8efbd783872f
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -177,6 +211,7 @@ AudioMixerSnapshotController:
   m_FloatValues:
     38a3adc9b2d835341b96596b1d8f4aea: 5000
     8a0639ecf3aff4c4fa5314dffa040c84: 6.7923827
+    f7fcd8be44794b643b22fd6f391d7fa2: -1.5191216
   m_TransitionOverrides: {}
 --- !u!243 &741058327724290181
 AudioMixerGroupController:
@@ -222,6 +257,7 @@ AudioMixerGroupController:
   m_GroupID: f5f46c462e1fb9f4db1b4d28ff785efd
   m_Children:
   - {fileID: -8627581259990819372}
+  - {fileID: -6173057732953885981}
   m_Volume: d2898fd52d650134b9cd3b5f5816af5b
   m_Pitch: cd825b0f0a180e349bb63854502688b1
   m_Send: 00000000000000000000000000000000

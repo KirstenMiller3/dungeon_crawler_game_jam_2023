@@ -1172,78 +1172,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 318989199}
-    - target: {fileID: 200431336134577201, guid: 23e4c5e31a53899489d5e4ce70ddb120, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 200431336134577201, guid: 23e4c5e31a53899489d5e4ce70ddb120, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 200431336134577201, guid: 23e4c5e31a53899489d5e4ce70ddb120, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 200431336489910709, guid: 23e4c5e31a53899489d5e4ce70ddb120, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 200431336489910709, guid: 23e4c5e31a53899489d5e4ce70ddb120, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 200431336489910709, guid: 23e4c5e31a53899489d5e4ce70ddb120, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 200431336681904895, guid: 23e4c5e31a53899489d5e4ce70ddb120, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 200431336681904895, guid: 23e4c5e31a53899489d5e4ce70ddb120, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 200431336681904895, guid: 23e4c5e31a53899489d5e4ce70ddb120, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 200431337581921822, guid: 23e4c5e31a53899489d5e4ce70ddb120, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 200431337581921822, guid: 23e4c5e31a53899489d5e4ce70ddb120, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 200431337581921822, guid: 23e4c5e31a53899489d5e4ce70ddb120, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 200431338030641185, guid: 23e4c5e31a53899489d5e4ce70ddb120, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 200431338030641185, guid: 23e4c5e31a53899489d5e4ce70ddb120, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 200431338030641185, guid: 23e4c5e31a53899489d5e4ce70ddb120, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 200431338055007825, guid: 23e4c5e31a53899489d5e4ce70ddb120, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 200431338055007825, guid: 23e4c5e31a53899489d5e4ce70ddb120, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 200431338055007825, guid: 23e4c5e31a53899489d5e4ce70ddb120, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1405272755494524397, guid: 23e4c5e31a53899489d5e4ce70ddb120, type: 3}
       propertyPath: m_Name
       value: RepeatingCorridor
@@ -1291,14 +1219,6 @@ PrefabInstance:
     - target: {fileID: 1405272755494524398, guid: 23e4c5e31a53899489d5e4ce70ddb120, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5771690480923653389, guid: 23e4c5e31a53899489d5e4ce70ddb120, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5771690481985197896, guid: 23e4c5e31a53899489d5e4ce70ddb120, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
