@@ -136,6 +136,14 @@ PrefabInstance:
       propertyPath: _dontAddToHand
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1975704131439895783, guid: c7f07ca83f435e94b8b267e10f1e93c8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1975704131439895783, guid: c7f07ca83f435e94b8b267e10f1e93c8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.716
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1150844755423450364, guid: c7f07ca83f435e94b8b267e10f1e93c8, type: 3}
