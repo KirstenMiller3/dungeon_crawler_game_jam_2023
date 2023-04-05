@@ -11,6 +11,7 @@ public class UIManager : Singleton<UIManager> {
     [SerializeField] private RectTransform _skyMessage;
     [SerializeField] private GameObject _giveText;
     [SerializeField] private GameObject _dropText;
+    [SerializeField] private GameObject _feedText;
     [SerializeField] private GameObject _mirrorInteractPrompt;
     [SerializeField] private CanvasGroup _fadeCanvasGroup;
     [SerializeField] private float _fadeSpeed = 2f;
@@ -20,6 +21,7 @@ public class UIManager : Singleton<UIManager> {
 
     private string _pickUpBase;
     private bool _onMirror;
+    private bool _onFoodMonster;
     private int _currentCondition;
     private float _targetFadeAlpha = 0f;
 
@@ -46,7 +48,7 @@ public class UIManager : Singleton<UIManager> {
     }
 
     private void Update() {
-        if(!_pickUpDetection.HasHeldObj) {
+        if(!_pickUpDetection.CanPresentToMirror) {
             _giveText.gameObject.SetActive(false);
             _dropText.gameObject.SetActive(false);
         } 
@@ -54,6 +56,8 @@ public class UIManager : Singleton<UIManager> {
             _giveText.gameObject.SetActive(_onMirror);
             _dropText.gameObject.SetActive(!_onMirror);
         }
+
+        _feedText.gameObject.SetActive(_pickUpDetection.CanPresentToMonster);
 
         _fadeCanvasGroup.alpha = Mathf.Lerp(_fadeCanvasGroup.alpha, _targetFadeAlpha, Time.deltaTime * _fadeSpeed);
     }

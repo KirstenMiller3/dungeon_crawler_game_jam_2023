@@ -7,6 +7,7 @@ using UnityEngine;
 public class PickUpDetection : MonoBehaviour {
     [SerializeField] private float _checkDist = 10f;
     [SerializeField] private LayerMask _layersToCheck;
+    [SerializeField] private LayerMask _feedLayer;
     [SerializeField] private Transform _heldObjPos;
     [SerializeField] protected PlayerMirrorDetection _mirrorDetection;
 
@@ -14,10 +15,13 @@ public class PickUpDetection : MonoBehaviour {
     public Observable<string> LookAtObjName = new Observable<string>();
 
     public bool HasHeldObj => _heldObj;
+    public bool CanPresentToMirror => _heldObj && _mirrorDetection.LookAtMirror is PresentMirror;
+    public bool CanPresentToMonster => _heldObj && _lookAtMonster;
 
     private PickUpObj _heldObj;
     private PickUpObj _lookAtObj;
     private GameObject _heldInstance;
+    private HungerMonster _lookAtMonster;
 
     private void FixedUpdate() {
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
@@ -32,6 +36,13 @@ public class PickUpDetection : MonoBehaviour {
             _lookAtObj = null;
             LookingAtObj.Value = false;
             LookAtObjName.Value = string.Empty;
+        }
+
+        if(Physics.Raycast(transform.position, fwd, out hit, _checkDist, _feedLayer)) {
+            _lookAtMonster = hit.transform.GetComponent<HungerMonster>();
+        }
+        else {
+            _lookAtMonster = null;
         }
     }
 
@@ -72,6 +83,12 @@ public class PickUpDetection : MonoBehaviour {
             return;
         }
 
+        if(_lookAtMonster != null) {
+            DestroyHeldObject();
+            _lookAtMonster.Feed();
+            return;
+        }
+
         if(_mirrorDetection.LookAtMirror != null) {
             if(_mirrorDetection.LookAtMirror is PresentMirror) {
                 PresentMirror mirror = (PresentMirror)_mirrorDetection.LookAtMirror;
@@ -79,12 +96,16 @@ public class PickUpDetection : MonoBehaviour {
                     return;
                 }
                 if(mirror.Solution == _heldObj.PickUpType) {
-                    Destroy(_heldInstance);
-                    _heldObj = null;
-                    _heldInstance = null;
+                    DestroyHeldObject();
                     mirror.CompleteMirror();
                 }
             }
         }
+    }
+
+    private void DestroyHeldObject() {
+        Destroy(_heldInstance);
+        _heldObj = null;
+        _heldInstance = null;
     }
 }

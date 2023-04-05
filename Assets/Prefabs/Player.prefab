@@ -395,6 +395,9 @@ MonoBehaviour:
   _layersToCheck:
     serializedVersion: 2
     m_Bits: 128
+  _feedLayer:
+    serializedVersion: 2
+    m_Bits: 8192
   _heldObjPos: {fileID: 8880177730078677539}
   _mirrorDetection: {fileID: 6775631625656333382}
 --- !u!1 &3699627890479497849
@@ -845,7 +848,7 @@ MonoBehaviour:
     m_Bits: 256
   _layersToCheck:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 8960
   walkSpeed: 0.8
   turnSpeed: 6
   walkSpeedCurve:
