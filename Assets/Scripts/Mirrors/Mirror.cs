@@ -12,6 +12,7 @@ public class Mirror : MonoBehaviour {
     [SerializeField] private Material _material;
    
     private MirroredPlayer _mirrorPerson;
+    protected bool _fightCompleted;
     protected bool _hasStarted;
 
     public MirroredPerson MirroredPerson => _person;
@@ -47,10 +48,24 @@ public class Mirror : MonoBehaviour {
 
     }
 
-    public virtual void OnPressStartPuzzle() {
+    public virtual void StartFight() {
         if(PlayerManager.Instance.ActiveMirror != null && PlayerManager.Instance.ActiveMirror != this) {
             PlayerManager.Instance.ActiveMirror.CancelPuzzle();
         }
+
+        _hasStarted = true;
+
+        if(_fightCompleted) {
+            OnPressStartPuzzle();
+        }
+        else {
+            FightController.Instance.StartFight();
+            FightController.Instance.OnComplete = OnPressStartPuzzle;
+        }
+    }
+
+    public virtual void OnPressStartPuzzle() {
+        _fightCompleted = true;
 
         switch(_person) {
             case MirroredPerson.Calm:
@@ -79,8 +94,6 @@ public class Mirror : MonoBehaviour {
         SkyText.Instance.SetText(_hintQuote);
 
         PlayerManager.Instance.SetActiveMirror(this);
-
-        _hasStarted = true;
     }
 
     public virtual void Interact() {
@@ -117,7 +130,7 @@ public class Mirror : MonoBehaviour {
 
         IsComplete.Value = true;
         _mirrorPerson.TransformPlayer();
-        PlayerManager.Instance.AddCondition(1);
+        //PlayerManager.Instance.AddCondition(1);
         PlayerManager.Instance.CompleteMirror();
     }
 }
