@@ -70,13 +70,6 @@ public class UIManager : Singleton<UIManager> {
         //_conditionMeter.text = $"{curr}%";
         _currentCondition = curr;
         _conditionMeter.SetLevel(curr);
-
-        if(_onMirror) {
-            _conditionMeter.IsInteractingWithMirror(_currentCondition);
-        }
-        else {
-            _conditionMeter.StopInteraction();
-        }
     }
 
     private void OnLookAtObj(bool prev, bool curr) {
@@ -85,13 +78,6 @@ public class UIManager : Singleton<UIManager> {
 
     private void OnMirror(bool prev, bool curr) {
         _onMirror = curr;
-
-        if(curr) {
-            _conditionMeter.IsInteractingWithMirror(_currentCondition);
-        }
-        else {
-            _conditionMeter.StopInteraction();
-        }
     }
 
     private void OnLookAtObjName(string prev, string curr) {

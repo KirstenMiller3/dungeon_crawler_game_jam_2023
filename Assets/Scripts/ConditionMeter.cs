@@ -13,25 +13,6 @@ public class ConditionMeter : MonoBehaviour {
 
     private Tween _tween;
 
-    public void IsInteractingWithMirror(int level) {
-        if(_tween != null) {
-            _tween.Kill();
-        }
-
-        if(level <= 0) {
-            return;
-        }
-
-        _tween = _rects[level - 1].DOShakeAnchorPos(100f, 2f, 10);
-    }
-
-    public void StopInteraction() {
-        if(_tween == null) {
-            return;
-        }
-        _tween.Restart();
-        _tween.Kill();
-    }
 
     public void SetLevel(int level) {
         for(int i = 0; i < _conditionImages.Length; i++) {
