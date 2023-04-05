@@ -1733,6 +1733,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8492937331855375293, guid: 626e5b26022153f4ca7e817b57296e8d, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8492937331855375295, guid: 626e5b26022153f4ca7e817b57296e8d, type: 3}
       propertyPath: m_Name
       value: Rainfall

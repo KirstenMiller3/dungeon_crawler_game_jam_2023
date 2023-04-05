@@ -4,6 +4,8 @@ using UnityEngine;
 public class Mirror : MonoBehaviour {
     [SerializeField] protected MirroredPerson _person;
     [SerializeField] private bool _isInteractable;
+    [SerializeField] private int _numberOfSouls = 3;
+    [SerializeField] private float _soulSpeed = 3f;
 
     [TextArea][SerializeField] private string _hintQuote;
 
@@ -59,7 +61,7 @@ public class Mirror : MonoBehaviour {
             OnPressStartPuzzle();
         }
         else {
-            FightController.Instance.StartFight();
+            FightController.Instance.StartFight(_numberOfSouls, _soulSpeed);
             FightController.Instance.OnComplete = OnPressStartPuzzle;
         }
     }

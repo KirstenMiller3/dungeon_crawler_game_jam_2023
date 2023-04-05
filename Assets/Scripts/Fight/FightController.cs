@@ -17,16 +17,12 @@ public class FightController : Singleton<FightController> {
 
     private int _soulCounter = 0;
     private int _soulAmount = 0;
-    private bool _isRunning = false;
+    private float _speed = 3f;
+
+    private AngrySoul _lastSoul;
 
     private void Start() {
         _root.gameObject.SetActive(false);
-    }
-
-    public void Update() {
-        if(!_isRunning) {
-            return;
-        }
     }
 
     [ContextMenu("Start Fight")]
@@ -34,9 +30,10 @@ public class FightController : Singleton<FightController> {
         StartFight();
     }
 
-    public void StartFight(int soulsAmount = 3) {
+    public void StartFight(int soulsAmount = 3, float speed = 3f) {
         _soulAmount = soulsAmount;
         _soulCounter = 0;
+        _speed = speed;
         _root.gameObject.SetActive(true);
         PlayerManager.Instance.PlayerTransform.GetComponent<AdvancedGridMovement>().DisableMovement(true);
 
@@ -69,6 +66,10 @@ public class FightController : Singleton<FightController> {
     }
 
     private void OnSoulHit() {
+        if(PlayerManager.Instance.ConditionLevel.Value == 0) {
+            return;
+        }
+
         PlayerManager.Instance.RemoveCondition(1);
 
         CheckEndGame();
@@ -78,10 +79,11 @@ public class FightController : Singleton<FightController> {
         _soulCounter++;
 
         GameObject soul = Instantiate(_soul.gameObject, transform);
+        _lastSoul = soul.GetComponent<AngrySoul>();
         soul.transform.position = _soulSpawns[Random.Range(0, _soulSpawns.Length)].position;
-        soul.GetComponent<AngrySoul>().OnDestroyed = OnSoulDestroyed;
-        soul.GetComponent<AngrySoul>().OnHitTarget = OnSoulHit;
-        soul.GetComponent<AngrySoul>().SetCenterTarget(_centerTarget);
+        _lastSoul.OnDestroyed = OnSoulDestroyed;
+        _lastSoul.OnHitTarget = OnSoulHit;
+        _lastSoul.SetUp(_centerTarget, _speed);
     }
 
     private void CheckEndGame() {
@@ -91,6 +93,13 @@ public class FightController : Singleton<FightController> {
         else {
             SpawnSoul();
         }
+    }
+
+    public void ForceEnd() {
+        Debug.Log("FORCE END");
+        _soulCounter = 100;
+        _lastSoul.Explode();
+        StartCoroutine(EndGame());
     }
 
     private IEnumerator EndGame() {

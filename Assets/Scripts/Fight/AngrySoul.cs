@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class AngrySoul : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler {
-    [SerializeField] private float _speed = 2f;
     [SerializeField] private Animator _animator;
 
     public System.Action OnDestroyed;
@@ -17,13 +16,16 @@ public class AngrySoul : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     private Tween _activeMoveTween;
     private Tween _activeScaleTween;
 
+
+    private float _speed;
+
     private void Start() {
         _scale = transform.localScale;
     }
 
-    public void SetCenterTarget(Transform target) {
+    public void SetUp(Transform target, float speed) {
         _target = target;
-
+        _speed = speed;
         _activeMoveTween = transform.DOMove(target.position, _speed, true).SetEase(Ease.Linear).OnComplete(OnHitCenter);
     }
     
@@ -47,7 +49,7 @@ public class AngrySoul : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         Explode();
     }
 
-    private void Explode() {
+    public void Explode() {
         _animator.SetTrigger("Kill");
         Destroy(gameObject, 0.3f);
     }

@@ -67,7 +67,9 @@ public class PlayerManager : Singleton<PlayerManager> {
         ConditionLevel.Value -= amount;
 
         if (ConditionLevel.Value == 0) {
-            SceneManager.LoadScene("DeathScene");
+            if(_activeMirror.MirroredPerson != MirroredPerson.Health) {
+                SceneManager.LoadScene("DeathScene");
+            }
         }
     }
 

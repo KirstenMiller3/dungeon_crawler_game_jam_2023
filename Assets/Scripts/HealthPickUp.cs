@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HealthPickUp : MonoBehaviour {
+    [SerializeField] private bool _isHealthZone;
     [SerializeField] private GameObject _pickUpParticles;
     [SerializeField] private Collider _triggerBox;
     [SerializeField] private GameObject _particles;
@@ -32,6 +33,10 @@ public class HealthPickUp : MonoBehaviour {
         PlayerManager.Instance.AddCondition(1);
 
         SetIsActived(false);
+
+        if(_isHealthZone) {
+            HealthZone.Instance.AddToCounter();
+        }
     }
 
     private void SetIsActived(bool isActivated) {

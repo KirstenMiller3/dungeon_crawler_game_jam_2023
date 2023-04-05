@@ -3,15 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HealMirror : Mirror {
-    [SerializeField] private int _conditionCheck = 101;
+    private bool _hasEnded;
+
+    public override void StartFight() {
+        base.StartFight();
+
+        _hasEnded = false;
+    }
 
     public override void OnPressStartPuzzle() {
         base.OnPressStartPuzzle();
 
-        if(PlayerManager.Instance.ConditionLevel.Value >= _conditionCheck) {
-            CompleteMirror();
+        HealthZone.Instance.OnComplete = CompleteMirror;
+        HealthZone.Instance.SpawnToArea();
+    }
+
+    private void Update() {
+        if(!_hasStarted) {
+            return;
+        }
+
+        if(PlayerManager.Instance.ConditionLevel.Value == 0 && !_hasEnded) {
+            _hasEnded = true;
+            FightController.Instance.ForceEnd();
         }
     }
+
 
     public override void CancelPuzzle() {
         base.CancelPuzzle();
