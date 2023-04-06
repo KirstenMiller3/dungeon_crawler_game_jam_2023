@@ -5450,6 +5450,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game_Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1545037475431574195, guid: a1fa4adcb4be8b140974c713c33bd69f, type: 3}
+      propertyPath: _skyMessageNewGradient.key2.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1545037475431574195, guid: a1fa4adcb4be8b140974c713c33bd69f, type: 3}
+      propertyPath: _skyMessageNewGradient.key2.g
+      value: 0.9842322
+      objectReference: {fileID: 0}
+    - target: {fileID: 1545037475431574195, guid: a1fa4adcb4be8b140974c713c33bd69f, type: 3}
+      propertyPath: _skyMessageNewGradient.key2.r
+      value: 0.6179246
+      objectReference: {fileID: 0}
     - target: {fileID: 1545037475431574199, guid: a1fa4adcb4be8b140974c713c33bd69f, type: 3}
       propertyPath: m_Pivot.x
       value: 0

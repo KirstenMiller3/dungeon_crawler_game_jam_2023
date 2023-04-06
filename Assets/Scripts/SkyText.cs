@@ -40,6 +40,7 @@ public class SkyText : Singleton<SkyText> {
 
     public void ShowText() {
         _targetAlpha = 1f;
+        UIManager.Instance.ClearSkyMessageNotification();
     }
 
     public void HideText() {
@@ -47,6 +48,7 @@ public class SkyText : Singleton<SkyText> {
     }
 
     public void SetText(string text) {
+        UIManager.Instance.ShowNewSkyMessageNotification();
         _text.text = text;
     }
 }

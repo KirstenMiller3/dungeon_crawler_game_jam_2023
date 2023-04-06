@@ -4,11 +4,15 @@ using UnityEngine;
 using TMPro;
 using DG.Tweening;
 using Milo.Tools;
+using UnityEngine.UI;
 
 public class UIManager : Singleton<UIManager> {
     [SerializeField] private ConditionMeter _conditionMeter;
     [SerializeField] private TextMeshProUGUI _pickUpText;
-    [SerializeField] private RectTransform _skyMessage;
+    [SerializeField] private Image _skyMessage;
+    [SerializeField] private Sprite _skyMessageNone;
+    [SerializeField] private Sprite _skyMessageNew;
+    [SerializeField] private Gradient _skyMessageNewGradient;
     [SerializeField] private GameObject _giveText;
     [SerializeField] private GameObject _dropText;
     [SerializeField] private GameObject _feedText;
@@ -98,13 +102,17 @@ public class UIManager : Singleton<UIManager> {
         _fadeCanvasGroup.DOFade(0f, 1f / _fadeSpeed);
     }
 
-    [ContextMenu("ShowSkyMessage")]
-    public void ShowSkyMessage() {
-        _skyMessage.DOMoveY(434, 2f).SetEase(Ease.OutCirc, 0.3f);
+    [ContextMenu("Show New Sky Message")]
+    public void ShowNewSkyMessageNotification() {
+        _skyMessage.sprite = _skyMessageNew;
+        Sequence seq = DOTween.Sequence();
+        seq.Append(_skyMessage.DOGradientColor(_skyMessageNewGradient, 0.7f))
+            .Join(_skyMessage.rectTransform.DOPunchScale(Vector3.one * 1.3f, 0.7f, 1));
     }
 
-    [ContextMenu("HideSkyMessage")]
-    public void HideSkyMessage() {
-        _skyMessage.DOMoveY(600, 1f).SetEase(Ease.InCirc);
+    [ContextMenu("Hide Sky Message")]
+    public void ClearSkyMessageNotification() {
+        _skyMessage.sprite = _skyMessageNone;
+        _skyMessage.rectTransform.DOPunchScale(Vector3.one * 1.05f, 1f, 1);
     }
 }
