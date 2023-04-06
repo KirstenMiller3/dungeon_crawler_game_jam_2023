@@ -9,10 +9,15 @@ using UnityEngine.UI;
 public class UIManager : Singleton<UIManager> {
     [SerializeField] private ConditionMeter _conditionMeter;
     [SerializeField] private TextMeshProUGUI _pickUpText;
-    [SerializeField] private Image _skyMessage;
-    [SerializeField] private Sprite _skyMessageNone;
-    [SerializeField] private Sprite _skyMessageNew;
-    [SerializeField] private Gradient _skyMessageNewGradient;
+
+    [Header("Sky Message")]
+    [SerializeField] private Image _skyMessageOutline;
+    [SerializeField] private Image _skyMessageMail;
+    [SerializeField] private Image _skyMessageStars;
+    [SerializeField] private Sprite _skyMessageMailStars;
+    [SerializeField] private Sprite _skyMessageNormalStars;
+
+    [Header("Text")]
     [SerializeField] private GameObject _giveText;
     [SerializeField] private GameObject _dropText;
     [SerializeField] private GameObject _feedText;
@@ -44,6 +49,7 @@ public class UIManager : Singleton<UIManager> {
         ShowMirrorInteractPrompt(false);
 
         _fadeCanvasGroup.DOFade(0f, 1f / _fadeSpeed);
+        ClearSkyMessageNotification();
     }
 
     public void OnDisable() {
@@ -104,15 +110,24 @@ public class UIManager : Singleton<UIManager> {
 
     [ContextMenu("Show New Sky Message")]
     public void ShowNewSkyMessageNotification() {
-        _skyMessage.sprite = _skyMessageNew;
+        Vector3 scale = _skyMessageOutline.rectTransform.localScale;
+        _skyMessageStars.sprite = _skyMessageMailStars;
+        _skyMessageMail.gameObject.SetActive(true);
         Sequence seq = DOTween.Sequence();
-        seq.Append(_skyMessage.DOGradientColor(_skyMessageNewGradient, 0.7f))
-            .Join(_skyMessage.rectTransform.DOPunchScale(Vector3.one * 1.3f, 0.7f, 1));
+        seq.Append(_skyMessageOutline.rectTransform.DOScale(scale * 1.1f, 0.5f))
+            .Append(_skyMessageOutline.rectTransform.DOLocalRotate(Vector3.zero, 0.5f))
+            .Join(_skyMessageMail.rectTransform.DOScale(Vector3.one, 0.5f))
+            .Append(_skyMessageOutline.rectTransform.DOScale(scale, 0.5f));
     }
 
     [ContextMenu("Hide Sky Message")]
     public void ClearSkyMessageNotification() {
-        _skyMessage.sprite = _skyMessageNone;
-        _skyMessage.rectTransform.DOPunchScale(Vector3.one * 1.05f, 1f, 1);
+        Vector3 scale = _skyMessageOutline.rectTransform.localScale;
+        _skyMessageStars.sprite = _skyMessageNormalStars;
+        Sequence seq = DOTween.Sequence();
+        seq.Append(_skyMessageOutline.rectTransform.DOScale(scale * 1.1f, 0.5f))
+            .Append(_skyMessageOutline.rectTransform.DOLocalRotate(Vector3.forward * -90f, 0.5f))
+            .Join(_skyMessageMail.rectTransform.DOScale(Vector3.zero, 0.5f))
+            .Append(_skyMessageOutline.rectTransform.DOScale(scale, 0.5f));
     }
 }

@@ -40,15 +40,20 @@ public class SkyText : Singleton<SkyText> {
 
     public void ShowText() {
         _targetAlpha = 1f;
-        UIManager.Instance.ClearSkyMessageNotification();
     }
 
     public void HideText() {
         _targetAlpha = 0f;
     }
 
-    public void SetText(string text) {
-        UIManager.Instance.ShowNewSkyMessageNotification();
+    public void SetText(string text, bool isDefault = false) {
+        if(isDefault) {
+            UIManager.Instance.ClearSkyMessageNotification();
+        }
+        else {
+            UIManager.Instance.ShowNewSkyMessageNotification();
+        }
+        
         _text.text = text;
     }
 }

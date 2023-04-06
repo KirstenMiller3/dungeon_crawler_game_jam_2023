@@ -98,7 +98,7 @@ public class PlayerManager : Singleton<PlayerManager> {
 
     [ContextMenu("Complete Puzzle")]
     public void CompleteMirror() {
-        SkyText.Instance.SetText("Keep going...");
+        SkyText.Instance.SetText("Keep going...", true);
         _completedMirrors++;
     }
 
