@@ -16,6 +16,9 @@ public class PlayerMirrorDetection : MonoBehaviour {
 
     public void OnPressInteract() {
         if(_lookAtMirror != null && _lookAtMirror.IsInteractable && !_lookAtMirror.IsComplete.Value) {
+            if(!LookingAtMirror.Value) {
+                return;
+            }
             _lookAtMirror.StartFight();
         }
     }
@@ -32,33 +35,16 @@ public class PlayerMirrorDetection : MonoBehaviour {
             _lookAtMirror = hit.transform.GetComponent<Mirror>();
             _lookAtMirror.Interact();
 
-            //if(_lookAtMirror.IsInteractable && !_lookAtMirror.IsComplete.Value) {
-            //    UIManager.Instance.ShowMirrorInteractPrompt(true);
-            //} 
-
             LookingAtMirror.Value = true;
-
-            //if (_lookAtMirror.HasStarted || _lookAtMirror.IsComplete.Value) {
-            //    PlayerManager.Instance.EndRemoveCondition();
-            //} else {
-            //    PlayerManager.Instance.StartRemoveCondition(1);
-            //}
         }
         else {
             if(_lookAtMirror) {
                 _lookAtMirror.StopInteract();
-                //if(_lookAtMirror.IsInteractable) {
-                //    UIManager.Instance.ShowMirrorInteractPrompt(false);
-                //}
             }
 
             _lookAtMirror = null;
 
             LookingAtMirror.Value = false;
-
-            //if (PlayerManager.Instance != null) {
-            //    PlayerManager.Instance.EndRemoveCondition();
-            //}
         }
 
         if(Physics.Raycast(transform.position, fwd, out hit, _checkDistToChange, _layersToCheck)) {
