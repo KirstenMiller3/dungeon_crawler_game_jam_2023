@@ -4133,7 +4133,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1540054773118890149, guid: d03ceffb9a133b546a2df1a946333595, type: 3}
       propertyPath: _soulSpeed
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1540054773118890149, guid: d03ceffb9a133b546a2df1a946333595, type: 3}
       propertyPath: _beatinHeart
@@ -4141,7 +4141,7 @@ PrefabInstance:
       objectReference: {fileID: 912434198}
     - target: {fileID: 1540054773118890149, guid: d03ceffb9a133b546a2df1a946333595, type: 3}
       propertyPath: _numberOfSouls
-      value: 6
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1540054773118890149, guid: d03ceffb9a133b546a2df1a946333595, type: 3}
       propertyPath: _isInteractable
