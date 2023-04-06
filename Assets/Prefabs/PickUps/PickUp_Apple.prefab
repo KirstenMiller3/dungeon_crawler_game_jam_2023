@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Market
       objectReference: {fileID: 0}
+    - target: {fileID: 2195416063568071809, guid: 043119ae407f9664aa11712347ca7e67, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 043119ae407f9664aa11712347ca7e67, type: 3}
@@ -154,7 +158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1150844755423450363, guid: c7f07ca83f435e94b8b267e10f1e93c8, type: 3}
       propertyPath: m_Name
-      value: PickUp_Apple
+      value: PickUp_Apple (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1150844755423450364, guid: c7f07ca83f435e94b8b267e10f1e93c8, type: 3}
       propertyPath: m_RootOrder
@@ -162,15 +166,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1150844755423450364, guid: c7f07ca83f435e94b8b267e10f1e93c8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.653
+      value: 9.741
       objectReference: {fileID: 0}
     - target: {fileID: 1150844755423450364, guid: c7f07ca83f435e94b8b267e10f1e93c8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.452
+      value: 0.13398075
       objectReference: {fileID: 0}
     - target: {fileID: 1150844755423450364, guid: c7f07ca83f435e94b8b267e10f1e93c8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.104
+      value: -36.037
       objectReference: {fileID: 0}
     - target: {fileID: 1150844755423450364, guid: c7f07ca83f435e94b8b267e10f1e93c8, type: 3}
       propertyPath: m_LocalRotation.w
