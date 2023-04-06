@@ -22,8 +22,11 @@ public class UIManager : Singleton<UIManager> {
     [SerializeField] private GameObject _dropText;
     [SerializeField] private GameObject _feedText;
     [SerializeField] private GameObject _mirrorInteractPrompt;
+
+    [Header("Fades")]
     [SerializeField] private CanvasGroup _fadeCanvasGroup;
     [SerializeField] private float _fadeSpeed = 2f;
+    [SerializeField] private CanvasGroup _presenceGroup;
 
     [SerializeField] private PickUpDetection _pickUpDetection;
     [SerializeField] private PlayerMirrorDetection _mirrorDetection;
@@ -95,21 +98,16 @@ public class UIManager : Singleton<UIManager> {
     }
 
 
-    public void FadeToBlack(System.Action onReady) {
-        _fadeCanvasGroup.DOFade(1f, 1f / _fadeSpeed).OnComplete(() => OnFadeToBlackComplete(onReady));
+    public void SetPresence() {
+        _presenceGroup.alpha = 1f;
     }
 
-    private void OnFadeToBlackComplete(System.Action onReady) {
-        onReady?.Invoke();
-    }
-
-    public void ReturnFade() {
-        _fadeCanvasGroup.DOFade(0f, 1f / _fadeSpeed);
+    public void EndPresence() {
+        _presenceGroup.alpha = 0f;
     }
 
     public void Transition(System.Action onReady) {
         _fadeCanvasGroup.DOFade(1f, 1f / _fadeSpeed).OnComplete(() => TransitionBack(onReady));
-        // = Mathf.Lerp(_fadeCanvasGroup.alpha, _targetFadeAlpha, Time.deltaTime * _fadeSpeed);
     }
 
     private void TransitionBack(System.Action onReady) {
