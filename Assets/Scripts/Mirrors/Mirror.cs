@@ -55,6 +55,7 @@ public class Mirror : MonoBehaviour {
             PlayerManager.Instance.ActiveMirror.CancelPuzzle();
         }
 
+        
         PlayerManager.Instance.SetActiveMirror(this);
 
         _hasStarted = true;

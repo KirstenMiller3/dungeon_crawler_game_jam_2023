@@ -53,6 +53,7 @@ public class FightController : Singleton<FightController> {
         _countdown.transform.DOScale(Vector3.one, 0.8f);
         _countdown.text = "1";
         yield return new WaitForSeconds(1);
+        AudioManager.instance.Play("game_start");
         _countdown.transform.localScale = Vector3.zero;
         _countdown.transform.DOScale(Vector3.one, 0.8f);
         _countdown.text = "Protect Yourself";
@@ -69,7 +70,7 @@ public class FightController : Singleton<FightController> {
         if(PlayerManager.Instance.ConditionLevel.Value == 0) {
             return;
         }
-
+        AudioManager.instance.Play("damage");
         PlayerManager.Instance.RemoveCondition(1);
 
         CheckEndGame();

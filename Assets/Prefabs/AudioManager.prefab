@@ -52,41 +52,6 @@ MonoBehaviour:
     loop: 1
     mixerGroup: {fileID: 6792780334715419751, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
     source: {fileID: 0}
-  - volume: 0.05
-    pitch: 1
-    clip: {fileID: 8300000, guid: 47907fd1ec7dc6644a45af5da2f52d88, type: 3}
-    sName: city_1
-    loop: 0
-    mixerGroup: {fileID: -8627581259990819372, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
-    source: {fileID: 0}
-  - volume: 0.1
-    pitch: 1
-    clip: {fileID: 8300000, guid: 48af0732854d3814bb8104c01dbca07d, type: 3}
-    sName: city_2
-    loop: 0
-    mixerGroup: {fileID: -8627581259990819372, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
-    source: {fileID: 0}
-  - volume: 0.1
-    pitch: 1
-    clip: {fileID: 8300000, guid: ede8484b9446aaf4e814d4cd788517c2, type: 3}
-    sName: city_3
-    loop: 0
-    mixerGroup: {fileID: -8627581259990819372, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
-    source: {fileID: 0}
-  - volume: 0.2
-    pitch: 1
-    clip: {fileID: 8300000, guid: 91788ef26e935e14ab9aeca8ac546cb7, type: 3}
-    sName: city_4
-    loop: 0
-    mixerGroup: {fileID: -8627581259990819372, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
-    source: {fileID: 0}
-  - volume: 0.3
-    pitch: 1
-    clip: {fileID: 8300000, guid: 51c22187be9bb0343be60a5090fe9e47, type: 3}
-    sName: main_2
-    loop: 1
-    mixerGroup: {fileID: -8627581259990819372, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
-    source: {fileID: 0}
   - volume: 1
     pitch: 1
     clip: {fileID: 8300000, guid: c0e57868efe51a449bec2bdaa9a16788, type: 3}
@@ -152,7 +117,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - volume: 1
     pitch: 1
-    clip: {fileID: 8300000, guid: ae925b15b287653499af48a0ab0a73a9, type: 3}
+    clip: {fileID: 8300000, guid: 3fd3310b80939dc4da9760c7fed25b42, type: 3}
     sName: pickup
     loop: 0
     mixerGroup: {fileID: 0}
@@ -184,5 +149,33 @@ MonoBehaviour:
     sName: patience
     loop: 1
     mixerGroup: {fileID: 741058327724290181, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
+    source: {fileID: 0}
+  - volume: 1
+    pitch: 1
+    clip: {fileID: 8300000, guid: 9a5b0dd3509c6564ab98888c389c7b7d, type: 3}
+    sName: game_start
+    loop: 0
+    mixerGroup: {fileID: 5912310669215329797, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
+    source: {fileID: 0}
+  - volume: 1
+    pitch: 1
+    clip: {fileID: 8300000, guid: 07339a0eb85347844bc35c01e54d78f4, type: 3}
+    sName: ambience
+    loop: 1
+    mixerGroup: {fileID: -8627581259990819372, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
+    source: {fileID: 0}
+  - volume: 1
+    pitch: 1
+    clip: {fileID: 8300000, guid: d518c369a59d82e43892e3d28fb927bb, type: 3}
+    sName: damage
+    loop: 0
+    mixerGroup: {fileID: 5912310669215329797, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
+    source: {fileID: 0}
+  - volume: 1
+    pitch: 1
+    clip: {fileID: 8300000, guid: c832d8b2cbeb3df43bc4bb135511ad08, type: 3}
+    sName: destroy_orb
+    loop: 0
+    mixerGroup: {fileID: 5912310669215329797, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
     source: {fileID: 0}
   audioMixer: {fileID: 24100000, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
