@@ -22,7 +22,6 @@ public class AdvancedGridMovement : MonoBehaviour
     private const float approximationThreshold = 0.025f;
     private bool start = true;
 
-
     [SerializeField] private float gridSize = 3.0f;
     [SerializeField] private LayerMask _groundCheckLayers;
     [SerializeField] private LayerMask _layersToCheck;
@@ -331,7 +330,7 @@ public class AdvancedGridMovement : MonoBehaviour
 
         if(Physics.Raycast(transform.position + new Vector3(0, 1f, 0), delta, out hit, 4f, _layersToCheck)) {
             if (hit.transform.gameObject.layer == LayerMask.NameToLayer("door")) {
-             //   AudioManager.instance.Play("pickup");
+               // AudioManager.instance.Play("pickup");
             }
             Debug.DrawRay(transform.position, delta * 3f, Color.red);
             return false;

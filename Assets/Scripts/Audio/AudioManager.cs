@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Audio;
-using static Unity.VisualScripting.Member;
 
 public class AudioManager : MonoBehaviour
 {
@@ -51,35 +50,35 @@ public class AudioManager : MonoBehaviour
         
 
         Play("main");
-        Play("main_2");
+        Play("ambience");
 
     }
 
 
-    public void Update() {
-        _citySoundsTimer += Time.deltaTime;
-        _citySoundsStopTimer += Time.deltaTime;
+    //public void Update() {
+    //    _citySoundsTimer += Time.deltaTime;
+    //    _citySoundsStopTimer += Time.deltaTime;
 
-        if (_citySoundsTimer >= 7f && CitySoundEffectIsNotPlaying()) {
-            _citySoundsTimer = 0;
-            _citySoundsStopTimer = 0;
-            _citySoundsPlayTime = UnityEngine.Random.Range(2f, 6f);
-            int num =GetUniqueRandomSectionNumber(5);
-            currCitySfxPlaying = $"city_{num}";
-            Debug.Log($"starting sfx {currCitySfxPlaying} {_citySoundsTimer} {_citySoundsPlayTime}");
-            Play(currCitySfxPlaying);
-        }
+    //    if (_citySoundsTimer >= 7f && CitySoundEffectIsNotPlaying()) {
+    //        _citySoundsTimer = 0;
+    //        _citySoundsStopTimer = 0;
+    //        _citySoundsPlayTime = UnityEngine.Random.Range(2f, 6f);
+    //        int num =GetUniqueRandomSectionNumber(5);
+    //        currCitySfxPlaying = $"city_{num}";
+    //        Debug.Log($"starting sfx {currCitySfxPlaying} {_citySoundsTimer} {_citySoundsPlayTime}");
+    //        Play(currCitySfxPlaying);
+    //    }
 
-        if (_citySoundsStopTimer >= _citySoundsPlayTime && !CitySoundEffectIsNotPlaying()) {
-            Debug.Log($"stopping sfx {_citySoundsTimer} {_citySoundsPlayTime}");
-            Sound s = Array.Find(sounds, sound => sound.sName == currCitySfxPlaying);
-            IEnumerator fadeSound1 = AudioFadeOut.FadeOut(s.source, 0.5f);
-            StartCoroutine (fadeSound1);
-            _citySoundsTimer = 0;
-            _citySoundsStopTimer = 0;
-        }
+    //    if (_citySoundsStopTimer >= _citySoundsPlayTime && !CitySoundEffectIsNotPlaying()) {
+    //        Debug.Log($"stopping sfx {_citySoundsTimer} {_citySoundsPlayTime}");
+    //        Sound s = Array.Find(sounds, sound => sound.sName == currCitySfxPlaying);
+    //        IEnumerator fadeSound1 = AudioFadeOut.FadeOut(s.source, 0.5f);
+    //        StartCoroutine (fadeSound1);
+    //        _citySoundsTimer = 0;
+    //        _citySoundsStopTimer = 0;
+    //    }
         
-    }
+    //}
 
     public bool IsSoundPlaying(string name) {
         Sound s = Array.Find(sounds, sound => sound.sName == name);
