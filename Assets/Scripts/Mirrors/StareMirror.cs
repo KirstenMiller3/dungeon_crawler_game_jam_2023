@@ -30,8 +30,12 @@ public class StareMirror : Mirror {
     public override void OnPressStartPuzzle() {
         base.OnPressStartPuzzle();
 
-        UIManager.Instance.SetCanvasFade(1f);
+        UIManager.Instance.FadeToBlack(StartExperience);
         _player.DisableMovement(true);
+
+    }
+
+    private void StartExperience() {
         AudioManager.instance.SetPresence(true);
         AudioManager.instance.Play("presence_1");
         AudioManager.instance.Play("presence_2");
@@ -40,7 +44,7 @@ public class StareMirror : Mirror {
     public override void CompleteMirror() {
         base.CompleteMirror();
 
-        UIManager.Instance.SetCanvasFade(0f);
+        UIManager.Instance.ReturnFade();
         _player.DisableMovement(false);
         AudioManager.instance.SetPresence(false);
         AudioManager.instance.Stop("presence_1");

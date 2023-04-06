@@ -94,8 +94,17 @@ public class UIManager : Singleton<UIManager> {
         _pickUpText.text = string.Format(_pickUpBase, curr);
     }
 
-    public void SetCanvasFade(float alpha) {
-        _targetFadeAlpha = alpha;
+
+    public void FadeToBlack(System.Action onReady) {
+        _fadeCanvasGroup.DOFade(1f, 1f / _fadeSpeed).OnComplete(() => OnFadeToBlackComplete(onReady));
+    }
+
+    private void OnFadeToBlackComplete(System.Action onReady) {
+        onReady?.Invoke();
+    }
+
+    public void ReturnFade() {
+        _fadeCanvasGroup.DOFade(0f, 1f / _fadeSpeed);
     }
 
     public void Transition(System.Action onReady) {
