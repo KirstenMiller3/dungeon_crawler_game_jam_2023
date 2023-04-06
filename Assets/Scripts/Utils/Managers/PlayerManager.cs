@@ -9,6 +9,15 @@ public class PlayerManager : Singleton<PlayerManager> {
 
     [SerializeField] private int _startCondition = 5;
     [SerializeField] private float _conditionReductionTickRate = 3f;
+    
+    [SerializeField] private Transform _rain;
+
+    private const int NumMirrors = 7;
+
+    private bool first = true;
+
+
+    public bool GameFinished = true;
 
     public int CompletedMirrors => _completedMirrors;
     public Transform PlayerTransform => _player;
@@ -35,6 +44,16 @@ public class PlayerManager : Singleton<PlayerManager> {
     }
 
     private void Update() {
+        if (GameFinished || CompletedMirrors == NumMirrors && first) {
+            GameFinished = false;
+            first = false;
+            Debug.Log("Game Finished");
+            var skybox = GameObject.Find("end_spawner");
+            var pos = skybox.transform.position;
+            PlayerTransform.GetComponent<AdvancedGridMovement>().Teleport(pos, skybox.transform.rotation);
+            var rain = _player.GetComponentInChildren<ParticleSystem>();
+        }
+
         if(_isRemovingCondition) {
             _conditionTimer += Time.deltaTime;
             // condition still removes even once mirror completed
@@ -102,8 +121,5 @@ public class PlayerManager : Singleton<PlayerManager> {
         _completedMirrors++;
     }
 
-    public virtual void TeleportPlayer(Vector3 newPos) {
-        _player.position = newPos;
-        Debug.Log($"Telporting Player to {newPos}: is at {_player.position}");
-    }
+ 
 }

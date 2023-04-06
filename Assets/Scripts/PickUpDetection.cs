@@ -44,6 +44,15 @@ public class PickUpDetection : MonoBehaviour {
         else {
             _lookAtMonster = null;
         }
+        
+        
+        if(Physics.Raycast(transform.position, fwd, out hit, _checkDist, LayerMask.NameToLayer("EndGame"))) {
+           // put up UI prompt
+           
+        }
+        else {
+            // remove UI prompt
+        }
     }
 
     public void PickUp() {
