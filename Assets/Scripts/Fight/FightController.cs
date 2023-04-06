@@ -43,15 +43,18 @@ public class FightController : Singleton<FightController> {
     private IEnumerator StartCount() {
         _countdown.transform.localScale = Vector3.zero;
         _countdown.transform.DOScale(Vector3.one, 0.8f);
+        AudioManager.instance.Play("countdown");
         _countdown.text = "3";
         yield return new WaitForSeconds(1);
         _countdown.transform.localScale = Vector3.zero;
         _countdown.transform.DOScale(Vector3.one, 0.8f);
         _countdown.text = "2";
+        AudioManager.instance.Play("countdown");
         yield return new WaitForSeconds(1);
         _countdown.transform.localScale = Vector3.zero;
         _countdown.transform.DOScale(Vector3.one, 0.8f);
         _countdown.text = "1";
+        AudioManager.instance.Play("countdown");
         yield return new WaitForSeconds(1);
         AudioManager.instance.Play("game_start");
         _countdown.transform.localScale = Vector3.zero;
@@ -63,6 +66,7 @@ public class FightController : Singleton<FightController> {
     }
 
     private void OnSoulDestroyed() {
+        AudioManager.instance.Play("destroy_orb");
         CheckEndGame();
     }
 
@@ -111,6 +115,7 @@ public class FightController : Singleton<FightController> {
         yield return new WaitForSeconds(2f);
         _countdown.text = "Now, restore them";
         yield return new WaitForSeconds(2f);
+        AudioManager.instance.Play("end_battle");
         OnComplete?.Invoke();
         _root.gameObject.SetActive(false);
         PlayerManager.Instance.PlayerTransform.GetComponent<AdvancedGridMovement>().DisableMovement(false);

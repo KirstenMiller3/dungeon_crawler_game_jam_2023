@@ -630,6 +630,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Environment
       objectReference: {fileID: 0}
+    - target: {fileID: 8559549670503173102, guid: 607507d1437fd314eb9906b03e42add6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8559549670503173103, guid: 607507d1437fd314eb9906b03e42add6, type: 3}
       propertyPath: m_RootOrder
       value: 5

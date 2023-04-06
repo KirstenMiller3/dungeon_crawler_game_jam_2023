@@ -60,10 +60,6 @@ public class PlayerManager : Singleton<PlayerManager> {
     }
 
     public void RemoveCondition(int amount) {
-        if (!AudioManager.instance.IsSoundPlaying("debuff")) {
-            AudioManager.instance.Play("debuff");
-        }
-
         ConditionLevel.Value -= amount;
 
         if (ConditionLevel.Value == 0) {
@@ -74,10 +70,11 @@ public class PlayerManager : Singleton<PlayerManager> {
     }
 
     public void AddCondition(int amount) {
-        if(ConditionLevel.Value == 5)
-        {
+        if(ConditionLevel.Value == 5)  {
             return;
         }
+
+        AudioManager.instance.Play("heal");
         ConditionLevel.Value += amount;
     }
 
