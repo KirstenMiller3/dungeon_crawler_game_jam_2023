@@ -22,6 +22,8 @@ public class FightController : Singleton<FightController> {
     private AngrySoul _lastSoul;
     private string _endFightText;
 
+    private int _fightCount;
+
     private void Start() {
         _root.gameObject.SetActive(false);
     }
@@ -45,6 +47,14 @@ public class FightController : Singleton<FightController> {
     }
 
     private IEnumerator StartCount() {
+        if (_fightCount == 0) {
+            _countdown.transform.localScale = Vector3.zero;
+            _countdown.transform.DOScale(Vector3.one, 0.8f);
+            AudioManager.instance.Play("countdown");
+            _countdown.text = "Click the orbs to defend your core";
+            yield return new WaitForSeconds(2);
+        }
+        _fightCount++;
         _countdown.transform.localScale = Vector3.zero;
         _countdown.transform.DOScale(Vector3.one, 0.8f);
         AudioManager.instance.Play("countdown");
