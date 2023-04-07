@@ -119,11 +119,11 @@ public class Mirror : MonoBehaviour {
     }
 
     public virtual void Interact() {
+        _camera.enabled = true;
         if(IsComplete.Value) {
             return;
         }
 
-        _camera.enabled = true;
         if(_isInteractable) {
             UIManager.Instance.ShowMirrorInteractPrompt(!_hasStarted);
         }
