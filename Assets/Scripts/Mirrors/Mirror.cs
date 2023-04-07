@@ -72,24 +72,6 @@ public class Mirror : MonoBehaviour {
             PlayerManager.Instance.ActiveMirror.CancelPuzzle();
         }
 
-
-        FightController.Instance.SetEndFightText(_questMessage);
-        PlayerManager.Instance.SetActiveMirror(this);
-
-        _hasStarted = true;
-
-        if(_fightCompleted) {
-            OnPressStartPuzzle();
-        }
-        else {
-            FightController.Instance.StartFight(_numberOfSouls, _soulSpeed);
-            FightController.Instance.OnComplete = OnPressStartPuzzle;
-        }
-    }
-
-    public virtual void OnPressStartPuzzle() {
-        _fightCompleted = true;
-
         switch(_person) {
             case MirroredPerson.Calm:
                 AudioManager.instance.Play("fire");
@@ -113,6 +95,23 @@ public class Mirror : MonoBehaviour {
                 AudioManager.instance.Play("time");
                 break;
         }
+
+        FightController.Instance.SetEndFightText(_questMessage);
+        PlayerManager.Instance.SetActiveMirror(this);
+
+        _hasStarted = true;
+
+        if(_fightCompleted) {
+            OnPressStartPuzzle();
+        }
+        else {
+            FightController.Instance.StartFight(_numberOfSouls, _soulSpeed);
+            FightController.Instance.OnComplete = OnPressStartPuzzle;
+        }
+    }
+
+    public virtual void OnPressStartPuzzle() {
+        _fightCompleted = true;
 
         SkyText.Instance.SetText(_hintQuote);
     }

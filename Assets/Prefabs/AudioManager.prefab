@@ -47,7 +47,7 @@ MonoBehaviour:
   sounds:
   - volume: 1
     pitch: 1
-    clip: {fileID: 8300000, guid: f5ff1c60956e5b3449e403a5e4b41311, type: 3}
+    clip: {fileID: 8300000, guid: 586310f549f4810489f063e794e5b964, type: 3}
     sName: main
     loop: 1
     mixerGroup: {fileID: 6792780334715419751, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
