@@ -213,4 +213,11 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: 5912310669215329797, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
     source: {fileID: 0}
+  - volume: 1
+    pitch: 1
+    clip: {fileID: 8300000, guid: 498d238e5228b3245b95eba669158ab7, type: 3}
+    sName: reject
+    loop: 0
+    mixerGroup: {fileID: 905590527896533480, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
+    source: {fileID: 0}
   audioMixer: {fileID: 24100000, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}

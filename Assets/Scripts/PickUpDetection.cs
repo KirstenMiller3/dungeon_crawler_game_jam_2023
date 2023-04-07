@@ -93,6 +93,11 @@ public class PickUpDetection : MonoBehaviour {
         }
 
         if(_lookAtMonster != null) {
+            if(_heldObj.PickUpType != PickUpType.Apple) {
+                AudioManager.instance.Play("reject");
+                return;
+            }
+
             DestroyHeldObject();
             _lookAtMonster.Feed();
             return;

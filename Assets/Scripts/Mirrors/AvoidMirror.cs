@@ -33,6 +33,10 @@ public class AvoidMirror : Mirror {
     }
 
     public override void CompleteMirror() {
+        for(int i = 0; i < _acceptanceObjs.Length; i++) {
+            _acceptanceObjs[i].OnPickUp = null;
+        }
+
         _player.Teleport(_player.transform.position, Quaternion.Euler(Vector3.up * -90f));
         base.CompleteMirror();
     }
