@@ -6,6 +6,7 @@ using DG.Tweening;
 using Milo.Tools;
 using UnityEngine.UI;
 
+
 public class UIManager : Singleton<UIManager> {
     [SerializeField] private ConditionMeter _conditionMeter;
     [SerializeField] private TextMeshProUGUI _pickUpText;
@@ -16,6 +17,10 @@ public class UIManager : Singleton<UIManager> {
     [SerializeField] private Image _skyMessageStars;
     [SerializeField] private Sprite _skyMessageMailStars;
     [SerializeField] private Sprite _skyMessageNormalStars;
+
+    [Header("HeartCompass")]
+    [SerializeField] private GameObject _root;
+    [SerializeField] private RectTransform _compass;
 
     [Header("Text")]
     [SerializeField] private GameObject _giveText;
@@ -53,6 +58,7 @@ public class UIManager : Singleton<UIManager> {
 
         _fadeCanvasGroup.DOFade(0f, 1f / _fadeSpeed);
         ClearSkyMessageNotification();
+        ShowHeartCompass(false);
     }
 
     public void OnDisable() {
@@ -105,6 +111,24 @@ public class UIManager : Singleton<UIManager> {
         _presenceGroup.alpha = 0f;
     }
 
+    public void ShowHeartCompass(bool show) {
+        _root.SetActive(show);
+    }
+
+    private Vector3 _northDir;
+    private Quaternion _heartDir;
+
+    public void UpdateHeartCompass(Vector3 heartPos) {
+        _northDir.z = PlayerManager.Instance.PlayerTransform.eulerAngles.y;
+        Vector3 dir = PlayerManager.Instance.PlayerTransform.position - heartPos;
+        _heartDir = Quaternion.LookRotation(-dir);
+
+        _heartDir.z = -_heartDir.y;
+        _heartDir.y = 0;
+        _heartDir.x = 0;
+
+        _compass.localRotation = _heartDir * Quaternion.Euler(_northDir);
+    }
 
     public void Transition(System.Action onReady) {
         _fadeCanvasGroup.DOFade(1f, 1f / _fadeSpeed).OnComplete(() => TransitionBack(onReady));
