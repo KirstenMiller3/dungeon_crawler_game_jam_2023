@@ -3290,7 +3290,7 @@ MonoBehaviour:
   _isInteractable: 1
   _numberOfSouls: 4
   _soulSpeed: 2
-  _questMessage: Now, bring food
+  _questMessage: Now, satisfy your hunger
   _hintQuote: Let food be thy medicine and medicine thy food.
   _badMirror: {fileID: 1485411626}
   _camera: {fileID: 1857993100}
@@ -3356,7 +3356,7 @@ MonoBehaviour:
   _isInteractable: 1
   _numberOfSouls: 3
   _soulSpeed: 3
-  _questMessage: Now, calm them
+  _questMessage: Now, bring calm
   _hintQuote: If the ocean can calm itself, so can you. We are both salt water mixed
     with air.
   _badMirror: {fileID: 849941269}
