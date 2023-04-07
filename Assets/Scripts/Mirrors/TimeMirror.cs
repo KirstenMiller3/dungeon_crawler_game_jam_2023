@@ -9,6 +9,7 @@ public class TimeMirror : Mirror {
     private RepeatingWorld _repeatingWorld;
     private Transform _player;
     private Vector3 _lastPlayerPosition;
+    private Quaternion _lastPlayerRotation;
 
     protected override void Start() {
         base.Start();
@@ -25,6 +26,7 @@ public class TimeMirror : Mirror {
         _repeatingWorld.Init();
         _repeatingWorld.Loops.Subscribe(OnLoopUpdate, true);
         _lastPlayerPosition = _player.position;
+        _lastPlayerRotation = _player.rotation;
         UIManager.Instance.Transition(() => _player.GetComponent<AdvancedGridMovement>().Teleport(_repeatingWorld.StartPosition, Quaternion.Euler(new Vector3(0, 90, 0))));
 
         AudioManager.instance.SetPatience(true);
@@ -43,7 +45,7 @@ public class TimeMirror : Mirror {
         base.CompleteMirror();
 
         AudioManager.instance.SetPatience(false);
-        UIManager.Instance.Transition(() => _player.GetComponent<AdvancedGridMovement>().Teleport(_lastPlayerPosition, Quaternion.Euler(Vector3.zero)));
+        UIManager.Instance.Transition(() => _player.GetComponent<AdvancedGridMovement>().Teleport(_lastPlayerPosition, _lastPlayerRotation));
         _repeatingWorld.Loops.Unsubscribe(OnLoopUpdate);
         _repeatingWorld.Complete();
     }
