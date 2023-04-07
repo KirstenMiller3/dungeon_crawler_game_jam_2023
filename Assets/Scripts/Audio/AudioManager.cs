@@ -157,7 +157,6 @@ public class AudioManager : MonoBehaviour
 
         if(s != null)
         {
-            Debug.Log($"playing sound {name}");
             s.source.Play();
         }
         else
