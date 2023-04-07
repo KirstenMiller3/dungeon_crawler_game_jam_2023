@@ -47,10 +47,6 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.outputAudioMixerGroup = s.mixerGroup;
         }
-        
-
-        Play("main");
-        Play("ambience");
 
     }
 

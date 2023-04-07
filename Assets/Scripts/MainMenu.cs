@@ -8,6 +8,8 @@ public class MainMenu : MonoBehaviour {
     [SerializeField] private CanvasGroup _fade;
 
     private void Start() {
+        AudioManager.instance.Play("main");
+
         _fade.alpha = 1f;
         _fade.DOFade(0f, 1f);
     }

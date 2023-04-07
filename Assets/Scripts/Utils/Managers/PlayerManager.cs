@@ -36,6 +36,7 @@ public class PlayerManager : Singleton<PlayerManager> {
     }
 
     private void Start() {
+        AudioManager.instance.Play("ambience");
         _player = GameObject.Find("Player").transform;
     }
 
