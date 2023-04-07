@@ -4,14 +4,22 @@ using UnityEngine;
 
 public class HungerMonster : MonoBehaviour {
     [SerializeField] private int _numberOfApplesNeeded = 3;
-    [SerializeField] private Texture2D[] _sprites;
+    [SerializeField] private GameObject[] _states;
     [SerializeField] private Renderer _renderer;
 
     public System.Action OnComplete;
 
     private int _currentApples;
 
+    private void Start() {
+        _states[0].SetActive(true);
+        _states[1].SetActive(false);
+    }
+
     public void Feed() {
+        _states[0].SetActive(false);
+        _states[1].SetActive(false);
+
         _currentApples++;
         if(_currentApples == 1) {
             AudioManager.instance.Play("munching");
@@ -20,8 +28,8 @@ public class HungerMonster : MonoBehaviour {
             AudioManager.instance.Play("munching_2");
         }
 
-        if(_currentApples < _sprites.Length) {
-            _renderer.material.mainTexture = _sprites[_currentApples];
+        if(_currentApples < _states.Length) {
+            _states[_currentApples].SetActive(true);
         }
 
         if(_currentApples >= _numberOfApplesNeeded) {
@@ -32,6 +40,6 @@ public class HungerMonster : MonoBehaviour {
 
     public void Reset() {
         _currentApples = 0;
-        _renderer.material.mainTexture = _sprites[_currentApples];
+        _states[0].SetActive(true);
     }
 }
