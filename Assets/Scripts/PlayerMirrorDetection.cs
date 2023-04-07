@@ -19,6 +19,10 @@ public class PlayerMirrorDetection : MonoBehaviour {
             if(!LookingAtMirror.Value) {
                 return;
             }
+
+            if(_lookAtMirror.HasStarted) {
+                return;
+            }
             _lookAtMirror.StartFight();
         }
     }
@@ -26,7 +30,6 @@ public class PlayerMirrorDetection : MonoBehaviour {
     private void FixedUpdate() {
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
         RaycastHit hit;
-
 
         Debug.DrawRay(transform.position, fwd * _checkDist);
         if(Physics.Raycast(transform.position, fwd, out hit, _checkDistToChange, _layersToCheck)) {
