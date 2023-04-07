@@ -68,6 +68,10 @@ public class Mirror : MonoBehaviour {
     }
 
     public virtual void StartFight() {
+        if(_hasStarted) {
+            return;
+        }
+
         if(PlayerManager.Instance.ActiveMirror != null && PlayerManager.Instance.ActiveMirror != this) {
             PlayerManager.Instance.ActiveMirror.CancelPuzzle();
         }
@@ -161,7 +165,7 @@ public class Mirror : MonoBehaviour {
 
         //PlayerManager.Instance.AddCondition(1);
         PlayerManager.Instance.CompleteMirror();
-
+        _mirrorPerson.ShowMirroredPerson(_person);
 
         _mirrorPerson.TransformPlayer();
         if(PlayerManager.Instance.GameFinished) {
