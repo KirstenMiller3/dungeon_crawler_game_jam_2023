@@ -524,6 +524,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 565643397188447075, guid: cb42c6804a5c90c45a282acdd8b49373, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 16383
+      objectReference: {fileID: 0}
     - target: {fileID: 3325582902549747753, guid: cb42c6804a5c90c45a282acdd8b49373, type: 3}
       propertyPath: _beatinHeart
       value: 
@@ -945,6 +949,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 180297393556945080, guid: 448102d0dbe1fe744b942673930143d7, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 16383
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 448102d0dbe1fe744b942673930143d7, type: 3}
@@ -975,6 +983,10 @@ PrefabInstance:
       propertyPath: _beatinHeart
       value: 
       objectReference: {fileID: 912434198}
+    - target: {fileID: 5213184063918656312, guid: bbf032dad70f56443a561fd4f845ab65, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 16383
+      objectReference: {fileID: 0}
     - target: {fileID: 5213184064550584003, guid: bbf032dad70f56443a561fd4f845ab65, type: 3}
       propertyPath: m_Name
       value: Presence_Mirror
@@ -1266,6 +1278,10 @@ PrefabInstance:
     - target: {fileID: 4469598718842201717, guid: 3bf2d26497f0b71458d4f2049a7367ae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469598719561143178, guid: 3bf2d26497f0b71458d4f2049a7367ae, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 16383
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
@@ -2614,6 +2630,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health_Mirror
       objectReference: {fileID: 0}
+    - target: {fileID: 1718844431820967965, guid: d03ceffb9a133b546a2df1a946333595, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 16383
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1718844431370692066, guid: d03ceffb9a133b546a2df1a946333595, type: 3}
@@ -2915,6 +2935,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 565643397188447075, guid: cb42c6804a5c90c45a282acdd8b49373, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 16383
+      objectReference: {fileID: 0}
     - target: {fileID: 3325582902549747753, guid: cb42c6804a5c90c45a282acdd8b49373, type: 3}
       propertyPath: _beatinHeart
       value: 
@@ -3193,6 +3217,10 @@ PrefabInstance:
     - target: {fileID: 565643396470578844, guid: cb42c6804a5c90c45a282acdd8b49373, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 565643397188447075, guid: cb42c6804a5c90c45a282acdd8b49373, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 16383
       objectReference: {fileID: 0}
     - target: {fileID: 9095119803166610779, guid: cb42c6804a5c90c45a282acdd8b49373, type: 3}
       propertyPath: _person

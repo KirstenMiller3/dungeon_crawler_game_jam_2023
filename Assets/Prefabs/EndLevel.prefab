@@ -686,7 +686,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5852929898158684919}
   - component: {fileID: 3376357555107902589}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: EndLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -712,7 +712,7 @@ Transform:
   - {fileID: 2853231461412370285}
   - {fileID: 1444055868}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3376357555107902589
 MonoBehaviour:
@@ -741,11 +741,20 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.6878977
-      value: 0.26676983
-      inSlope: 1.1537895
+      time: 0.59539527
+      value: 0.0021328032
+      inSlope: 0.0035821635
       outSlope: 1.1537895
-      tangentMode: 0
+      tangentMode: 5
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.85248417
+      value: 0.77012587
+      inSlope: 2.790117
+      outSlope: 2.790117
+      tangentMode: 1
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
@@ -879,7 +888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8142159022749127934, guid: cb049c1a5450c004e89084c2ab4bce34, type: 3}
       propertyPath: m_Layer
-      value: 14
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3386347566478624452, guid: cb049c1a5450c004e89084c2ab4bce34, type: 3}
@@ -964,6 +973,10 @@ PrefabInstance:
     - target: {fileID: 9073256755647705088, guid: 48f5864871b761445a922f061f6fcfdc, type: 3}
       propertyPath: m_Name
       value: End_Sky
+      objectReference: {fileID: 0}
+    - target: {fileID: 9073256755647705088, guid: 48f5864871b761445a922f061f6fcfdc, type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

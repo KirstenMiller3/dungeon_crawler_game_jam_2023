@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5375,74 +5375,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2433925972637707797, guid: 2a109f78daff5fc4f87552a32faaf3c0, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3376357555107902589, guid: 2a109f78daff5fc4f87552a32faaf3c0, type: 3}
-      propertyPath: _lightCurve.m_Curve.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3376357555107902589, guid: 2a109f78daff5fc4f87552a32faaf3c0, type: 3}
-      propertyPath: _lightCurve.m_Curve.Array.data[1].time
-      value: 0.59539527
-      objectReference: {fileID: 0}
-    - target: {fileID: 3376357555107902589, guid: 2a109f78daff5fc4f87552a32faaf3c0, type: 3}
-      propertyPath: _lightCurve.m_Curve.Array.data[2].time
-      value: 0.85248417
-      objectReference: {fileID: 0}
-    - target: {fileID: 3376357555107902589, guid: 2a109f78daff5fc4f87552a32faaf3c0, type: 3}
-      propertyPath: _lightCurve.m_Curve.Array.data[3].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3376357555107902589, guid: 2a109f78daff5fc4f87552a32faaf3c0, type: 3}
-      propertyPath: _lightCurve.m_Curve.Array.data[1].value
-      value: 0.0021328032
-      objectReference: {fileID: 0}
-    - target: {fileID: 3376357555107902589, guid: 2a109f78daff5fc4f87552a32faaf3c0, type: 3}
-      propertyPath: _lightCurve.m_Curve.Array.data[2].value
-      value: 0.77012587
-      objectReference: {fileID: 0}
-    - target: {fileID: 3376357555107902589, guid: 2a109f78daff5fc4f87552a32faaf3c0, type: 3}
-      propertyPath: _lightCurve.m_Curve.Array.data[3].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3376357555107902589, guid: 2a109f78daff5fc4f87552a32faaf3c0, type: 3}
-      propertyPath: _lightCurve.m_Curve.Array.data[1].inSlope
-      value: 0.0035821635
-      objectReference: {fileID: 0}
-    - target: {fileID: 3376357555107902589, guid: 2a109f78daff5fc4f87552a32faaf3c0, type: 3}
-      propertyPath: _lightCurve.m_Curve.Array.data[2].inSlope
-      value: 2.790117
-      objectReference: {fileID: 0}
-    - target: {fileID: 3376357555107902589, guid: 2a109f78daff5fc4f87552a32faaf3c0, type: 3}
-      propertyPath: _lightCurve.m_Curve.Array.data[3].inSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3376357555107902589, guid: 2a109f78daff5fc4f87552a32faaf3c0, type: 3}
-      propertyPath: _lightCurve.m_Curve.Array.data[2].inWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 3376357555107902589, guid: 2a109f78daff5fc4f87552a32faaf3c0, type: 3}
-      propertyPath: _lightCurve.m_Curve.Array.data[2].outSlope
-      value: 2.790117
-      objectReference: {fileID: 0}
-    - target: {fileID: 3376357555107902589, guid: 2a109f78daff5fc4f87552a32faaf3c0, type: 3}
-      propertyPath: _lightCurve.m_Curve.Array.data[3].outSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3376357555107902589, guid: 2a109f78daff5fc4f87552a32faaf3c0, type: 3}
-      propertyPath: _lightCurve.m_Curve.Array.data[2].outWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 3376357555107902589, guid: 2a109f78daff5fc4f87552a32faaf3c0, type: 3}
-      propertyPath: _lightCurve.m_Curve.Array.data[1].tangentMode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3376357555107902589, guid: 2a109f78daff5fc4f87552a32faaf3c0, type: 3}
-      propertyPath: _lightCurve.m_Curve.Array.data[2].tangentMode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5852929898158684918, guid: 2a109f78daff5fc4f87552a32faaf3c0, type: 3}
       propertyPath: m_Name
       value: EndLevel
