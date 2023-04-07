@@ -14,11 +14,13 @@ public class HungerMonster : MonoBehaviour {
     private void Start() {
         _states[0].SetActive(true);
         _states[1].SetActive(false);
+        _states[2].SetActive(false);
     }
 
     public void Feed() {
         _states[0].SetActive(false);
         _states[1].SetActive(false);
+        _states[2].SetActive(false);
 
         _currentApples++;
         if(_currentApples == 1) {
@@ -28,16 +30,19 @@ public class HungerMonster : MonoBehaviour {
             AudioManager.instance.Play("munching_2");
         }
 
+        _states[_currentApples].SetActive(true);
 
         if(_currentApples >= _numberOfApplesNeeded) {
-            gameObject.SetActive(false);
-            OnComplete?.Invoke();
+            StartCoroutine(CountdownToDone());
         }
-        else {
-            if(_currentApples < _states.Length) {
-                _states[_currentApples].SetActive(true);
-            }
-        }
+    }
+
+    private IEnumerator CountdownToDone() {
+        PlayerManager.Instance.PlayerTransform.GetComponent<AdvancedGridMovement>().DisableMovement(true);
+        yield return new WaitForSeconds(2f);
+        PlayerManager.Instance.PlayerTransform.GetComponent<AdvancedGridMovement>().DisableMovement(false);
+        gameObject.SetActive(false);
+        OnComplete?.Invoke();
     }
 
     public void Reset() {
