@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Concrete pattern 20
+  m_Name: Cushion
   m_Shader: {fileID: 4, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 2100000, guid: 573165ec89c0f4a488f962940dc8d6d9, type: 2}
   m_ModifiedSerializedProperties: 0
