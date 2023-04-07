@@ -26,6 +26,8 @@ public class UIManager : Singleton<UIManager> {
     [SerializeField] private GameObject _giveText;
     [SerializeField] private GameObject _dropText;
     [SerializeField] private GameObject _feedText;
+    [SerializeField] private GameObject _moreFoodText;
+    [SerializeField] private GameObject _hungryText;
     [SerializeField] private GameObject _mirrorInteractPrompt;
 
     [Header("Fades")]
@@ -59,6 +61,8 @@ public class UIManager : Singleton<UIManager> {
         _fadeCanvasGroup.DOFade(0f, 1f / _fadeSpeed);
         ClearSkyMessageNotification();
         ShowHeartCompass(false);
+        _moreFoodText.SetActive(false);
+        _hungryText.SetActive(false);
     }
 
     public void OnDisable() {
@@ -109,6 +113,42 @@ public class UIManager : Singleton<UIManager> {
 
     public void EndPresence() {
         _presenceGroup.alpha = 0f;
+    }
+
+    private bool _moreFoodIsShowing = false;
+    public void ShowMoreFood(bool show) {
+        if(_moreFoodIsShowing == show) {
+            return;
+        }
+
+        _moreFoodIsShowing = show;
+       
+        if(show) {
+            _moreFoodText.SetActive(true);
+            _moreFoodText.transform.localScale = Vector3.zero;
+            _moreFoodText.transform.DOScale(Vector3.one, 0.4f);
+        }
+        else {
+            _moreFoodText.transform.DOScale(Vector3.zero, 0.4f);
+        }
+    }
+
+    private bool _hungryIsShowing = false;
+    public void ShowHungry(bool show) {
+        if(_hungryIsShowing == show) {
+            return;
+        }
+
+        _hungryIsShowing = show;
+  
+        if(show) {
+            _hungryText.SetActive(true);
+            _hungryText.transform.localScale = Vector3.zero;
+            _hungryText.transform.DOScale(Vector3.one, 0.4f);
+        }
+        else {
+            _hungryText.transform.DOScale(Vector3.zero, 0.4f);
+        }
     }
 
     public void ShowHeartCompass(bool show) {

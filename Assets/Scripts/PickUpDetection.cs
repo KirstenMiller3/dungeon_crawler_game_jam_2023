@@ -40,19 +40,24 @@ public class PickUpDetection : MonoBehaviour {
 
         if(Physics.Raycast(transform.position, fwd, out hit, _checkDist, _feedLayer)) {
             _lookAtMonster = hit.transform.GetComponent<HungerMonster>();
+            _lookAtMonster.CheckDialogue();
         }
         else {
+            if(_lookAtMonster) {
+                _lookAtMonster.HideDialogue();
+            }
+           
             _lookAtMonster = null;
         }
         
         
-        if(Physics.Raycast(transform.position, fwd, out hit, _checkDist, LayerMask.NameToLayer("EndGame"))) {
-           // put up UI prompt
+        //if(Physics.Raycast(transform.position, fwd, out hit, _checkDist, LayerMask.NameToLayer("EndGame"))) {
+        //   // put up UI prompt
            
-        }
-        else {
-            // remove UI prompt
-        }
+        //}
+        //else {
+        //    // remove UI prompt
+        //}
     }
 
     public void PickUp() {

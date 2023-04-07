@@ -33,8 +33,29 @@ public class HungerMonster : MonoBehaviour {
         _states[_currentApples].SetActive(true);
 
         if(_currentApples >= _numberOfApplesNeeded) {
+            UIManager.Instance.ShowMoreFood(false);
             StartCoroutine(CountdownToDone());
         }
+    }
+
+    public void CheckDialogue() {
+        if(_currentApples == 0) {
+            UIManager.Instance.ShowMoreFood(false);
+            UIManager.Instance.ShowHungry(true);
+        }
+        else if(_currentApples == 1) {
+            UIManager.Instance.ShowMoreFood(true);
+            UIManager.Instance.ShowHungry(false);
+        }
+        else {
+            UIManager.Instance.ShowMoreFood(false);
+            UIManager.Instance.ShowHungry(false);
+        }
+    }
+
+    public void HideDialogue() {
+        UIManager.Instance.ShowMoreFood(false);
+        UIManager.Instance.ShowHungry(false);
     }
 
     private IEnumerator CountdownToDone() {
