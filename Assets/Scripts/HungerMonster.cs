@@ -13,6 +13,12 @@ public class HungerMonster : MonoBehaviour {
 
     public void Feed() {
         _currentApples++;
+        if(_currentApples == 1) {
+            AudioManager.instance.Play("munching");
+        }
+        else {
+            AudioManager.instance.Play("munching_2");
+        }
 
         if(_currentApples < _sprites.Length) {
             _renderer.material.mainTexture = _sprites[_currentApples];
