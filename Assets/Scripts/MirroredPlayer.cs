@@ -70,9 +70,10 @@ public class MirroredPlayer : MonoBehaviour {
         _isTransforming = true;
         _light.SetTrigger("Play");
         _transformParticles.Play();
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         _isTransforming = false;
         ShowMirroredPerson(0);
+        yield return new WaitForSeconds(1f);
         OnCompleteTransform?.Invoke();
     }
 }

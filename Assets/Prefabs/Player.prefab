@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _checkDist: 3
-  _checkDistToChange: 20
+  _checkDistToChange: 25
   _layersToCheck:
     serializedVersion: 2
     m_Bits: 320
