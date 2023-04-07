@@ -3467,6 +3467,10 @@ PrefabInstance:
       propertyPath: GameFinished
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1467772702962868859, guid: 196b37e12f7555c46a9cb33eef937178, type: 3}
+      propertyPath: _completedMirrors
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 196b37e12f7555c46a9cb33eef937178, type: 3}
