@@ -192,4 +192,11 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: 5912310669215329797, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
     source: {fileID: 0}
+  - volume: 1
+    pitch: 1
+    clip: {fileID: 8300000, guid: 5c59fca2fbdf2c14f95d0a86b634d79e, type: 3}
+    sName: rain
+    loop: 1
+    mixerGroup: {fileID: -4606959632553894468, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
+    source: {fileID: 0}
   audioMixer: {fileID: 24100000, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
