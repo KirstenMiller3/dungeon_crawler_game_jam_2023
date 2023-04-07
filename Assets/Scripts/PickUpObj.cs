@@ -27,6 +27,10 @@ public class PickUpObj : MonoBehaviour {
     }
 
     public void PickUp() {
+        if(_type == PickUpType.Beating_Heart) {
+            UIManager.Instance.ShowHeartCompass(false);
+        }
+
         AudioManager.instance.Play("pickup");
         Instantiate(_poof, transform.position, Quaternion.identity);
         OnPickUp?.Invoke();
