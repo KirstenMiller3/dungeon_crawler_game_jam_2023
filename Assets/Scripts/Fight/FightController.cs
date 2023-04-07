@@ -20,6 +20,7 @@ public class FightController : Singleton<FightController> {
     private float _speed = 3f;
 
     private AngrySoul _lastSoul;
+    private string _endFightText;
 
     private void Start() {
         _root.gameObject.SetActive(false);
@@ -31,6 +32,9 @@ public class FightController : Singleton<FightController> {
     }
 
     public void StartFight(int soulsAmount = 3, float speed = 3f) {
+        _root.localScale = Vector3.zero;
+        _root.DOScale(Vector3.one, 0.5f);
+
         _soulAmount = soulsAmount;
         _soulCounter = 0;
         _speed = speed;
@@ -63,6 +67,10 @@ public class FightController : Singleton<FightController> {
         yield return new WaitForSeconds(1);
         _countdown.gameObject.SetActive(false);
         SpawnSoul();
+    }
+
+    public void SetEndFightText(string endFightText) {
+        _endFightText = endFightText;
     }
 
     private void OnSoulDestroyed() {
@@ -113,11 +121,11 @@ public class FightController : Singleton<FightController> {
         _countdown.transform.DOScale(Vector3.one, 0.8f);
         _countdown.text = "Reflection Weakened";
         yield return new WaitForSeconds(2f);
-        _countdown.text = "Now, restore them";
+        _countdown.text = _endFightText;
         yield return new WaitForSeconds(2f);
         AudioManager.instance.Play("end_battle");
         OnComplete?.Invoke();
-        _root.gameObject.SetActive(false);
+        _root.DOScale(Vector3.zero, 0.5f).OnComplete(() => _root.gameObject.SetActive(false));
         PlayerManager.Instance.PlayerTransform.GetComponent<AdvancedGridMovement>().DisableMovement(false);
     }
 }

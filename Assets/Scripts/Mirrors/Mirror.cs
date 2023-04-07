@@ -6,6 +6,7 @@ public class Mirror : MonoBehaviour {
     [SerializeField] private bool _isInteractable;
     [SerializeField] private int _numberOfSouls = 3;
     [SerializeField] private float _soulSpeed = 3f;
+    [SerializeField] private string _questMessage;
 
     [TextArea][SerializeField] private string _hintQuote;
 
@@ -71,7 +72,8 @@ public class Mirror : MonoBehaviour {
             PlayerManager.Instance.ActiveMirror.CancelPuzzle();
         }
 
-        
+
+        FightController.Instance.SetEndFightText(_questMessage);
         PlayerManager.Instance.SetActiveMirror(this);
 
         _hasStarted = true;

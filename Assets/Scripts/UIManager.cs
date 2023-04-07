@@ -97,7 +97,6 @@ public class UIManager : Singleton<UIManager> {
         _pickUpText.text = string.Format(_pickUpBase, curr);
     }
 
-
     public void SetPresence() {
         _presenceGroup.alpha = 1f;
     }
@@ -105,6 +104,7 @@ public class UIManager : Singleton<UIManager> {
     public void EndPresence() {
         _presenceGroup.alpha = 0f;
     }
+
 
     public void Transition(System.Action onReady) {
         _fadeCanvasGroup.DOFade(1f, 1f / _fadeSpeed).OnComplete(() => TransitionBack(onReady));

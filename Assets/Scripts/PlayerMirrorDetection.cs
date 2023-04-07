@@ -46,13 +46,12 @@ public class PlayerMirrorDetection : MonoBehaviour {
 
             if(hit.distance <= _checkDist) {
                 _lookAtMirror.Interact();
+                LookingAtMirror.Value = true;
             }
             else {
                 _lookAtMirror.StopInteract();
                 _lookAtMirror.ShowPerson();
             }
-
-            LookingAtMirror.Value = true;
         }
         else {
             if(_lookAtMirror) {

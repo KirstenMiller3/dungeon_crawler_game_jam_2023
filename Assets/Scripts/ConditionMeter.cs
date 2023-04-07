@@ -23,5 +23,9 @@ public class ConditionMeter : MonoBehaviour {
                 _conditionImages[i].color = _depletedColor;
             }
         }
+
+        //if(level > 0) {
+        //    _conditionImages[level - 1].rectTransform.Do
+        //}
     }
 }

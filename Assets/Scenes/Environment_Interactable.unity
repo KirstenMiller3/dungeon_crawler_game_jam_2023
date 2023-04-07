@@ -901,6 +901,10 @@ PrefabInstance:
       propertyPath: _beatinHeart
       value: 
       objectReference: {fileID: 912434198}
+    - target: {fileID: 432958976, guid: 448102d0dbe1fe744b942673930143d7, type: 3}
+      propertyPath: _questMessage
+      value: Now, have patience
+      objectReference: {fileID: 0}
     - target: {fileID: 180297393176644931, guid: 448102d0dbe1fe744b942673930143d7, type: 3}
       propertyPath: m_Name
       value: Time_Mirror
@@ -983,6 +987,10 @@ PrefabInstance:
       propertyPath: _beatinHeart
       value: 
       objectReference: {fileID: 912434198}
+    - target: {fileID: 2818685658001771433, guid: bbf032dad70f56443a561fd4f845ab65, type: 3}
+      propertyPath: _questMessage
+      value: Now, be present
+      objectReference: {fileID: 0}
     - target: {fileID: 5213184063918656312, guid: bbf032dad70f56443a561fd4f845ab65, type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 16383
@@ -1195,6 +1203,10 @@ PrefabInstance:
       propertyPath: _beatinHeart
       value: 
       objectReference: {fileID: 912434198}
+    - target: {fileID: 629600721, guid: 3bf2d26497f0b71458d4f2049a7367ae, type: 3}
+      propertyPath: _questMessage
+      value: Now, accept yourself
+      objectReference: {fileID: 0}
     - target: {fileID: 629600721, guid: 3bf2d26497f0b71458d4f2049a7367ae, type: 3}
       propertyPath: _numberOfSouls
       value: 6
@@ -2575,6 +2587,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 912434198}
     - target: {fileID: 1540054773118890149, guid: d03ceffb9a133b546a2df1a946333595, type: 3}
+      propertyPath: _questMessage
+      value: Now, heal
+      objectReference: {fileID: 0}
+    - target: {fileID: 1540054773118890149, guid: d03ceffb9a133b546a2df1a946333595, type: 3}
       propertyPath: _numberOfSouls
       value: 1000
       objectReference: {fileID: 0}
@@ -3274,6 +3290,7 @@ MonoBehaviour:
   _isInteractable: 1
   _numberOfSouls: 4
   _soulSpeed: 2
+  _questMessage: Now, bring food
   _hintQuote: Let food be thy medicine and medicine thy food.
   _badMirror: {fileID: 1485411626}
   _camera: {fileID: 1857993100}
@@ -3305,6 +3322,7 @@ MonoBehaviour:
   _isInteractable: 1
   _numberOfSouls: 6
   _soulSpeed: 2.5
+  _questMessage: Now, bring peace
   _hintQuote: I took a deep breath and listened to the old bray of my heart. I am.
     I am. I am.
   _badMirror: {fileID: 1873179304}
@@ -3338,6 +3356,7 @@ MonoBehaviour:
   _isInteractable: 1
   _numberOfSouls: 3
   _soulSpeed: 3
+  _questMessage: Now, calm them
   _hintQuote: If the ocean can calm itself, so can you. We are both salt water mixed
     with air.
   _badMirror: {fileID: 849941269}
