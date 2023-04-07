@@ -111,9 +111,11 @@ public class Mirror : MonoBehaviour {
     }
 
     public virtual void OnPressStartPuzzle() {
-        _fightCompleted = true;
+        if(!_fightCompleted) {
+            SkyText.Instance.SetText(_hintQuote);
+        }
 
-        SkyText.Instance.SetText(_hintQuote);
+        _fightCompleted = true;
     }
 
     public virtual void Interact() {
