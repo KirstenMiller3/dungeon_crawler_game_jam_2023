@@ -30,6 +30,9 @@ public class PlayerManager : Singleton<PlayerManager> {
 
     [SerializeField] private int _completedMirrors = 0;
 
+    private Vector3 _homePos;
+    private Quaternion _homeRot;
+
     protected override void Awake() {
         base.Awake();
         ConditionLevel.Value = _startCondition;
@@ -39,18 +42,15 @@ public class PlayerManager : Singleton<PlayerManager> {
         AudioManager.instance.SetFinal(false);
         AudioManager.instance.Play("ambience");
         _player = GameObject.Find("Player").transform;
+        _homePos = _player.position;
+        _homeRot = _player.rotation;
     }
 
-    //private void Update() {
-    //    if(_isRemovingCondition) {
-    //        _conditionTimer += Time.deltaTime;
-    //        // condition still removes even once mirror completed
-    //        if(_conditionTimer >= _conditionReductionTickRate) {
-    //            RemoveCondition(_currConditionRemovalAmount);
-    //            _conditionTimer = 0f;
-    //        }
-    //    }
-    //}
+    private void Update() {
+        if(Input.GetKeyDown(KeyCode.Alpha9)) {
+            ESCAPE();
+        }
+    }
 
     //public void StartRemoveCondition(int amount) {
     //    if(_isRemovingCondition) {
@@ -65,6 +65,10 @@ public class PlayerManager : Singleton<PlayerManager> {
     //public void EndRemoveCondition() {
     //    _isRemovingCondition = false;
     //}
+
+    public void ESCAPE() {
+        PlayerTransform.GetComponent<AdvancedGridMovement>().Teleport(_homePos, _homeRot);
+    }
 
     public void RemoveCondition(int amount) {
         ConditionLevel.Value -= amount;
