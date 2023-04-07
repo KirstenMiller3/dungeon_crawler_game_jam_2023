@@ -155,6 +155,7 @@ public class Mirror : MonoBehaviour {
             UIManager.Instance.ShowMirrorInteractPrompt(false);
         }
 
+        _camera.enabled = true;
         IsComplete.Value = true;
 
         //PlayerManager.Instance.AddCondition(1);
