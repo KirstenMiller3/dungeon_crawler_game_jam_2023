@@ -467,7 +467,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4095
+    m_Bits: 20479
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1121,18 +1121,6 @@ MonoBehaviour:
         - m_Target: {fileID: 7446226509243976495}
           m_TargetAssemblyTypeName: PickUpDetection, Assembly-CSharp
           m_MethodName: PresentObj
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 7446226509243976495}
-          m_TargetAssemblyTypeName: PickUpDetection, Assembly-CSharp
-          m_MethodName: DropObj
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

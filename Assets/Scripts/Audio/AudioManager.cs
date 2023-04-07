@@ -136,11 +136,19 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void SetFinal() {
-        audioMixer.SetFloat("SFXVol", -80);
-        audioMixer.SetFloat("MusicVol", -80);
+    public void SetFinal(bool isFinal) {
+        if(isFinal) {
+            audioMixer.SetFloat("SFXVol", -80);
+            audioMixer.SetFloat("MusicVol", -80);
 
-        Play("rain");
+            Play("rain");
+        }
+        else {
+            audioMixer.SetFloat("SFXVol", 0);
+            audioMixer.SetFloat("MusicVol", 0);
+            audioMixer.SetFloat("EvilSFXVol", -14);
+            Stop("rain");
+        }
     }
 
     public void Play(string name)

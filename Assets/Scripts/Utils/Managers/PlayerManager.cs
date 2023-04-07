@@ -36,6 +36,7 @@ public class PlayerManager : Singleton<PlayerManager> {
     }
 
     private void Start() {
+        AudioManager.instance.SetFinal(false);
         AudioManager.instance.Play("ambience");
         _player = GameObject.Find("Player").transform;
     }
@@ -120,7 +121,7 @@ public class PlayerManager : Singleton<PlayerManager> {
     }
 
     private IEnumerator EndGameRoutine() {
-        AudioManager.instance.SetFinal();
+        AudioManager.instance.SetFinal(true);
         PlayerTransform.GetComponentInChildren<Camera>().clearFlags = CameraClearFlags.SolidColor;
         yield return new WaitForSeconds(0.5f);
         UIManager.Instance.Transition(TeleportToEnd);

@@ -65,11 +65,11 @@ public class UIManager : Singleton<UIManager> {
     private void Update() {
         if(!_pickUpDetection.CanPresentToMirror) {
             _giveText.gameObject.SetActive(false);
-            _dropText.gameObject.SetActive(false);
+            //_dropText.gameObject.SetActive(false);
         } 
         else {
             _giveText.gameObject.SetActive(_onMirror);
-            _dropText.gameObject.SetActive(!_onMirror);
+            //_dropText.gameObject.SetActive(!_onMirror);
         }
 
         _feedText.gameObject.SetActive(_pickUpDetection.CanPresentToMonster);
