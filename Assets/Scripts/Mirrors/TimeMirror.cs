@@ -32,18 +32,20 @@ public class TimeMirror : Mirror {
         AudioManager.instance.SetPatience(true);
     }
 
+    private PickUpObj pickUpObj;
     private void OnLoopUpdate(int prev, int curr) {
         if(curr < _loopsNeeded) {
             return;
         }
 
-        PickUpObj pickUpObj = _repeatingWorld.ShowPickUp(_endCorridorPickUp);
+        pickUpObj = _repeatingWorld.ShowPickUp(_endCorridorPickUp);
         pickUpObj.OnPickUp = CompleteMirror;
     }
 
     public override void CompleteMirror() {
         base.CompleteMirror();
 
+        pickUpObj.OnPickUp = null;
         AudioManager.instance.SetPatience(false);
         UIManager.Instance.Transition(() => _player.GetComponent<AdvancedGridMovement>().Teleport(_lastPlayerPosition, _lastPlayerRotation));
         _repeatingWorld.Loops.Unsubscribe(OnLoopUpdate);
