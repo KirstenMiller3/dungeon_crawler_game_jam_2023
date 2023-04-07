@@ -28,13 +28,15 @@ public class HungerMonster : MonoBehaviour {
             AudioManager.instance.Play("munching_2");
         }
 
-        if(_currentApples < _states.Length) {
-            _states[_currentApples].SetActive(true);
-        }
 
         if(_currentApples >= _numberOfApplesNeeded) {
             gameObject.SetActive(false);
             OnComplete?.Invoke();
+        }
+        else {
+            if(_currentApples < _states.Length) {
+                _states[_currentApples].SetActive(true);
+            }
         }
     }
 
