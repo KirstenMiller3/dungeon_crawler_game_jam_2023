@@ -9,14 +9,10 @@ public class PlayerManager : Singleton<PlayerManager> {
     [SerializeField] private Transform _player;
 
     [SerializeField] private int _startCondition = 5;
-    [SerializeField] private float _conditionReductionTickRate = 3f;
     
     [SerializeField] private Transform _rain;
 
     private const int NumMirrors = 7;
-
-    private bool first = true;
-
 
     public bool GameFinished => _gameFinished;
 
@@ -29,9 +25,7 @@ public class PlayerManager : Singleton<PlayerManager> {
 
     private Mirror _activeMirror;
 
-    private bool _isRemovingCondition = false;
     private bool _gameFinished = false;
-    private float _conditionTimer = 0f;
     private int _currConditionRemovalAmount;
 
     [SerializeField] private int _completedMirrors = 0;
@@ -66,9 +60,9 @@ public class PlayerManager : Singleton<PlayerManager> {
     //    _isRemovingCondition = true;
     //}
 
-    public void EndRemoveCondition() {
-        _isRemovingCondition = false;
-    }
+    //public void EndRemoveCondition() {
+    //    _isRemovingCondition = false;
+    //}
 
     public void RemoveCondition(int amount) {
         ConditionLevel.Value -= amount;
