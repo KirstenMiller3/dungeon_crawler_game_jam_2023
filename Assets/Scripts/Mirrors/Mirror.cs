@@ -132,9 +132,20 @@ public class Mirror : MonoBehaviour {
         }
 
         IsComplete.Value = true;
-        _mirrorPerson.TransformPlayer();
+
         //PlayerManager.Instance.AddCondition(1);
         PlayerManager.Instance.CompleteMirror();
+
+
+        _mirrorPerson.TransformPlayer();
+        if(PlayerManager.Instance.GameFinished) {
+            PlayerManager.Instance.PlayerTransform.GetComponent<AdvancedGridMovement>().DisableMovement(true);
+            _mirrorPerson.OnCompleteTransform = OnTransformCompleteEndGame;
+        }
+    }
+
+    private void OnTransformCompleteEndGame() {
+        PlayerManager.Instance.EndGame();
     }
 }
 

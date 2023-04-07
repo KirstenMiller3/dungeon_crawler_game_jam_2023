@@ -140,6 +140,13 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void SetFinal() {
+        audioMixer.SetFloat("SFXVol", -80);
+        audioMixer.SetFloat("MusicVol", -80);
+
+        Play("rain");
+    }
+
     public void Play(string name)
     {
        Sound s = Array.Find(sounds, sound => sound.sName == name);

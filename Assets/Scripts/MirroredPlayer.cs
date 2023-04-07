@@ -21,6 +21,9 @@ public class MirroredPlayer : MonoBehaviour {
     [SerializeField] private ParticleSystem _transformParticles;
     [SerializeField] private Animator _light;
 
+    public System.Action OnCompleteTransform;
+    public bool IsTransforming => _isTransforming;
+
     public Vector3 Offset => _offset;
 
     private MirroredPerson _currentMirroredPerson;
@@ -72,5 +75,6 @@ public class MirroredPlayer : MonoBehaviour {
         yield return new WaitForSeconds(2f);
         _isTransforming = false;
         ShowMirroredPerson(0);
+        OnCompleteTransform?.Invoke();
     }
 }

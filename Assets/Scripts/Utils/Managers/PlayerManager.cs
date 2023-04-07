@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Milo.Tools;
 using UnityEngine.SceneManagement;
+using System;
 
 public class PlayerManager : Singleton<PlayerManager> {
     [SerializeField] private Transform _player;
@@ -17,7 +18,7 @@ public class PlayerManager : Singleton<PlayerManager> {
     private bool first = true;
 
 
-    public bool GameFinished = true;
+    public bool GameFinished => _gameFinished;
 
     public int CompletedMirrors => _completedMirrors;
     public Transform PlayerTransform => _player;
@@ -29,10 +30,11 @@ public class PlayerManager : Singleton<PlayerManager> {
     private Mirror _activeMirror;
 
     private bool _isRemovingCondition = false;
+    private bool _gameFinished = false;
     private float _conditionTimer = 0f;
     private int _currConditionRemovalAmount;
 
-    private int _completedMirrors = 0;
+    [SerializeField] private int _completedMirrors = 0;
 
     protected override void Awake() {
         base.Awake();
@@ -43,36 +45,26 @@ public class PlayerManager : Singleton<PlayerManager> {
         _player = GameObject.Find("Player").transform;
     }
 
-    private void Update() {
-        if (GameFinished || CompletedMirrors == NumMirrors && first) {
-            GameFinished = false;
-            first = false;
-            Debug.Log("Game Finished");
-            var skybox = GameObject.Find("end_spawner");
-            var pos = skybox.transform.position;
-            PlayerTransform.GetComponent<AdvancedGridMovement>().Teleport(pos, skybox.transform.rotation);
-            var rain = _player.GetComponentInChildren<ParticleSystem>();
-        }
+    //private void Update() {
+    //    if(_isRemovingCondition) {
+    //        _conditionTimer += Time.deltaTime;
+    //        // condition still removes even once mirror completed
+    //        if(_conditionTimer >= _conditionReductionTickRate) {
+    //            RemoveCondition(_currConditionRemovalAmount);
+    //            _conditionTimer = 0f;
+    //        }
+    //    }
+    //}
 
-        if(_isRemovingCondition) {
-            _conditionTimer += Time.deltaTime;
-            // condition still removes even once mirror completed
-            if(_conditionTimer >= _conditionReductionTickRate) {
-                RemoveCondition(_currConditionRemovalAmount);
-                _conditionTimer = 0f;
-            }
-        }
-    }
+    //public void StartRemoveCondition(int amount) {
+    //    if(_isRemovingCondition) {
+    //        return;
+    //    }
 
-    public void StartRemoveCondition(int amount) {
-        if(_isRemovingCondition) {
-            return;
-        }
-
-        _currConditionRemovalAmount = amount;
-        _conditionTimer = 0f;
-        _isRemovingCondition = true;
-    }
+    //    _currConditionRemovalAmount = amount;
+    //    _conditionTimer = 0f;
+    //    _isRemovingCondition = true;
+    //}
 
     public void EndRemoveCondition() {
         _isRemovingCondition = false;
@@ -116,7 +108,39 @@ public class PlayerManager : Singleton<PlayerManager> {
     public void CompleteMirror() {
         SkyText.Instance.SetText("Keep going...", true);
         _completedMirrors++;
+
+        _gameFinished = CompletedMirrors == NumMirrors;
     }
 
- 
+    [ContextMenu("Complete 6 Puzzles")]
+    public void ForceComplete6Puzzles() {
+        for(int i = 0; i < 6; i++) {
+            CompleteMirror();
+        }
+    }
+
+    public void EndGame() {
+        SkyText.Instance.SetText("Write it on your heart that every day is the best day of the year.", false);
+        StartCoroutine(EndGameRoutine());
+    }
+
+    private IEnumerator EndGameRoutine() {
+        AudioManager.instance.SetFinal();
+        PlayerTransform.GetComponentInChildren<Camera>().clearFlags = CameraClearFlags.SolidColor;
+        yield return new WaitForSeconds(0.5f);
+        UIManager.Instance.Transition(TeleportToEnd);
+    }
+
+    private void TeleportToEnd() {
+        var rain = _player.GetComponentInChildren<ParticleSystem>();
+        var rainEmission = rain.emission;
+        rainEmission.rateOverTime = 500;
+
+
+        var skybox = GameObject.Find("end_spawner");
+        var pos = skybox.transform.position;
+        PlayerTransform.GetComponent<AdvancedGridMovement>().Teleport(pos, skybox.transform.rotation);
+        PlayerTransform.GetComponent<AdvancedGridMovement>().DisableMovement(false);
+    }
+
 }
