@@ -75,14 +75,14 @@ MonoBehaviour:
     source: {fileID: 0}
   - volume: 0.7
     pitch: 1
-    clip: {fileID: 8300000, guid: 2de4756015cdfae46842c1e8f50e857a, type: 3}
+    clip: {fileID: 8300000, guid: f0f9fd91ae923a14a94873a374607d57, type: 3}
     sName: health
     loop: 0
     mixerGroup: {fileID: 5912310669215329797, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
     source: {fileID: 0}
   - volume: 1
     pitch: 1
-    clip: {fileID: 8300000, guid: dd2badbfd388e704ba9a3384fb0eca35, type: 3}
+    clip: {fileID: 8300000, guid: d967b4239d789ae4c846421658e77490, type: 3}
     sName: time
     loop: 0
     mixerGroup: {fileID: 5912310669215329797, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
@@ -96,7 +96,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - volume: 1
     pitch: 1
-    clip: {fileID: 8300000, guid: e1e39673a5478b64fb8b52a01e98e4e6, type: 3}
+    clip: {fileID: 8300000, guid: db98b2f103ce1bc4fa35bd0a53e4b153, type: 3}
     sName: restore
     loop: 0
     mixerGroup: {fileID: 5912310669215329797, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
@@ -198,5 +198,19 @@ MonoBehaviour:
     sName: rain
     loop: 1
     mixerGroup: {fileID: -4606959632553894468, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
+    source: {fileID: 0}
+  - volume: 1
+    pitch: 1
+    clip: {fileID: 8300000, guid: ba1e5edb653e0844799ddf72e500789f, type: 3}
+    sName: munching
+    loop: 0
+    mixerGroup: {fileID: 5912310669215329797, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
+    source: {fileID: 0}
+  - volume: 1
+    pitch: 1
+    clip: {fileID: 8300000, guid: 6dd5782899a3f6a42b9874b2f5a94529, type: 3}
+    sName: munching_2
+    loop: 0
+    mixerGroup: {fileID: 5912310669215329797, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
     source: {fileID: 0}
   audioMixer: {fileID: 24100000, guid: 6e6098bc0b3814a4db0d2d2d30a95398, type: 2}
