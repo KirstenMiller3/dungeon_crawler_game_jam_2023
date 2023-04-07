@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndGame : MonoBehaviour {
     [SerializeField] private Transform _spawn;
@@ -19,13 +20,18 @@ public class EndGame : MonoBehaviour {
     }
 
     public void Update() {
-        if(!PlayerManager.Instance.GameFinished) {
+        if(PlayerManager.Instance == null || !PlayerManager.Instance.GameFinished) {
             return;
         }
 
         float dist = Vector3.Distance(PlayerManager.Instance.PlayerTransform.position, _target.position);
 
         float calc = (_margin - dist) / _margin;
+
+        if(dist < 2f) {
+            SceneManager.LoadScene("WinScreen");
+            return;
+        }
 
         _light.intensity = Mathf.Lerp(_lightRange.x, _lightRange.y, _lightCurve.Evaluate(calc));
 
