@@ -22,10 +22,12 @@ public class Mirror : MonoBehaviour {
     public bool HasStarted => _hasStarted;
     public Observable<bool> IsComplete = new Observable<bool>();
 
+    private RenderTexture rt;
+
     protected virtual void Start() {
         _mirrorPerson = FindObjectOfType<MirroredPlayer>();
 
-        RenderTexture rt = new RenderTexture((int)transform.localScale.x * 400, (int)transform.localScale.y * 400, 16, RenderTextureFormat.DefaultHDR);
+        rt = new RenderTexture((int)transform.localScale.x * 400, (int)transform.localScale.y * 400, 16, RenderTextureFormat.DefaultHDR);
         rt.Create();
         rt.name = "Mirror_RenderTexture";
         Material newMat = new Material(_material);
@@ -38,9 +40,23 @@ public class Mirror : MonoBehaviour {
         _badMirror.transform.position = transform.position + _mirrorPerson.Offset;
 
         IsComplete.Value = false;
+
+        _camera.enabled = false;
+    }
+
+    protected virtual void Update() {
+        //if(PlayerManager.Instance == null) {
+        //    return;
+        //}
+
+        //float dist = Vector3.Distance(PlayerManager.Instance.PlayerTransform.position, transform.position);
+
+        //_camera.enabled = dist < 10f;
     }
 
     public void ShowPerson() {
+        _camera.enabled = true;
+
         if(IsComplete.Value) {
             _mirrorPerson.ShowMirroredPerson(MirroredPerson.None);
         }
@@ -104,6 +120,7 @@ public class Mirror : MonoBehaviour {
             return;
         }
 
+        _camera.enabled = true;
         if(_isInteractable) {
             UIManager.Instance.ShowMirrorInteractPrompt(!_hasStarted);
         }
@@ -115,6 +132,11 @@ public class Mirror : MonoBehaviour {
         }
 
         UIManager.Instance.ShowMirrorInteractPrompt(false);
+    }
+
+    public void Hide() {
+        _camera.enabled = false;
+        rt.Release();
     }
 
     public virtual void CancelPuzzle() {

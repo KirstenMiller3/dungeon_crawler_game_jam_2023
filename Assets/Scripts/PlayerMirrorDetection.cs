@@ -26,34 +26,43 @@ public class PlayerMirrorDetection : MonoBehaviour {
     private void FixedUpdate() {
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
         RaycastHit hit;
+
+
         Debug.DrawRay(transform.position, fwd * _checkDist);
-        if(Physics.Raycast(transform.position, fwd, out hit, _checkDist, _layersToCheck)) {
+        if(Physics.Raycast(transform.position, fwd, out hit, _checkDistToChange, _layersToCheck)) {
             if(hit.transform.gameObject.layer == LayerMask.NameToLayer("Level")) {
+                if(_lookAtMirror) {
+                    _lookAtMirror.Hide();
+                    _lookAtMirror.StopInteract();
+
+                    _lookAtMirror = null;
+
+                    LookingAtMirror.Value = false;
+                }
                 return;
             }
 
             _lookAtMirror = hit.transform.GetComponent<Mirror>();
-            _lookAtMirror.Interact();
+
+            if(hit.distance <= _checkDist) {
+                _lookAtMirror.Interact();
+            }
+            else {
+                _lookAtMirror.StopInteract();
+                _lookAtMirror.ShowPerson();
+            }
 
             LookingAtMirror.Value = true;
         }
         else {
             if(_lookAtMirror) {
+                _lookAtMirror.Hide();
                 _lookAtMirror.StopInteract();
             }
 
             _lookAtMirror = null;
 
             LookingAtMirror.Value = false;
-        }
-
-        if(Physics.Raycast(transform.position, fwd, out hit, _checkDistToChange, _layersToCheck)) {
-            if(hit.transform.gameObject.layer == LayerMask.NameToLayer("Level")) {
-                return;
-            }
-
-            _lookAtMirror = hit.transform.GetComponent<Mirror>();
-            _lookAtMirror.ShowPerson();
         }
     }
 }

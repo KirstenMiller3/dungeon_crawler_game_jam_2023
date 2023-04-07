@@ -18,7 +18,8 @@ public class HealMirror : Mirror {
         HealthZone.Instance.SpawnToArea();
     }
 
-    private void Update() {
+    protected override void Update() {
+        base.Update();
         if(!_hasStarted) {
             return;
         }

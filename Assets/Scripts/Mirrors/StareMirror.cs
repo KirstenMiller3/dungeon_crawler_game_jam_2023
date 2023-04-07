@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class StareMirror : Mirror {
     [SerializeField] private float _stareTime = 5f;
@@ -16,7 +15,9 @@ public class StareMirror : Mirror {
         _player = PlayerManager.Instance.PlayerTransform.GetComponent<AdvancedGridMovement>();
     }
 
-    private void Update() {
+    protected override void Update() {
+        base.Update();
+
         if(!_hasStarted) {
             return;
         }
