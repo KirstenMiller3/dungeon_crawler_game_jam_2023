@@ -39,16 +39,27 @@ public class TimeMirror : Mirror {
         }
 
         pickUpObj = _repeatingWorld.ShowPickUp(_endCorridorPickUp);
-        pickUpObj.OnPickUp = CompleteMirror;
+        pickUpObj.OnPickUp = CompletedThisGuy;
     }
 
-    public override void CompleteMirror() {
-        base.CompleteMirror();
+    private bool _doubleCheck = false;
+    private void CompletedThisGuy() {
+        if(_doubleCheck) {
+            return;
+        }
+
+        _doubleCheck = true;
+
+        CompleteMirror();
 
         pickUpObj.OnPickUp = null;
         AudioManager.instance.SetPatience(false);
         UIManager.Instance.Transition(() => _player.GetComponent<AdvancedGridMovement>().Teleport(_lastPlayerPosition, _lastPlayerRotation));
         _repeatingWorld.Loops.Unsubscribe(OnLoopUpdate);
         _repeatingWorld.Complete();
+    }
+
+    public override void CompleteMirror() {
+        base.CompleteMirror();
     }
 }
