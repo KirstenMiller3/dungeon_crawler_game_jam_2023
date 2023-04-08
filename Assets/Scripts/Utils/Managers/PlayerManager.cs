@@ -41,6 +41,7 @@ public class PlayerManager : Singleton<PlayerManager> {
     private void Start() {
         AudioManager.instance.SetFinal(false);
         AudioManager.instance.Play("ambience");
+        AudioManager.instance.Play("soft-rain");
         _player = GameObject.Find("Player").transform;
         _homePos = _player.position;
         _homeRot = _player.rotation;

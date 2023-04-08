@@ -19,6 +19,7 @@ public class WinScreenScript : MonoBehaviour
     }
 
     public void MainMenu() {
+        AudioManager.instance.Stop("rain");
         SceneManager.LoadScene("MainMenu");
     }
     

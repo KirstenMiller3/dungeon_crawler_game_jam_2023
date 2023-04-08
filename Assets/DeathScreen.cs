@@ -20,5 +20,6 @@ public class DeathScreen : MonoBehaviour
 
     public void LoadGame() {
         SceneManager.LoadScene("Environment_Interactable");
-        SceneManager.LoadScene("Kirsten", LoadSceneMode.Additive);    }
+        SceneManager.LoadScene("Kirsten", LoadSceneMode.Additive);    
+    }
 }

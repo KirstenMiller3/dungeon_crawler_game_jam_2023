@@ -137,7 +137,8 @@ public class AudioManager : MonoBehaviour
     }
 
     public void SetFinal(bool isFinal) {
-        if(isFinal) {
+        if(isFinal) {   
+            Stop("soft-rain");
             audioMixer.SetFloat("SFXVol", -80);
             audioMixer.SetFloat("MusicVol", -80);
 
