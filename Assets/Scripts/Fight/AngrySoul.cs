@@ -16,6 +16,8 @@ public class AngrySoul : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     private Tween _activeMoveTween;
     private Tween _activeScaleTween;
 
+    private bool _isClicked = false;
+
 
     private float _speed;
 
@@ -43,6 +45,12 @@ public class AngrySoul : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     }
 
     public void OnPointerDown(PointerEventData eventData) {
+        if(_isClicked) {
+            return;
+        }
+
+        _isClicked = true;
+
         _activeMoveTween.Kill();
         _activeScaleTween.Kill();
         OnDestroyed?.Invoke();
